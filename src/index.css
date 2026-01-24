@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+.mantine-DatePickerInput-input {
+  background-color: transparent !important;
+}
+
+.chevron {
+  &[data-rotate] {
+    transform: rotate(45deg);
+  }
+}
+
+.mantine-Checkbox-input {
+  background-color: transparent;
+}
+
+.chart-container {
+  width: 100%;
+  height: 100%;
+}
+
+.mantine-TextInput-input {
+  background-color: transparent !important;
+  width: 100%;
+  border: 0 !important;
+  outline: none;
+  padding: 0 !important;
+  height: '100%' !important;
+}
+
+.m_8fb7ebe7:disabled,
+.m_8fb7ebe7[data-disabled] {
+  color: #BF0204 !important;
+}
+
+.m_1b7284a3 {
+  border-radius: 30px !important;
+}
