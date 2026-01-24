@@ -96,17 +96,6 @@ export type CustomTextInputProps = Omit<
   withAsterisk?: boolean | false;
 };
 
-
-export type CustomError = {
-  status?: number;
-  message?: string;
-  data?: any;
-};
-
-export type NotificationProps = {
-  message: string;
-};
-
 export type ButtonComponentProps = {
   title: string;
   onClick?: () => void;
@@ -178,48 +167,6 @@ export type TableColumn = {
   type?: string;
 };
 
-
-export const SAVE_API_RESPONSE = 'SAVE_API_RESPONSE';
-export const CLEAR_API_RESPONSE = 'CLEAR_API_RESPONSE';
-export const CLEAR_ALL_RESPONSES = 'CLEAR_ALL_RESPONSES';
-
-export type SaveApiResponseAction = {
-  type: typeof SAVE_API_RESPONSE;
-  payload: { key: string; data: string | object };
-};
-
-export type ClearApiResponseAction = {
-  type: typeof CLEAR_API_RESPONSE;
-  payload: string;
-};
-
-export type ClearAllResponsesAction = {
-  type: typeof CLEAR_ALL_RESPONSES;
-};
-
-export type ApiActionTypes =
-  | SaveApiResponseAction
-  | ClearApiResponseAction
-  | ClearAllResponsesAction;
-
-
-export type SetLanguageRequest = {
-  language: string;
-  mobileNumber: string;
-};
-
-export type LogoutModalProps = {
-  opened: boolean;
-  onClose: () => void;
-  onClick: () => void;
-  isLoading: boolean;
-};
-
-export type BackgroundContextType = {
-  isBg: boolean;
-  setIsBg: (value: boolean) => void;
-};
-
 export type TableProps = {
   data: Record<string, any>[];
   columns: TableColumn[];
@@ -229,13 +176,4 @@ export type TableProps = {
   onCurrentPageData?: (data: Record<string, any>[]) => void;
   onSearch?: (columnKey: string, value: string) => void;
   showSearch?: boolean;
-};
-
-export type FetchUserData = Record<string, any>;
-
-export type UsersState = {
-list: FetchUserData[];
-page: number;
-loading: boolean;
-selectedUser: FetchUserData | null;
 };

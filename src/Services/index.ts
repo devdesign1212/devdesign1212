@@ -1,4 +1,3 @@
-import { HandleCustomError } from '@/Utils/handleCustomError';
 import axios from 'axios';
 
 const API_CONFIG = {
@@ -42,7 +41,6 @@ api.interceptors.response.use(
     //   message: error.message,
     // });
     if (error.response.status === 401) {
-      await HandleCustomError(error);
       // showErrorNotification(error?.response?.data, )
     }
 

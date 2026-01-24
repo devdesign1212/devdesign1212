@@ -2,8 +2,6 @@ import RouterOutlet from './Routes';
 import { MantineProvider } from '@mantine/core';
 import { theme } from '@/themes/theme';
 import { Notifications } from '@mantine/notifications';
-import { Provider } from 'react-redux';
-import { store } from '@/Redux/Store/store';
 
 const AppContent = () => {
   return (
@@ -16,9 +14,9 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <Provider store={store}>
+    <>
       <AppContent />
-    </Provider>
+    </>
   );
 };
 
