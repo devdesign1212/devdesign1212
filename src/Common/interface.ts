@@ -14,7 +14,7 @@ export type CustomDropdownProps = {
   label?: string;
   placeholder?: string;
   data: (string | { value: string; label: string })[];
-  value?: string;
+  value?: string | null;
   onChange?: (value: string | null) => void;
   error?: string;
   disabled?: boolean;
@@ -97,40 +97,46 @@ export type CustomTextInputProps = Omit<
 };
 
 export type ButtonComponentProps = {
-  title: string;
+title: string; 
   onClick?: () => void;
-  variant?: 'filled' | 'outline' | 'light' | 'gradient';
+  variant?: 'filled' | 'outline'  | 'gradient';
   className?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   disabled?: boolean;
   loading?: boolean;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  size?: number;
   fullWidth?: boolean;
   radius?: number;
+  color: string;
+  backgroundColor?: string;
+  borderColor: string;
+  from?:string;
+  to?:string;
+  deg?:number;
 };
 
 export type CustomDatePickerProps = {
   label?: string;
   placeholder?: string;
-  value: Date | [Date | null, Date | null] | null; // Accepts either a single date or a range
+  value: Date | [Date | null, Date | null] | null; 
   onChange: (date: Date | [Date | null, Date | null] | null) => void;
   // value?: Date | null; // Ensure this is Date or null
-  // onChange?: (value: Date | null) => void; // Change to accept Date or null
+  // onChange?: (value: Date | null) => void; 
   error?: string;
   disabled?: boolean;
-  required?: boolean;
-  name?: string;
-  id?: string;
+  // required?: boolean;
+  // name?: string;
+  // id?: string;
   className?: string;
-  style?: React.CSSProperties;
+  // style?: React.CSSProperties;
   radius?: string;
   variant?: 'default' | 'filled' | 'unstyled';
   withAsterisk?: boolean | false;
   minDate?: Date;
   maxDate?: Date;
-  clearable?: boolean;
-  autoComplete?: string;
+  // clearable?: boolean;
+  // autoComplete?: string;
   type?: 'default' | 'range';
   defaultDate?: boolean;
   onShortcutSelect?: (start: Date | null, end: Date | null) => void;
@@ -177,3 +183,45 @@ export type TableProps = {
   onSearch?: (columnKey: string, value: string) => void;
   showSearch?: boolean;
 };
+
+
+export const SAVE_API_RESPONSE = 'SAVE_API_RESPONSE';
+export const CLEAR_API_RESPONSE = 'CLEAR_API_RESPONSE';
+export const CLEAR_ALL_RESPONSES = 'CLEAR_ALL_RESPONSES';
+
+export type SaveApiResponseAction = {
+  type: typeof SAVE_API_RESPONSE;
+  payload: { key: string; data: string | object };
+};
+
+export type ClearApiResponseAction = {
+  type: typeof CLEAR_API_RESPONSE;
+  payload: string;
+};
+
+export type ClearAllResponsesAction = {
+  type: typeof CLEAR_ALL_RESPONSES;
+};
+
+export type ApiActionTypes =
+  | SaveApiResponseAction
+  | ClearApiResponseAction
+  | ClearAllResponsesAction;
+
+  export type BurgerProps = {
+  opened: boolean;
+  onClick: () => void;
+  color: string;
+  label?: string; 
+  textColor: string;
+}
+
+export type DynamicModalProps = {
+  opened: boolean;
+  onClose: () => void;
+  title?: string;
+  content: string | React.ReactNode;
+  ButtonTitle?: string;
+  onClick?: () => void;
+  loading?: boolean; 
+}

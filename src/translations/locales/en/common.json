@@ -1,3 +1,70 @@
 {
-  "Dashboard": "Dashboard"
+  "Dashboard": "Dashboard",
+  "buttons": {
+    "get_started": "Get Started",
+    "send_message": "Send Message",
+    "loading": "Please wait..."
+    },
+    "menu": {
+    "dashboard": "Terminal",
+    "transactions": "Ledger",
+    "security": "Vault",
+    "ai_analytics": "Neural Lab",
+    "biometrics": "Identity",
+    "settings": "Configuration",
+    "devDesign": "DEV DESIGN",
+    "selectNodeFromCommandCenter": "Select a node from the Command Center..."
+  },
+  "date": {
+    "placeholder": "Select a date range",
+    "shortcuts": "Quick Select",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "last7": "Last 7 Days",
+    "last30": "Last 30 Days",
+    "thisMonth": "This Month"
+  },
+  "select": "Select an option",
+  "fileReadyForUpload": "File ready for upload",
+  "Dropdown":{
+    "systemAccessRole": "System Access Role",
+    "preferredLanguage": "Preferred Language",
+    "regionSimulatedError": "Region (Simulated Error)",
+    "thisRegionIsCurrentlyUnderMaintenance": "This region is currently under maintenance"
+  },
+  "FileUpload":{
+    "requiredDocument": "Please attach the required document",
+    "uploadSuccess": "File uploaded successfully!",
+    "identityVerification": "Identity Verification",
+    "uploadInstruction": "Please upload a clear scan of your ID (PDF or JPG)",
+    "documentLabel": "National ID / Passport",
+    "documentPlaceholder": "Select document file",
+    "uploadButton": "Upload Document",
+    "uploadInfo": "Encrypted and secure upload. Max file size: 10MB."
+  },
+  "TextInput":{
+    "welcomeBack":"Welcome Back",
+    "emailAddress":"Email Address",
+    "emailPlaceholder":"name@company.com",
+    "password":"Password",
+    "enterYourPassword":"Enter your password",
+    "signIn":"Sign In",
+    "loginAttempt":"Login attempt"
+  },
+  "Modal":{
+    "actionConfirmed":"Action Confirmed!", 
+    "title":"Modal System Demo",
+    "openConfirmation":"Open Confirmation",
+    "finalizeAction":"Finalize Action",
+    "confirmationMessage":"Are you sure you want to proceed with this transaction? This action cannot be undone.",
+    "confirm":"Confirm"
+  },
+  "Textarea":{
+    "min10Chars":"Please provide a bit more detail (min 10 chars)",
+    "feedbackSubmitted":"Feedback submitted!",
+    "howCanWeHelp":"How can we help?",
+    "issueDescription":"Issue Description",
+    "tellUsWhatOnYourMind":"Tell us what's on your mind...",
+    "submit":"Send Feedback"
   }
+}

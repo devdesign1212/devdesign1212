@@ -10,7 +10,6 @@ const TextareaComponent: React.FC<CustomTextareaProps> = ({
   placeholder,
   value,
   onChange,
-  onBlur,
   error,
   disabled = false,
   maxLength,
@@ -62,13 +61,13 @@ const TextareaComponent: React.FC<CustomTextareaProps> = ({
       },
 
       '&::placeholder': {
-        color: colors.placeholderColor,
+        color: colors.inActive,
         fontSize: '16px',
         fontWeight: 500,
       },
 
       fontFamily: 'Manrope',
-      backgroundColor: colors.transparent,
+      backgroundColor: 'transparent',
       borderColor: error
         ? colors.primaryColor
         : isFocused
@@ -79,7 +78,7 @@ const TextareaComponent: React.FC<CustomTextareaProps> = ({
       borderWidth: '1px',
       fontSize: '12px',
       fontWeight: '500',
-      borderRadius: '8px',
+      borderRadius: '8px' || radius,
       transition: 'all 0.2s ease',
     },
     label: {
