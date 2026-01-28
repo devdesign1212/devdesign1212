@@ -20,6 +20,7 @@ export interface ThemeColors {
   textSecondary: string,
   borderColor: string,
   card: string,
+  maroon: string
 }
 
 // Light theme colors
@@ -39,6 +40,7 @@ export const lightTheme: ThemeColors = {
   textSecondary: '#526D6D', 
   borderColor: '#D1DBDB',
   card: 'rgba(0, 133, 133, 0.04)',
+  maroon:'#800000',
 };
 
 export const darkTheme: ThemeColors = {
@@ -57,6 +59,7 @@ export const darkTheme: ThemeColors = {
   textSecondary: '#809999',
   borderColor: '#1A2E2E',
   card: 'rgba(0, 163, 163, 0.03)',
+  maroon: '#800000',
 
 };
 

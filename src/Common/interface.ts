@@ -131,7 +131,7 @@ export type CustomDatePickerProps = {
   className?: string;
   // style?: React.CSSProperties;
   radius?: string;
-  variant?: 'default' | 'filled' | 'unstyled';
+  variant?: 'default' | 'filled' ;
   withAsterisk?: boolean | false;
   minDate?: Date;
   maxDate?: Date;
@@ -143,6 +143,9 @@ export type CustomDatePickerProps = {
   dateFormat?: 'DD-MM-YYYY' | 'YYYY-MM-DD';
   customButtons?: boolean;
   inputMode?: 'picker' | 'manual' | 'both';
+  color: string;
+  backgroundColor: string;
+  borderColor: string;  
 };
 
 export type customFileinputProps = {

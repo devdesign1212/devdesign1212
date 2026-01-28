@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { Popover, UnstyledButton } from '@mantine/core';
 import { DatePicker, DatePickerProps } from '@mantine/dates';
-import { darkTheme, lightTheme } from '../../themes/colors';
 import { CustomDatePickerProps } from '@/Common/interface';
 import TextComponent from './TextComponent';
 import { motion } from 'framer-motion';
 import dayjs from 'dayjs';
 import { useTranslation } from 'react-i18next';
 import { Calendar, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { darkTheme, lightTheme } from '@/themes/colors';
+import { useSelector } from 'react-redux';
 
 const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
   value,
@@ -16,19 +16,22 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
   error,
   label,
   defaultDate = false,
-  type = 'default', //default, range
+  type = 'default',
   disabled = false,
   className,
   withAsterisk,
   onShortcutSelect,
   dateFormat = 'YYYY-MM-DD',
   customButtons = false,
-  inputMode = 'picker', // picker, manual, both
+  inputMode = 'picker',
   placeholder,
   radius,
-  variant = 'default', // default, filled, unstyled
+  variant = 'default',
   minDate,
   maxDate,
+  color,
+  backgroundColor,
+  borderColor,
 }) => {
   const { t } = useTranslation();
   const currentTheme = useSelector((state: any) => state.theme.theme);
@@ -229,7 +232,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
     if (isSelected) {
       return {
         style: {
-          backgroundColor: colors.primaryColor,
+          backgroundColor: backgroundColor,
           color: colors.whiteColor,
           padding: '6px',
           borderRadius: '40px',
@@ -241,7 +244,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
     if (isInRange) {
       return {
         style: {
-          backgroundColor: colors.primaryColor,
+          backgroundColor: backgroundColor,
           color: colors.whiteColor,
           padding: '6px',
           borderRadius: '30px',
@@ -253,8 +256,8 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
     if (isSameDay(date, today)) {
       return {
         style: {
-          border: `1px solid ${colors.primaryColor}`,
-          color: colors.primaryColor,
+          border: `1px solid ${borderColor}`,
+          color: color,
           padding: '4px',
           borderRadius: '30px',
           textAlign: 'center',
@@ -295,16 +298,17 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
   return (
     <div className={` ${className}`}>
       {label && (
-        <div className="mt-1 flex items-center gap-1">
+        <div className="mt-1 flex w-max items-center gap-[2px] ">
           <TextComponent
-            color={colors.primaryColor}
+            color={color}
             fontSize={14}
             fontWeight={600}
+            className="w-max"
           >
             {label}
           </TextComponent>
           {withAsterisk && (
-            <TextComponent color="red" fontSize={14} fontWeight={600}>
+            <TextComponent color={colors.maroon} fontSize={14} fontWeight={600}>
               *
             </TextComponent>
           )}
@@ -320,19 +324,16 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
         <Popover.Target>
           <div onClick={() => !disabled && setOpened(o => !o)}>
             <motion.div
-              whileHover={{ borderColor: colors.primaryColor }}
-              className={`relative flex h-12 items-center rounded-xl border-2 px-3 transition-all ${error ? 'border-red-500' : isFocused ? 'border-primary' : 'border-gray-200'}`}
+              whileHover={{ borderColor: borderColor }}
+              className={`relative flex h-12 items-center rounded-xl border-2 px-3 transition-all ${error ? 'border-light-maroon' : isFocused ? borderColor : 'border-light-borderColor'}`}
               style={{
-                backgroundColor: colors.whiteColor,
-                borderColor: opened ? colors.primaryColor : '',
+                backgroundColor:
+                  variant === 'default' ? backgroundColor : 'transparent',
+                borderColor: opened ? borderColor : '',
               }}
               onClick={() => !disabled && setOpened(o => !o)}
             >
-              <Calendar
-                size={18}
-                color={colors.primaryColor}
-                className="mr-2"
-              />
+              <Calendar size={18} color={color} className="mr-2" />
               <input
                 type="text"
                 value={inputValue}
@@ -340,19 +341,25 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
                 placeholder={
-                  placeholder || type === 'range'
-                    ? dateFormat === 'YYYY-MM-DD'
-                      ? 'YYYY-MM-DD - YYYY-MM-DD'
-                      : 'DD-MM-YYYY - DD-MM-YYYY'
-                    : dateFormat === 'YYYY-MM-DD'
-                      ? 'YYYY-MM-DD'
-                      : 'DD-MM-YYYY'
+                  placeholder
+                    ? placeholder
+                    : type === 'range'
+                      ? dateFormat === 'YYYY-MM-DD'
+                        ? 'YYYY-MM-DD - YYYY-MM-DD'
+                        : 'DD-MM-YYYY - DD-MM-YYYY'
+                      : dateFormat === 'YYYY-MM-DD'
+                        ? 'YYYY-MM-DD'
+                        : 'DD-MM-YYYY'
                 }
                 disabled={disabled}
-                className={`text-light-textColor flex-grow cursor-text bg-transparent outline-none ${error ? 'placeholder:text-light-primaryColor' : 'placeholder:text-light-inActive'} placeholder:text-[16px] placeholder:font-normal  `}
+                className={`text-light-textColor dark:text-dark-textColor flex-grow cursor-text bg-transparent outline-none ${error ? 'placeholder:text-light-maroon' : 'placeholder:text-light-inActive placeholder:dark:text-dark-inActive'} placeholder:text-[16px] placeholder:font-normal  `}
                 onClick={e => {
                   e.stopPropagation();
-                  if (inputMode === 'picker' && !disabled) setOpened(o => !o);
+                  if (
+                    inputMode === 'picker' ||
+                    (inputMode === 'both' && !disabled)
+                  )
+                    setOpened(o => !o);
                 }}
                 readOnly={inputMode === 'picker'}
               />
@@ -390,20 +397,22 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
                 'flex items-center justify-center w-full flex-col gap-2',
               weekdaysRow: 'flex items-center justify-between w-full',
               monthsListRow: 'flex items-center justify-between w-full gap-3',
-              weekday: 'text-light-primaryColor',
+              weekday: 'text-light-primaryColor dark:text-dark-primaryColor',
               monthRow: 'flex items-center justify-between w-full gap-3',
               monthCell: 'w-full text-center ',
               monthsList: 'w-full',
-              monthsListControl: 'text-light-textColor font-[400] text-[18px]',
+              monthsListControl:
+                'text-light-textColor dark:text-dark-textColor font-[400] text-[18px]',
               yearsListRow: 'flex items-center justify-between w-full gap-3',
-              yearsListControl: 'text-light-textColor font-[400] text-[18px]',
+              yearsListControl:
+                'text-light-textColor dark:text-dark-textColor font-[400] text-[18px]',
               day: 'font-[500] text-[14px] w-[30px] text-center ',
             }}
           />
           {customButtons && (
             <div
               className="flex flex-col gap-2 border-l pl-4"
-              style={{ borderColor: colors.borderColor }}
+              style={{ borderColor: borderColor }}
             >
               <TextComponent
                 fontSize={12}
@@ -423,8 +432,8 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
                     }}
                     className="rounded-lg px-4 py-2 text-sm font-semibold transition-all hover:translate-x-1"
                     style={{
-                      backgroundColor: `${colors.primaryColor}10`,
-                      color: colors.primaryColor,
+                      backgroundColor: ` ${variant} === default ? ${backgroundColor}10 : transparent`,
+                      color: color,
                     }}
                   >
                     {t(`date.${key}`)}
@@ -437,7 +446,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
       </Popover>
 
       {error && (
-        <div className="te xt-[12px] text-light-primaryColor text-right font-[400]">
+        <div className="xt-[12px] text-light-maroon text-right font-[400]">
           {error}
         </div>
       )}

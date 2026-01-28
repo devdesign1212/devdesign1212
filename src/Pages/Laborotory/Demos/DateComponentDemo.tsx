@@ -7,9 +7,13 @@ import { useState } from 'react';
 const DateDemo = () => {
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
-  const [dateValue, setDateValue] = useState<
+  const [rangeValue, setRangeValue] = useState<
     [Date | null, Date | null] | Date | null
   >([new Date(new Date().setDate(new Date().getDate() - 7)), new Date()]);
+  const [singleManualDate, setSingleManualDate] = useState<Date | null>(
+    new Date(),
+  );
+  const [singleHybridDate, setSingleHybridDate] = useState<Date | null>(null);
 
   return (
     <Stack align="center" gap="xl">
@@ -17,29 +21,60 @@ const DateDemo = () => {
         <Card
           radius="lg"
           padding="xl"
-          className="mb-6 border border-gray-100 shadow-sm"
+          className="mb-6 gap-3 border border-gray-100 shadow-sm"
         >
           <div className="w-full md:w-96">
             <CustomDateComponent
               label="Date Range"
               type="range"
-              value={dateValue}
-              onChange={val => setDateValue(val)}
+              value={rangeValue}
+              onChange={val => setRangeValue(val)}
               customButtons={true}
               withAsterisk
               dateFormat="DD-MM-YYYY"
+              color={colors.primaryColor}
+              backgroundColor={colors.primaryColor}
+              borderColor={colors.primaryColor}
+              variant="default"
+              inputMode="picker"
             />
           </div>
           <div className="w-full md:w-96">
             <CustomDateComponent
               label="Date"
               type="default"
-              placeholder="Select "
-              value={dateValue}
-              onChange={val => setDateValue(val)}
+              placeholder="Enter"
+              value={singleManualDate}
+              onChange={val => {
+                if (!Array.isArray(val)) setSingleManualDate(val);
+              }}
               customButtons={true}
               withAsterisk
-              dateFormat="DD-MM-YYYY"
+              dateFormat="YYYY-MM-DD"
+              color={colors.primaryColor}
+              backgroundColor={colors.primaryColor}
+              borderColor={colors.primaryColor}
+              variant="filled"
+              inputMode="manual"
+            />
+          </div>
+          <div className="w-full md:w-96">
+            <CustomDateComponent
+              label="Date"
+              type="default"
+              placeholder="Select/Enter"
+              value={singleHybridDate}
+              onChange={val => {
+                if (!Array.isArray(val)) setSingleHybridDate(val);
+              }}
+              customButtons={true}
+              withAsterisk
+              dateFormat="YYYY-MM-DD"
+              color={colors.primaryColor}
+              backgroundColor={colors.primaryColor}
+              borderColor={colors.primaryColor}
+              variant="default"
+              inputMode="both"
             />
           </div>
         </Card>
