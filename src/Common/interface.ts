@@ -17,6 +17,7 @@ export type CustomDropdownProps = {
   value?: string | null;
   onChange?: (value: string | null) => void;
   error?: string;
+  variant: 'default' | 'filled' 
   disabled?: boolean;
   required?: boolean;
   searchable?: boolean;
@@ -27,6 +28,10 @@ export type CustomDropdownProps = {
   multiple?: boolean;
   withCheckIcon?: boolean;
   className?: string;
+  color:string;
+  backgroundColor:string;
+  borderColor:string;
+  labelColor: string;
 };
 
 export type CustomTextareaProps = Omit<

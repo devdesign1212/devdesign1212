@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Group, Select } from '@mantine/core';
 import { darkTheme, lightTheme } from '../../themes/colors';
-import { useViewportSize } from '@mantine/hooks';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { CustomDropdownProps } from '@/Common/interface';
@@ -13,6 +12,7 @@ const DropdownComponent: React.FC<CustomDropdownProps> = ({
   value,
   onChange,
   error,
+  variant = 'default',
   disabled = false,
   required = false,
   searchable = false,
@@ -20,14 +20,17 @@ const DropdownComponent: React.FC<CustomDropdownProps> = ({
   withAsterisk = false,
   leftSection,
   rightSection,
-  multiple = false,
   withCheckIcon = false,
   className,
+  placeholder,
+  color,
+  backgroundColor,
+  borderColor,
+  labelColor,
 }) => {
   const { t } = useTranslation();
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
-  const { height } = useViewportSize();
   const [isFocused, setIsFocused] = useState(false);
 
   useEffect(() => {
@@ -37,17 +40,11 @@ const DropdownComponent: React.FC<CustomDropdownProps> = ({
   }, [value]);
 
   const checkmarkVariants: Variants = {
-    hidden: {
-      pathLength: 0,
-      opacity: 0,
-    },
+    hidden: { pathLength: 0, opacity: 0 },
     visible: {
       pathLength: 1,
       opacity: 1,
-      transition: {
-        duration: 0.3,
-        ease: 'easeInOut',
-      },
+      transition: { duration: 0.3, ease: 'easeInOut' },
     },
   };
 
@@ -60,7 +57,7 @@ const DropdownComponent: React.FC<CustomDropdownProps> = ({
     >
       <Select
         label={label}
-        placeholder={t('select')}
+        placeholder={placeholder ? placeholder : t('Select Option...')}
         data={data}
         value={value || null}
         onChange={onChange}
@@ -76,19 +73,27 @@ const DropdownComponent: React.FC<CustomDropdownProps> = ({
         rightSection={rightSection}
         withCheckIcon={withCheckIcon}
         checkIconPosition="right"
-        multiple={multiple}
-        defaultValue={value}
+        variant={variant}
+        comboboxProps={{
+          transitionProps: { transition: 'pop-top-left', duration: 250 },
+          shadow: 'xl',
+          withinPortal: true,
+        }}
         renderOption={({ option, checked }) => (
           <Group gap="sm" justify="space-between" style={{ width: '100%' }}>
-            <span>{option.label}</span>
+            <span
+              className={`text-sm ${checked ? 'font-bold' : 'font-medium'}`}
+            >
+              {option.label}
+            </span>
             <AnimatePresence>
               {checked && (
                 <motion.svg
-                  width="16"
-                  height="16"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke={colors.primaryColor}
+                  stroke={color}
                   strokeWidth="4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -105,112 +110,77 @@ const DropdownComponent: React.FC<CustomDropdownProps> = ({
             </AnimatePresence>
           </Group>
         )}
-        comboboxProps={{
-          transitionProps: { transition: 'pop-top-left', duration: 250 },
-          shadow: 'xl',
-          withinPortal: true,
-        }}
-        styles={() => ({
-          root: {
-            position: 'relative',
-          },
-          wrapper: {
-            marginTop: height * 0.01,
-            marginBottom: height * 0.01,
-            width: '100%',
-          },
+        styles={{
+          root: { position: 'relative' },
+          wrapper: { marginTop: 4, marginBottom: 8 },
           input: {
-            '&[data-invalid="true"]': {
-              borderColor: colors.primaryColor,
-              '&:hover': { borderColor: colors.primaryColor },
-            },
-            '&:focus, &:focus-within': {
-              borderColor: colors.textColor,
-              transform: 'translateY(-2px)',
-              boxShadow: `0 4px 12px ${colors.textColor}15`,
-            },
-            borderColor: error
-              ? colors.primaryColor
-              : isFocused
-                ? colors.textColor
-                : colors.inActive,
-            padding: '10px 12px',
-            borderWidth: '1px',
+            height: '52px',
             borderRadius: '12px',
-            fontSize: '16px',
-            height: '48px',
-            fontWeight: value ? 600 : 400,
-            color: value ? colors.primaryColor : colors.textColor,
-            backgroundColor: isFocused
-              ? `${colors.primaryColor}05`
-              : 'transparent',
+            borderWidth: '2px',
             transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            backgroundColor:
+              variant === 'default' ? 'transparent' : backgroundColor,
+            color: color,
+            borderColor: error
+              ? colors.maroon
+              : isFocused
+                ? borderColor
+                : colors.borderColor,
+            '&:focus, &:focus-within': {
+              borderColor: borderColor,
+              transform: 'translateY(-1px)',
+              boxShadow: `0 8px 20px ${borderColor}15`,
+            },
+            '&::placeholder': {
+              color: colors.textColor,
+              opacity: 0.6,
+            },
           },
           label: {
-            color: isFocused ? colors.primaryColor : colors.textColor,
-            fontSize: '14px',
-            fontWeight: 600,
-            transition: 'color 0.2s ease',
-            marginBottom: 4,
-          },
-          error: {
-            color: colors.primaryColor,
+            color: error ? colors.maroon : labelColor,
             fontSize: '12px',
-            fontWeight: 500,
-            textAlign: 'right',
-            marginTop: 4,
+            fontWeight: 800,
+            textTransform: 'uppercase',
+            letterSpacing: '1.5px',
+            marginBottom: 6,
           },
           dropdown: {
             backgroundColor: colors.whiteColor,
-            borderRadius: '12px',
-            border: `1px solid ${colors.inActive}`,
-            padding: '4px',
+            borderRadius: '16px',
+            border: `1px solid ${borderColor}`,
+            padding: '8px',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
           },
           option: {
-            borderRadius: '8px',
+            borderRadius: '10px',
             margin: '2px 0',
+            fontSize: '14px',
             transition: 'all 0.2s ease',
             color: colors.textColor,
+
             '&[data-selected]': {
-              backgroundColor: colors.primaryColor,
-              color: colors.whiteColor,
+              backgroundColor: `${backgroundColor}`,
+              color: color,
               fontWeight: 700,
-              position: 'relative',
-              '&::after': {
-                content: '""',
-                position: 'absolute',
-                right: '12px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                width: '6px',
-                height: '6px',
-                borderRadius: '50%',
-                backgroundColor: colors.whiteColor,
-              },
             },
             '&[data-hovered]': {
-              backgroundColor: currentTheme === 'light' ? '#F1F3F5' : '#2C2E33',
-              transform: 'scale(1.02)',
-              color: colors.primaryColor,
+              backgroundColor: colors.primaryColor,
+              color: colors.whiteColor,
             },
           },
-          section: {
-            color: colors.textColor,
-            width: '20%',
+          error: {
+            color: colors.maroon,
+            fontSize: '11px',
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            textAlign: 'right',
+            marginTop: 6,
           },
-        })}
+          section: {
+            color: color,
+          },
+        }}
       />
-
-      <AnimatePresence>
-        {error && (
-          <motion.div
-            initial={{ x: -10, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: 10, opacity: 0 }}
-            className="hidden"
-          />
-        )}
-      </AnimatePresence>
     </motion.div>
   );
 };

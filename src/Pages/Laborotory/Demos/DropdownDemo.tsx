@@ -3,11 +3,16 @@ import DropdownComponent from '@/components/Atoms/DropdownComponent';
 import { Globe, Shield } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { darkTheme, lightTheme } from '@/themes/colors';
 
 const DropdownDemo = () => {
   const { t } = useTranslation();
-  const [role, setRole] = useState<string | null>('admin');
-  const [lang, setLang] = useState<string | null>('en');
+  const currentTheme = useSelector((state: any) => state.theme.theme);
+  const colors = currentTheme === 'light' ? lightTheme : darkTheme;
+  const [accessRole, setAccessRole] = useState<string | null>(null);
+  const [selectedLangs, setSelectedLangs] = useState<string | null>(null);
+  const [region, setRegion] = useState<string | null>(null);
 
   const roleData = [
     { value: 'admin', label: 'Administrator' },
@@ -27,27 +32,46 @@ const DropdownDemo = () => {
         <DropdownComponent
           label={t('Dropdown.systemAccessRole')}
           data={roleData}
-          value={role}
-          onChange={setRole}
+          value={accessRole}
+          onChange={setAccessRole}
           leftSection={<Shield size={18} />}
+          variant="default"
+          placeholder="Search"
           withAsterisk
           searchable
+          withCheckIcon
+          color={colors.primaryColor}
+          backgroundColor={colors.primaryColor}
+          borderColor={colors.primaryColor}
+          labelColor={colors.primaryColor}
         />
 
         <DropdownComponent
           label={t('Dropdown.preferredLanguage')}
           data={languages}
-          value={lang}
-          onChange={setLang}
-          leftSection={<Globe size={18} />}
+          value={selectedLangs}
+          onChange={(val: any) => setSelectedLangs(val)}
+          rightSection={<Globe size={18} />}
+          variant="filled"
           clearable
+          color={colors.blackColor}
+          backgroundColor={colors.primaryColor}
+          borderColor={colors.primaryColor}
+          labelColor={colors.primaryColor}
         />
 
         <DropdownComponent
           label={t('Dropdown.regionSimulatedError')}
           data={['North America', 'Europe', 'Asia']}
+          value={region}
+          onChange={setRegion}
           error={t('Dropdown.thisRegionIsCurrentlyUnderMaintenance')}
           withCheckIcon
+          variant="default"
+          color={colors.blackColor}
+          backgroundColor={colors.primaryColor}
+          borderColor={colors.primaryColor}
+          labelColor={colors.primaryColor}
         />
       </div>
     </Stack>
