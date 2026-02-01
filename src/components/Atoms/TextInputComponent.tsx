@@ -1,10 +1,10 @@
 import { TextInput } from '@mantine/core';
 import React, { useState } from 'react';
-import { useViewportSize } from '@mantine/hooks';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '../../themes/colors';
 import { CustomTextInputProps } from '@/Common/interface';
 import { motion } from 'framer-motion';
+
 const TextInputComponent: React.FC<CustomTextInputProps> = ({
   label,
   placeholder,
@@ -20,11 +20,16 @@ const TextInputComponent: React.FC<CustomTextInputProps> = ({
   className,
   leftSection,
   rightSection,
+  variant,
+  labelColor,
+  borderColor,
+  backgroundColor,
+  radius,
+  color,
   ...props
 }) => {
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
-  const { height } = useViewportSize();
   const [isFocused, setIsFocused] = useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -60,6 +65,7 @@ const TextInputComponent: React.FC<CustomTextInputProps> = ({
         disabled={disabled}
         type={type}
         required={required}
+        variant={variant}
         maxLength={maxLength}
         minLength={minLength}
         withAsterisk={withAsterisk}
@@ -67,75 +73,43 @@ const TextInputComponent: React.FC<CustomTextInputProps> = ({
         leftSection={leftSection}
         rightSection={rightSection}
         {...props}
-        styles={() => ({
-          root: {
-            position: 'relative',
-          },
+        classNames={{
+          root: 'relative w-full',
+          label: `text-sm font-black tracking-widest mb-2 transition-colors
+                  ${error ? 'text-maroon' : isFocused ? 'text-primaryColor' : labelColor}`,
+          wrapper: ` w-full
+            h-[52px] rounded-xl border-2 transition-all duration-300 !ease-in-out pl-12 pr-12
+            ${
+              error
+                ? 'border-maroon'
+                : isFocused
+                  ? 'border-primaryColor -translate-y-[1px] shadow-lg shadow-primaryColor/10'
+                  : 'border-borderColor hover:border-primaryColor/50'
+            }
+             
+          `,
+          input: `
+          
+            h-full border-none bg-transparent text-textColor font-medium text-sm bg-red-500 `,
+          section: `transition-colors ${isFocused ? 'text-primaryColor' : 'text-textSecondary'} `,
+          error:
+            'text-maroon font-bold text-[10px] uppercase text-right mt-1.5',
+        }}
+        styles={{
           wrapper: {
-            backgroundColor: colors.whiteColor,
-            marginTop: height * 0.01,
-            marginBottom: height * 0.01,
+            borderRadius: radius ? radius : '12px',
+            backgroundColor:
+              variant === 'default' ? 'transparent' : backgroundColor,
+            color: variant === 'default' ? colors.textColor : colors.whiteColor,
 
-            width: '100%',
-            borderColor: error
-              ? colors.primaryColor
-              : isFocused
-                ? colors.textColor
-                : colors.inActive,
-            borderWidth: '1px',
-            borderStyle: 'solid',
-            borderRadius: '12px',
-
-            color: colors.textColor,
-            boxShadow: isFocused ? `0 4px 12px ${colors.textColor}15` : 'none',
-            transform: isFocused ? 'translateY(-1px)' : 'none',
-
-            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-            paddingLeft: leftSection ? '40px' : '10px',
-            paddingRight: rightSection ? '40px' : '10px',
-
-            "&[dataInvalid='true']": {
-              borderColor: colors.primaryColor,
-              '&:hover': {
-                borderColor: colors.primaryColor,
-              },
+            '&:focus, &:focus-within': {
+              borderColor: borderColor,
             },
-            '&:focus, &:focusWithin': {
-              borderColor: colors.textColor,
-            },
-          },
-          input: {
-            color: colors.textColor,
-            height: '46px',
-            fontSize: '14px',
-            fontWeight: 500,
-            border: 'none',
-            backgroundColor: 'transparent',
-            '&::placeholder': {
-              color: colors.inActive,
-              opacity: 0.6,
-            },
-          },
-          label: {
-            color: isFocused ? colors.primaryColor : colors.textColor,
-            fontSize: 's14px',
-            fontWeight: 600,
-            marginBottom: 4,
-            transition: 'color 0.2s ease',
-          },
-          error: {
-            color: colors.primaryColor,
-            fontSize: '12px',
-            fontWeight: 500,
-            textAlign: 'right',
-            marginTop: 4,
           },
           section: {
-            width: '40px',
-            color: isFocused ? colors.primaryColor : colors.inActive,
-            transition: 'color 0.2s ease',
+            color: color,
           },
-        })}
+        }}
       />
     </motion.div>
   );

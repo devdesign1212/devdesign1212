@@ -12,7 +12,7 @@ const DropdownDemo = () => {
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
   const [accessRole, setAccessRole] = useState<string | null>(null);
   const [selectedLangs, setSelectedLangs] = useState<string | null>(null);
-  const [region, setRegion] = useState<string | null>(null);
+  // const [region, setRegion] = useState<string | null>(null);
 
   const roleData = [
     { value: 'admin', label: 'Administrator' },
@@ -28,13 +28,13 @@ const DropdownDemo = () => {
 
   return (
     <Stack align="center" gap="xl">
-      <div className="mx-auto max-w-md space-y-8 p-10">
+      <div className="mx-auto mt-1 max-w-md space-y-8 ">
         <DropdownComponent
           label={t('Dropdown.systemAccessRole')}
           data={roleData}
           value={accessRole}
           onChange={setAccessRole}
-          leftSection={<Shield size={18} />}
+          leftSection={<Shield size={18} color={colors.textColor} />}
           variant="default"
           placeholder="Search"
           withAsterisk
@@ -51,10 +51,10 @@ const DropdownDemo = () => {
           data={languages}
           value={selectedLangs}
           onChange={(val: any) => setSelectedLangs(val)}
-          rightSection={<Globe size={18} />}
+          rightSection={<Globe size={18} color={colors.whiteColor} />}
           variant="filled"
           clearable
-          color={colors.blackColor}
+          color={colors.primaryColor}
           backgroundColor={colors.primaryColor}
           borderColor={colors.primaryColor}
           labelColor={colors.primaryColor}
@@ -63,8 +63,8 @@ const DropdownDemo = () => {
         <DropdownComponent
           label={t('Dropdown.regionSimulatedError')}
           data={['North America', 'Europe', 'Asia']}
-          value={region}
-          onChange={setRegion}
+          // value={region}
+          // onChange={setRegion}
           error={t('Dropdown.thisRegionIsCurrentlyUnderMaintenance')}
           withCheckIcon
           variant="default"

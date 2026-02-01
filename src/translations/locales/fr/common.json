@@ -1,0 +1,90 @@
+{
+  "Dashboard": "Tableau de Bord",
+  "DesignSystemVersion": "Système de Design v1.0",
+  "BridgingTheGapBetween": "Combler le fossé entre",
+  "CodeAndCreativity": "Code et Créativité.",
+  "WelcomeToDevDesignLab": "Bienvenue au laboratoire d'ingénierie Dev Design. Accédez à nos composants atomiques de base et explorez les fondements de nos protocoles d'interface évolutifs.",
+  "ProductEvolutionStrategy": "Stratégie d'Évolution du Produit",
+  "DevDesignMemo": "Note Dev Design :",
+  "OurRoadmapFocusesOnTransformingStaticUI": "Notre feuille de route se concentre sur la transformation des interfaces statiques en expériences intelligentes pilotées par les données.",
+  "DataIntelligenceModule": "Module d'Intelligence des Données",
+  "AdvancedDataVisualizationDesc": "Moteur de visualisation avancée et d'analyse en temps réel.",
+  "CognitiveUIEngine": "Moteur d'Interface Cognitive",
+  "ContextAwareComponents": "Composants sensibles au contexte alimentés par l'apprentissage automatique adaptatif.",
+  "Componentlab": "Labo de Composants",
+  "days": "Jours",
+  "ReturnToCommand": "Retour au Commandement",
+  "ActiveNodes": "Nœuds Actifs",
+  "NextEvolution": "Prochaine Évolution",
+  "AdvancedDataVisualization": "Visualisation de Données Avancée (J-30)",
+  "BaseLayerComponent": "Composant Couche de Base",
+  "TechStack": "Pile Technique",
+  "buttons": {
+    "get_started": "Commencer",
+    "send_message": "Envoyer le Message",
+    "loading": "Veuillez patienter..."
+  },
+  "menu": {
+    "dashboard": "Terminal",
+    "transactions": "Grand Livre",
+    "security": "Coffre-fort",
+    "ai_analytics": "Laboratoire Neural",
+    "biometrics": "Identité",
+    "settings": "Configuration",
+    "devDesign": "DEV DESIGN",
+    "selectNodeFromCommandCenter": "Sélectionnez un nœud depuis le Centre de Commandement..."
+  },
+  "date": {
+    "placeholder": "Sélectionnez une période",
+    "shortcuts": "Sélection Rapide",
+    "today": "Aujourd'hui",
+    "yesterday": "Hier",
+    "last7": "7 derniers jours",
+    "last30": "30 derniers jours",
+    "thisMonth": "Ce mois-ci"
+  },
+  "select": "Sélectionnez une option",
+  "fileReadyForUpload": "Fichier prêt pour le téléchargement",
+  "Dropdown": {
+    "systemAccessRole": "Rôle d'Accès Système",
+    "preferredLanguage": "Langue Préférée",
+    "regionSimulatedError": "Région (Erreur Simulée)",
+    "thisRegionIsCurrentlyUnderMaintenance": "Cette région est actuellement en maintenance"
+  },
+  "FileUpload": {
+    "requiredDocument": "Veuillez joindre le document requis",
+    "uploadSuccess": "Fichier téléchargé avec succès !",
+    "identityVerification": "Vérification d'Identité",
+    "uploadInstruction": "Veuillez télécharger un scan clair de votre pièce d'identité (PDF ou JPG)",
+    "documentLabel": "ID Nationale / Passeport",
+    "profilePictureLabel": "Photo de Profil",
+    "documentPlaceholder": "Sélectionner le fichier du document",
+    "uploadButton": "Télécharger le Document",
+    "uploadInfo": "Téléchargement crypté et sécurisé. Taille max : 10 Mo."
+  },
+  "TextInput": {
+    "welcomeBack": "Bon retour",
+    "emailAddress": "Adresse E-mail",
+    "emailPlaceholder": "nom@entreprise.com",
+    "password": "Mot de passe",
+    "enterYourPassword": "Entrez votre mot de passe",
+    "signIn": "Se connecter",
+    "loginAttempt": "Tentative de connexion"
+  },
+  "Modal": {
+    "actionConfirmed": "Action Confirmée !",
+    "title": "Démo du Système Modal",
+    "openConfirmation": "Ouvrir la Confirmation",
+    "finalizeAction": "Finaliser l'Action",
+    "confirmationMessage": "Êtes-vous sûr de vouloir procéder à cette transaction ? Cette action est irréversible.",
+    "confirm": "Confirmer"
+  },
+  "Textarea": {
+    "min10Chars": "Veuillez fournir un peu plus de détails (min 10 caract.)",
+    "feedbackSubmitted": "Commentaire envoyé !",
+    "howCanWeHelp": "Comment pouvons-nous vous aider ?",
+    "issueDescription": "Description du Problème",
+    "tellUsWhatOnYourMind": "Dites-nous ce que vous avez en tête...",
+    "submit": "Envoyer le Commentaire"
+  }
+}

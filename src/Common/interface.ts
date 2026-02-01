@@ -1,14 +1,12 @@
 import { TextareaProps, TextInputProps, TextProps } from '@mantine/core';
 import React, { ChangeEvent, FocusEvent } from 'react';
 
-
 export type ApiResponse<T = any> = {
   data: T;
   status: number;
   message: string;
   success: boolean;
 };
-
 
 export type CustomDropdownProps = {
   label?: string;
@@ -17,7 +15,7 @@ export type CustomDropdownProps = {
   value?: string | null;
   onChange?: (value: string | null) => void;
   error?: string;
-  variant: 'default' | 'filled' 
+  variant: 'default' | 'filled';
   disabled?: boolean;
   required?: boolean;
   searchable?: boolean;
@@ -28,9 +26,9 @@ export type CustomDropdownProps = {
   multiple?: boolean;
   withCheckIcon?: boolean;
   className?: string;
-  color:string;
-  backgroundColor:string;
-  borderColor:string;
+  color: string;
+  backgroundColor: string;
+  borderColor: string;
   labelColor: string;
 };
 
@@ -54,12 +52,15 @@ export type CustomTextareaProps = Omit<
   className?: string;
   style?: React.CSSProperties;
   radius?: string;
-  variant?: 'default' | 'filled' | 'unstyled';
+  variant?: 'default' | 'filled';
   withAsterisk?: boolean | false;
   rows?: number;
   autosize?: boolean;
   minRows?: number;
   maxRows?: number;
+  labelColor: string;
+  borderColor: string;
+  backgroundColor?: string;
 };
 
 export type CustomTextProps = TextProps & {
@@ -97,14 +98,18 @@ export type CustomTextInputProps = Omit<
   className?: string;
   style?: React.CSSProperties;
   radius?: string;
-  variant?: 'default' | 'filled' | 'unstyled';
+  variant?: 'default' | 'filled';
   withAsterisk?: boolean | false;
+  labelColor: string;
+  borderColor: string;
+  backgroundColor: string;
+  color: string;
 };
 
 export type ButtonComponentProps = {
-title: string; 
+  title: string;
   onClick?: () => void;
-  variant?: 'filled' | 'outline'  | 'gradient';
+  variant?: 'filled' | 'outline' | 'gradient';
   className?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
@@ -116,18 +121,18 @@ title: string;
   color: string;
   backgroundColor?: string;
   borderColor: string;
-  from?:string;
-  to?:string;
-  deg?:number;
+  from?: string;
+  to?: string;
+  deg?: number;
 };
 
 export type CustomDatePickerProps = {
   label?: string;
   placeholder?: string;
-  value: Date | [Date | null, Date | null] | null; 
+  value: Date | [Date | null, Date | null] | null;
   onChange: (date: Date | [Date | null, Date | null] | null) => void;
   // value?: Date | null; // Ensure this is Date or null
-  // onChange?: (value: Date | null) => void; 
+  // onChange?: (value: Date | null) => void;
   error?: string;
   disabled?: boolean;
   // required?: boolean;
@@ -136,7 +141,7 @@ export type CustomDatePickerProps = {
   className?: string;
   // style?: React.CSSProperties;
   radius?: string;
-  variant?: 'default' | 'filled' ;
+  variant?: 'default' | 'filled';
   withAsterisk?: boolean | false;
   minDate?: Date;
   maxDate?: Date;
@@ -150,7 +155,7 @@ export type CustomDatePickerProps = {
   inputMode?: 'picker' | 'manual' | 'both';
   color: string;
   backgroundColor: string;
-  borderColor: string;  
+  borderColor: string;
 };
 
 export type customFileinputProps = {
@@ -165,8 +170,12 @@ export type customFileinputProps = {
   withAsterisk?: boolean | false;
   accept?: string;
   className?: string;
+  borderColor: string;
+  labelColor: string;
+  color: string;
+  backgroundColor: string;
+  variant: 'default' | 'filled';
 };
-
 
 export type TableColumn = {
   key: string;
@@ -192,7 +201,6 @@ export type TableProps = {
   showSearch?: boolean;
 };
 
-
 export const SAVE_API_RESPONSE = 'SAVE_API_RESPONSE';
 export const CLEAR_API_RESPONSE = 'CLEAR_API_RESPONSE';
 export const CLEAR_ALL_RESPONSES = 'CLEAR_ALL_RESPONSES';
@@ -216,13 +224,13 @@ export type ApiActionTypes =
   | ClearApiResponseAction
   | ClearAllResponsesAction;
 
-  export type BurgerProps = {
+export type BurgerProps = {
   opened: boolean;
   onClick: () => void;
   color: string;
-  label?: string; 
+  label?: string;
   textColor: string;
-}
+};
 
 export type DynamicModalProps = {
   opened: boolean;
@@ -231,5 +239,5 @@ export type DynamicModalProps = {
   content: string | React.ReactNode;
   ButtonTitle?: string;
   onClick?: () => void;
-  loading?: boolean; 
-}
+  loading?: boolean;
+};

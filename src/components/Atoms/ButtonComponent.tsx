@@ -57,7 +57,7 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
       className="group relative p-2"
     >
       <div
-        className={`bg-light-${backgroundColor} dark:bg-dark-${backgroundColor} absolute inset-0 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-20`}
+        className={`bg-${backgroundColor} absolute inset-0 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-20`}
       />
 
       <Button
@@ -71,7 +71,7 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
         styles={{
           root: {
             height: size || 54,
-            padding: '0 32px',
+            padding: '0 15px',
             backgroundColor: backgroundColor,
             color: color,
             borderColor: borderColor,
@@ -123,7 +123,7 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
             initial={{ x: '-100%' }}
             whileHover={{ x: '100%' }}
             transition={{ duration: 0.6, ease: 'easeInOut' }}
-            className={`absolute inset-0 skew-x-[35deg] bg-light-${backgroundColor} dark:bg-dark-${backgroundColor} `}
+            className={`absolute inset-0 skew-x-[35deg] bg-${backgroundColor} `}
           />
         )}
       </Button>

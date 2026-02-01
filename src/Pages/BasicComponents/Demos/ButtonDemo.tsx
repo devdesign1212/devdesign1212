@@ -3,6 +3,7 @@ import ButtonComponent from '@/components/Atoms/ButtonComponent';
 import { ArrowRightSvgIcon, SendSvgIcon } from '@/assets/svg';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '@/themes/colors';
+import { showNotification } from '@/utils/notifications';
 
 const ButtonDemo = () => {
   const currentTheme = useSelector((state: any) => state.theme.theme);
@@ -13,7 +14,7 @@ const ButtonDemo = () => {
       <ButtonComponent
         title="buttons.get_started"
         rightIcon={<ArrowRightSvgIcon color={colors.whiteColor} />}
-        onClick={() => console.log("Let's go!")}
+        onClick={() => showNotification('success', 'Clicked', 'Brilliant!')}
         fullWidth
         variant="filled"
         color={colors.whiteColor}
@@ -24,6 +25,7 @@ const ButtonDemo = () => {
       <ButtonComponent
         title="buttons.send_message"
         variant="outline"
+        onClick={() => showNotification('success', 'Clicked', 'Brilliant!')}
         leftIcon={<SendSvgIcon color={colors.primaryColor} />}
         radius={50}
         color={colors.primaryColor}
@@ -33,6 +35,7 @@ const ButtonDemo = () => {
       <ButtonComponent
         title="buttons.send_message"
         variant="gradient"
+        onClick={() => showNotification('success', 'Clicked', 'Brilliant!')}
         leftIcon={<SendSvgIcon color={colors.whiteColor} />}
         radius={50}
         color={colors.whiteColor}

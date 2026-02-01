@@ -1,0 +1,90 @@
+{
+  "Dashboard": "Dashboard",
+  "DesignSystemVersion": "Design System v1.0",
+  "BridgingTheGapBetween": "Die Brücke zwischen",
+  "CodeAndCreativity": "Code & Kreativität.",
+  "WelcomeToDevDesignLab": "Willkommen im Dev Design Engineering Lab. Greifen Sie auf unsere atomaren Kernkomponenten zu und erkunden Sie die Grundlagen unserer zukunftssicheren Schnittstellenprotokolle.",
+  "ProductEvolutionStrategy": "Produkt-Evolutionsstrategie",
+  "DevDesignMemo": "Dev Design Memo:",
+  "OurRoadmapFocusesOnTransformingStaticUI": "Unsere Roadmap konzentriert sich darauf, statische Benutzeroberflächen in intelligente, datengesteuerte Erlebnisse zu verwandeln.",
+  "DataIntelligenceModule": "Daten-Intelligenz-Modul",
+  "AdvancedDataVisualizationDesc": "Erweiterte Visualisierung und Echtzeit-Analyse-Engine.",
+  "CognitiveUIEngine": "Kognitive UI-Engine",
+  "ContextAwareComponents": "Kontextsensitive Komponenten, angetrieben durch adaptives maschinelles Lernen.",
+  "Componentlab": "Komponenten-Labor",
+  "days": "Tage",
+  "ReturnToCommand": "Zurück zum Befehl",
+  "ActiveNodes": "Aktive Knoten",
+  "NextEvolution": "Nächste Evolution",
+  "AdvancedDataVisualization": "Erweiterte Datenvisualisierung (T-30t)",
+  "BaseLayerComponent": "Basisschicht-Komponente",
+  "TechStack": "Tech-Stack",
+  "buttons": {
+    "get_started": "Loslegen",
+    "send_message": "Nachricht senden",
+    "loading": "Bitte warten..."
+  },
+  "menu": {
+    "dashboard": "Terminal",
+    "transactions": "Hauptbuch",
+    "security": "Tresor",
+    "ai_analytics": "Neural Lab",
+    "biometrics": "Identität",
+    "settings": "Konfiguration",
+    "devDesign": "DEV DESIGN",
+    "selectNodeFromCommandCenter": "Wählen Sie einen Knoten aus dem Command Center..."
+  },
+  "date": {
+    "placeholder": "Zeitraum auswählen",
+    "shortcuts": "Schnellauswahl",
+    "today": "Heute",
+    "yesterday": "Gestern",
+    "last7": "Letzte 7 Tage",
+    "last30": "Letzte 30 Tage",
+    "thisMonth": "Diesen Monat"
+  },
+  "select": "Option auswählen",
+  "fileReadyForUpload": "Datei bereit zum Hochladen",
+  "Dropdown": {
+    "systemAccessRole": "Systemzugriffsrolle",
+    "preferredLanguage": "Bevorzugte Sprache",
+    "regionSimulatedError": "Region (Simulierter Fehler)",
+    "thisRegionIsCurrentlyUnderMaintenance": "Diese Region wird derzeit gewartet"
+  },
+  "FileUpload": {
+    "requiredDocument": "Bitte hängen Sie das erforderliche Dokument an",
+    "uploadSuccess": "Datei erfolgreich hochgeladen!",
+    "identityVerification": "Identitätsprüfung",
+    "uploadInstruction": "Bitte laden Sie einen klaren Scan Ihres Ausweises hoch (PDF oder JPG)",
+    "documentLabel": "Personalausweis / Reisepass",
+    "profilePictureLabel": "Profilbild",
+    "documentPlaceholder": "Dokumentdatei auswählen",
+    "uploadButton": "Dokument hochladen",
+    "uploadInfo": "Verschlüsselter und sicherer Upload. Max. Dateigröße: 10MB."
+  },
+  "TextInput": {
+    "welcomeBack": "Willkommen zurück",
+    "emailAddress": "E-Mail-Adresse",
+    "emailPlaceholder": "name@firma.de",
+    "password": "Passwort",
+    "enterYourPassword": "Geben Sie Ihr Passwort ein",
+    "signIn": "Anmelden",
+    "loginAttempt": "Anmeldeversuch"
+  },
+  "Modal": {
+    "actionConfirmed": "Aktion bestätigt!",
+    "title": "Modal-System-Demo",
+    "openConfirmation": "Bestätigung öffnen",
+    "finalizeAction": "Aktion abschließen",
+    "confirmationMessage": "Sind Sie sicher, dass Sie mit dieser Transaktion fortfahren möchten? Dieser Vorgang kann nicht rückgängig gemacht werden.",
+    "confirm": "Bestätigen"
+  },
+  "Textarea": {
+    "min10Chars": "Bitte geben Sie etwas mehr Details an (mind. 10 Zeichen)",
+    "feedbackSubmitted": "Feedback gesendet!",
+    "howCanWeHelp": "Wie können wir helfen?",
+    "issueDescription": "Problembeschreibung",
+    "tellUsWhatOnYourMind": "Sagen Sie uns, was Sie beschäftigt...",
+    "submit": "Feedback senden"
+  }
+}

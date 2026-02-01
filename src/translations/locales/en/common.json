@@ -1,5 +1,26 @@
 {
   "Dashboard": "Dashboard",
+  "DesignSystemVersion": "Design System v1.0",
+  "BridgingTheGapBetween": "Bridging the gap between",
+  "CodeAndCreativity": "Code & Creativity.",
+  "WelcomeToDevDesignLab": "Welcome to the Dev Design Engineering Lab. Access our core atomic components and explore the foundations of our future-proof interface protocols.",
+  "ProductEvolutionStrategy": "Product Evolution Strategy",
+  "DevDesignMemo": "ev Design Memo:",
+  "OurRoadmapFocusesOnTransformingStaticUI": "Our roadmap focuses on transforming static UI into intelligent, data-driven experiences.",
+  "DataIntelligenceModule": "Data Intelligence Module",
+  "AdvancedDataVisualizationDesc": "Advanced visualization and real-time analytics engine.",
+  "CognitiveUIEngine": "Cognitive UI Engine",
+  "ContextAwareComponents": "Context-aware components powered by adaptive machine learning.",
+  
+  "Componentlab":"Component Lab",
+  "days":"Days",
+  
+  "ReturnToCommand":"Return to Command",
+  "ActiveNodes":"Active Nodes",
+  "NextEvolution":"Next Evolution",
+  "AdvancedDataVisualization":"Advanced Data Visualization (T-30d)",
+  "BaseLayerComponent":"Base Layer Component",
+  "TechStack":"Tech Stack",
   "buttons": {
     "get_started": "Get Started",
     "send_message": "Send Message",
@@ -38,6 +59,7 @@
     "identityVerification": "Identity Verification",
     "uploadInstruction": "Please upload a clear scan of your ID (PDF or JPG)",
     "documentLabel": "National ID / Passport",
+    "profilePictureLabel": "Profile Picture",
     "documentPlaceholder": "Select document file",
     "uploadButton": "Upload Document",
     "uploadInfo": "Encrypted and secure upload. Max file size: 10MB."

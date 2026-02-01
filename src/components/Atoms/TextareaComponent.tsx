@@ -1,6 +1,5 @@
 import { Textarea } from '@mantine/core';
 import React, { useState } from 'react';
-import { useViewportSize } from '@mantine/hooks';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '../../themes/colors';
 import { CustomTextareaProps } from '@/Common/interface';
@@ -26,72 +25,14 @@ const TextareaComponent: React.FC<CustomTextareaProps> = ({
   autosize = true,
   minRows = 3,
   maxRows = 10,
+  labelColor,
+  borderColor,
+  backgroundColor,
   ...props
 }) => {
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
-  const { height } = useViewportSize();
   const [isFocused, setIsFocused] = useState(false);
-
-  const textareaStyles = {
-    wrapper: {
-      marginTop: height * 0.01,
-      marginBottom: height * 0.01,
-      width: '100%',
-      height: 'auto',
-    },
-    input: {
-      '&[dataInvalid="true"]': {
-        borderColor: colors.primaryColor,
-        '&:hover': {
-          borderColor: colors.primaryColor,
-        },
-      },
-
-      '&:focus, &:focusWithin': {
-        borderColor: colors.textColor,
-        borderWidth: '1px',
-        borderStyle: 'solid',
-      },
-
-      '&:hover': {
-        borderColor: colors.textColor,
-        borderWidth: '1px',
-        borderStyle: 'solid',
-      },
-
-      '&::placeholder': {
-        color: colors.inActive,
-        fontSize: '16px',
-        fontWeight: 500,
-      },
-
-      fontFamily: 'Manrope',
-      backgroundColor: 'transparent',
-      borderColor: error
-        ? colors.primaryColor
-        : isFocused
-          ? colors.textColor
-          : colors.inActive,
-      color: colors.textColor,
-      padding: '10px 6px',
-      borderWidth: '1px',
-      fontSize: '12px',
-      fontWeight: '500',
-      borderRadius: '8px' || radius,
-      transition: 'all 0.2s ease',
-    },
-    label: {
-      color: colors.textColor,
-      fontSize: '14px',
-      fontWeight: 600,
-    },
-    error: {
-      color: colors.primaryColor,
-      fontSize: '12px',
-      fontWeight: 400,
-    },
-  };
 
   return (
     <Textarea
@@ -111,13 +52,42 @@ const TextareaComponent: React.FC<CustomTextareaProps> = ({
       className={className}
       style={style}
       variant={variant}
-      styles={textareaStyles}
+      styles={{
+        input: {
+          borderRadius: radius ? radius : '12px',
+          backgroundColor:
+            variant === 'default' ? 'transparent' : backgroundColor,
+          color: variant === 'default' ? colors.textColor : colors.whiteColor,
+
+          '&:focus, &:focus-within': {
+            borderColor: borderColor,
+          },
+        },
+      }}
       withErrorStyles={error ? true : false}
       withAsterisk={withAsterisk}
       rows={rows}
       autosize={autosize}
       minRows={minRows}
       maxRows={maxRows}
+      classNames={{
+        wrapper: 'mb-1.5 mt-1.5',
+        label: `${error ? 'text-maroon' : labelColor} mb-[6px] text-sm  font-semibold `,
+        input: ` w-full
+          h-[52px] border-2
+          px-4 py-3 text-sm font-medium transition-all duration-300
+         ${
+           error
+             ? 'border-maroon'
+             : isFocused
+               ? borderColor
+               : 'border-borderColor'
+         }
+            focus-within:ring-2  -translate-y-[1px] placeholder:text-textColor placeholder:opacity-80 
+          
+        `,
+        error: `text-maroon mt-2 text-right text-xs font-bold `,
+      }}
       {...props}
     />
   );

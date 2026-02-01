@@ -268,7 +268,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
     if (date > maxDate) {
       return {
         style: {
-          color: colors.borderColor,
+          color: colors.inActive,
           padding: '4px',
           borderRadius: '40px',
         },
@@ -298,7 +298,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
   return (
     <div className={` ${className}`}>
       {label && (
-        <div className="mt-1 flex w-max items-center gap-[2px] ">
+        <div className="mt-1 flex w-max items-center gap-1 ">
           <TextComponent
             color={color}
             fontSize={14}
@@ -325,15 +325,25 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
           <div onClick={() => !disabled && setOpened(o => !o)}>
             <motion.div
               whileHover={{ borderColor: borderColor }}
-              className={`relative flex h-12 items-center rounded-xl border-2 px-3 transition-all ${error ? 'border-light-maroon' : isFocused ? borderColor : 'border-light-borderColor'}`}
+              className={`relative flex h-12 items-center rounded-xl border-2 px-3 transition-all `}
               style={{
                 backgroundColor:
-                  variant === 'default' ? backgroundColor : 'transparent',
-                borderColor: opened ? borderColor : '',
+                  variant === 'default' ? 'transparent' : backgroundColor,
+                borderColor: error
+                  ? 'border-maroon'
+                  : isFocused
+                    ? borderColor
+                    : `color-mix(in srgb, ${borderColor} 20%, transparent)`,
               }}
               onClick={() => !disabled && setOpened(o => !o)}
             >
-              <Calendar size={18} color={color} className="mr-2" />
+              <Calendar
+                size={18}
+                color={
+                  variant === 'default' ? colors.textColor : colors.whiteColor
+                }
+                className="mr-2"
+              />
               <input
                 type="text"
                 value={inputValue}
@@ -352,7 +362,8 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
                         : 'DD-MM-YYYY'
                 }
                 disabled={disabled}
-                className={`text-light-textColor dark:text-dark-textColor flex-grow cursor-text bg-transparent outline-none ${error ? 'placeholder:text-light-maroon' : 'placeholder:text-light-inActive placeholder:dark:text-dark-inActive'} placeholder:text-[16px] placeholder:font-normal  `}
+                style={{ border: borderColor }}
+                className={`${variant === 'default' ? 'text-textColor' : 'text-whiteColor'} flex-grow cursor-text bg-transparent outline-none ${error ? 'placeholder:text-maroon' : 'placeholder:text-inActive '} placeholder:text-[16px] placeholder:font-normal  `}
                 onClick={e => {
                   e.stopPropagation();
                   if (
@@ -366,6 +377,9 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
               {inputValue && (
                 <X
                   size={16}
+                  color={
+                    variant === 'default' ? colors.textColor : colors.whiteColor
+                  }
                   className="cursor-pointer opacity-50 hover:opacity-100"
                   onClick={handleClear}
                 />
@@ -397,15 +411,13 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
                 'flex items-center justify-center w-full flex-col gap-2',
               weekdaysRow: 'flex items-center justify-between w-full',
               monthsListRow: 'flex items-center justify-between w-full gap-3',
-              weekday: 'text-light-primaryColor dark:text-dark-primaryColor',
+              weekday: 'text-primaryColor',
               monthRow: 'flex items-center justify-between w-full gap-3',
-              monthCell: 'w-full text-center ',
+              monthCell: 'w-full text-center text-primaryColor ',
               monthsList: 'w-full',
-              monthsListControl:
-                'text-light-textColor dark:text-dark-textColor font-[400] text-[18px]',
+              monthsListControl: 'text-textColor font-[400] text-[18px]',
               yearsListRow: 'flex items-center justify-between w-full gap-3',
-              yearsListControl:
-                'text-light-textColor dark:text-dark-textColor font-[400] text-[18px]',
+              yearsListControl: 'text-textColor font-[400] text-[18px]',
               day: 'font-[500] text-[14px] w-[30px] text-center ',
             }}
           />
@@ -430,9 +442,9 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
                       handleShortcut(key);
                       console.log('key', key);
                     }}
-                    className="rounded-lg px-4 py-2 text-sm font-semibold transition-all hover:translate-x-1"
+                    className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all hover:translate-x-1 `}
                     style={{
-                      backgroundColor: ` ${variant} === default ? ${backgroundColor}10 : transparent`,
+                      backgroundColor: `color-mix(in srgb, ${backgroundColor} 10%, transparent)`,
                       color: color,
                     }}
                   >
@@ -446,7 +458,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
       </Popover>
 
       {error && (
-        <div className="xt-[12px] text-light-maroon text-right font-[400]">
+        <div className="xt-[12px] text-maroon text-right font-[400]">
           {error}
         </div>
       )}

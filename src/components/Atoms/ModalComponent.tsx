@@ -31,25 +31,12 @@ const ModalComponent: React.FC<DynamicModalProps> = ({
       closeButtonProps={{
         icon: <X color={colors.textColor} />,
       }}
-      styles={{
-        header: {
-          backgroundColor: colors.whiteColor,
-        },
-        title: {
-          color: colors.textColor,
-          fontWeight: 700,
-          fontSize: '20px',
-        },
-        content: {
-          backgroundColor: colors.whiteColor,
-          border: `1px solid ${colors.primaryColor}50`,
-          borderRadius: '16px',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-        },
-        close: {
-          color: colors.textColor,
-          '&:hover': { backgroundColor: `${colors.primaryColor}15` },
-        },
+      classNames={{
+        header: 'bg-background',
+        title: 'text-textColor font-bold text-xl',
+        content:
+          'bg-background border-[1px] shadow-xl rounded-2xl border-solid border-primaryColor border-opacity-50',
+        close: 'text-textColor hover:bg-primaryColor hover:bg-opacity-15 ',
       }}
     >
       <AnimatePresence>
@@ -82,6 +69,9 @@ const ModalComponent: React.FC<DynamicModalProps> = ({
                   variant="filled"
                   onClick={onClick}
                   radius={100}
+                  color={colors.whiteColor}
+                  backgroundColor={colors.primaryColor}
+                  borderColor={colors.primaryColor}
                 />
               </motion.div>
             )}

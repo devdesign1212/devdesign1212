@@ -110,72 +110,49 @@ const DropdownComponent: React.FC<CustomDropdownProps> = ({
             </AnimatePresence>
           </Group>
         )}
-        styles={{
-          root: { position: 'relative' },
-          wrapper: { marginTop: 4, marginBottom: 8 },
-          input: {
-            height: '52px',
-            borderRadius: '12px',
-            borderWidth: '2px',
-            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-            backgroundColor:
-              variant === 'default' ? 'transparent' : backgroundColor,
-            color: color,
-            borderColor: error
-              ? colors.maroon
+        classNames={{
+          root: 'relative',
+          wrapper: 'mt-1 mb-2',
+          input: `h-[52px] rounded-xl border-2 transition-all duration-300 ease-in-out 
+          ${
+            error
+              ? 'border-maroon'
               : isFocused
                 ? borderColor
-                : colors.borderColor,
+                : 'border-borderColor'
+          }
+            focus-within:ring-2  -translate-y-[1px] placeholder:text-textColor placeholder:opacity-80 
+          `,
+          label: `${error ? 'text-maroon' : labelColor} font-extrabold text-xs  mb-[6px] `,
+          dropdown: `bg-whiteColor rounded-2xl border border-solid p-2 shadow-xl`,
+          option: `rounded-lg text-sm transition-all  text-blackColor my-[2px] ease-in-out  
+   hover:font-extrabold hover:text-2xl `,
+          error: `text-maroon font-bold text-xs text-right mt-2 `,
+        }}
+        styles={{
+          input: {
+            backgroundColor:
+              variant === 'default' ? 'transparent' : backgroundColor,
+            color: variant === 'default' ? colors.textColor : colors.whiteColor,
+
             '&:focus, &:focus-within': {
               borderColor: borderColor,
-              transform: 'translateY(-1px)',
-              boxShadow: `0 8px 20px ${borderColor}15`,
             },
-            '&::placeholder': {
-              color: colors.textColor,
-              opacity: 0.6,
-            },
-          },
-          label: {
-            color: error ? colors.maroon : labelColor,
-            fontSize: '12px',
-            fontWeight: 800,
-            textTransform: 'uppercase',
-            letterSpacing: '1.5px',
-            marginBottom: 6,
           },
           dropdown: {
-            backgroundColor: colors.whiteColor,
-            borderRadius: '16px',
-            border: `1px solid ${borderColor}`,
-            padding: '8px',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+            borderColor: error ? colors.maroon : borderColor,
           },
           option: {
-            borderRadius: '10px',
-            margin: '2px 0',
-            fontSize: '14px',
-            transition: 'all 0.2s ease',
-            color: colors.textColor,
-
             '&[data-selected]': {
-              backgroundColor: `${backgroundColor}`,
+              backgroundColor: backgroundColor,
               color: color,
-              fontWeight: 700,
             },
             '&[data-hovered]': {
               backgroundColor: colors.primaryColor,
               color: colors.whiteColor,
             },
           },
-          error: {
-            color: colors.maroon,
-            fontSize: '11px',
-            fontWeight: 700,
-            textTransform: 'uppercase',
-            textAlign: 'right',
-            marginTop: 6,
-          },
+
           section: {
             color: color,
           },

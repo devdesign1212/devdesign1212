@@ -45,20 +45,8 @@ const MenuDemo = () => {
               opened={isMenuOpen}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               color={colors.primaryColor}
+              textColor={colors.primaryColor}
             />
-            <AnimatePresence>
-              {isMenuOpen && (
-                <motion.span
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  className="text-xl font-black tracking-tighter"
-                  style={{ color: colors.blackColor }}
-                >
-                  {t('menu.devDesign')}
-                </motion.span>
-              )}
-            </AnimatePresence>
           </div>
 
           <nav className="mt-4 flex-1 space-y-2 px-4">

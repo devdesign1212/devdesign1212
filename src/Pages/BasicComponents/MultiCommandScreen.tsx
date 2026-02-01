@@ -14,21 +14,23 @@ import {
   Moon,
   Languages,
   ChevronRight,
-  ArrowLeft,
   Zap,
   BarChart3,
   Brain,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TextComponent from '@/components/Atoms/TextComponent';
-import LaboratoryGallery from './Laborotory/Layout';
+import LaboratoryGallery from './Layout';
 import i18n from '@/translations';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '@/themes/colors';
 import { setTheme } from '@/Redux/Actions/themeActions';
+import ButtonComponent from '@/components/Atoms/ButtonComponent';
+import { useTranslation } from 'react-i18next';
 
 const MainCommandCenter = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
@@ -49,33 +51,28 @@ const MainCommandCenter = () => {
 
   const handleLanguageSelect = (language: string) => {
     i18n.changeLanguage(language);
+    setSelectedLanguage(language);
   };
 
   return (
     <Box
-      style={{
-        backgroundColor: colors.bg,
-        color: colors.textColor,
-        transition: 'all 0.4s ease',
-      }}
-      className="relative min-h-screen w-screen overflow-x-hidden"
+      className={`text-textColor bg-background  relative min-h-screen w-screen overflow-x-hidden transition-all ease-in-out `}
     >
-      <header className="fixed top-0 z-[100] flex w-full items-center justify-between border-b border-white/5 p-6 backdrop-blur-md">
-        <Group gap="xs">
-          <div
-            className="rounded-lg p-2"
-            style={{ backgroundColor: colors.primaryColor }}
-          >
-            <Zap size={20} color="white" fill="white" />
+      <header className="border-borderColor fixed top-0 z-[100] flex w-full items-center justify-between border-b px-6 py-4 backdrop-blur-md">
+        <Group gap="xs" className="flex-row">
+          <div className={`bg-primaryColor rounded-lg p-2`}>
+            <Zap size={20} color={colors.whiteColor} fill={colors.whiteColor} />
           </div>
-          <TextComponent
-            fontSize={22}
-            fontWeight={900}
-            color={colors.textColor}
-            className="tracking-tighter"
-          >
-            DEV<span style={{ color: colors.primaryColor }}>DESIGN</span>
-          </TextComponent>
+          <div>
+            <TextComponent
+              fontSize={22}
+              fontWeight={900}
+              color={colors.textColor}
+              className="tracking-tighter"
+            >
+              DEV<span className="text-primaryColor">DESIGN</span>
+            </TextComponent>
+          </div>
         </Group>
 
         <Group gap="lg">
@@ -83,7 +80,7 @@ const MainCommandCenter = () => {
             <Menu.Target>
               <Button
                 variant="subtle"
-                color="gray"
+                color={colors.textColor}
                 leftSection={<Languages size={16} />}
               >
                 {selectLanguage}
@@ -92,6 +89,9 @@ const MainCommandCenter = () => {
             <Menu.Dropdown>
               <Menu.Item onClick={() => handleLanguageSelect('en')}>
                 English
+              </Menu.Item>
+              <Menu.Item onClick={() => handleLanguageSelect('hi')}>
+                Hindi
               </Menu.Item>
               <Menu.Item onClick={() => handleLanguageSelect('fr')}>
                 Français
@@ -104,17 +104,23 @@ const MainCommandCenter = () => {
 
           <ActionIcon
             variant="filled"
-            color={currentTheme === 'dark' ? 'yellow' : 'blue'}
+            color={
+              currentTheme === 'dark' ? colors.whiteColor : colors.primaryColor
+            }
             size="lg"
             radius="md"
             onClick={toggleTheme}
           >
-            {currentTheme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            {currentTheme === 'dark' ? (
+              <Sun size={18} color={colors.blackColor} />
+            ) : (
+              <Moon size={18} />
+            )}
           </ActionIcon>
         </Group>
       </header>
 
-      <main className="px-10 pt-32">
+      <main className="px-10 pt-10">
         <AnimatePresence mode="wait">
           {!showLab ? (
             <motion.div
@@ -129,47 +135,46 @@ const MainCommandCenter = () => {
                   <Stack gap="xl">
                     <Badge
                       variant="outline"
-                      color="blue"
+                      color={colors.secondaryColor}
                       size="lg"
                       radius="sm"
                       p="md"
                     >
-                      Design System v1.0
+                      {t('DesignSystemVersion')}
                     </Badge>
 
                     <TextComponent
-                      fontSize={68}
+                      fontSize={60}
                       fontWeight={900}
                       color={colors.textColor}
                       className="leading-[1.1]"
                     >
-                      Bridging the gap between{' '}
-                      <span style={{ color: colors.primaryColor }}>
-                        Code & Creativity.
+                      {t('BridgingTheGapBetween')}{' '}
+                      <span className={`text-primaryColor`}>
+                        {t('CodeAndCreativity')}
                       </span>
                     </TextComponent>
 
                     <TextComponent
-                      fontSize={18}
+                      fontSize={16}
                       fontWeight={400}
                       color={colors.textSecondary}
                       className="max-w-md leading-relaxed"
                     >
-                      Welcome to the Dev Design Engineering Lab. Access our core
-                      atomic components and explore the foundations of our
-                      future-proof interface protocols.
+                      {t('WelcomeToDevDesignLab')}
                     </TextComponent>
 
-                    <Button
-                      size="xl"
-                      radius="md"
-                      style={{ backgroundColor: colors.buttonBg }}
+                    <ButtonComponent
+                      title={t('Componentlab')}
                       onClick={() => setShowLab(true)}
-                      rightSection={<ChevronRight size={18} />}
-                      className="h-14 w-fit px-12 transition-opacity hover:opacity-90"
-                    >
-                      Enter Component Lab
-                    </Button>
+                      rightIcon={<ChevronRight size={18} />}
+                      size={60}
+                      radius={10}
+                      variant="filled"
+                      color={colors.whiteColor}
+                      backgroundColor={colors.primaryColor}
+                      borderColor={colors.primaryColor}
+                    />
                   </Stack>
 
                   <Stack gap="md">
@@ -179,34 +184,33 @@ const MainCommandCenter = () => {
                       color={colors.primaryColor}
                       className="mb-4 uppercase tracking-[0.3em]"
                     >
-                      Product Evolution Strategy
+                      {t('ProductEvolutionStrategy')}
                     </TextComponent>
 
                     <IncomingModule
                       icon={<BarChart3 size={20} />}
-                      title="Data Intelligence Module"
-                      desc="Advanced visualization and real-time analytics engine."
-                      eta="30 Days"
+                      title={t('DataIntelligenceModule')}
+                      desc={t('AdvancedDataVisualizationDesc')}
+                      eta={`30 ${t('days')}`}
                       colors={colors}
                     />
 
                     <IncomingModule
                       icon={<Brain size={20} />}
-                      title="Cognitive UI Engine"
-                      desc="Context-aware components powered by adaptive machine learning."
-                      eta="60 Days"
+                      title={t('CognitiveUIEngine')}
+                      desc={t('ContextAwareComponents')}
+                      eta={`60 ${t('days')}`}
                       colors={colors}
                     />
 
-                    <div className="mt-4 rounded-2xl border border-blue-500/10 bg-blue-500/5 p-6">
+                    <div className="border-secondaryColor bg-secondaryColor mt-4 rounded-2xl border border-opacity-10 bg-opacity-5 p-6">
                       <TextComponent
                         fontSize={14}
                         fontWeight={500}
                         color={colors.textSecondary}
                       >
-                        <strong>Dev Design Memo:</strong> Our roadmap focuses on
-                        transforming static UI into intelligent, data-driven
-                        experiences.
+                        <strong>{t('DevDesignMemo')}</strong>{' '}
+                        {t('OurRoadmapFocusesOnTransformingStaticUI')}
                       </TextComponent>
                     </div>
                   </Stack>
@@ -218,19 +222,9 @@ const MainCommandCenter = () => {
               key="laboratory"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="fixed inset-0 z-[150] bg-[#0A0A0B]"
+              className={`bg-background fixed inset-0 z-[150]`}
             >
-              <div className="absolute left-10 top-10 z-[100]">
-                <Button
-                  leftSection={<ArrowLeft size={16} />}
-                  variant="subtle"
-                  color="gray"
-                  onClick={() => setShowLab(false)}
-                >
-                  Return to Command
-                </Button>
-              </div>
-              <LaboratoryGallery />
+              <LaboratoryGallery setShowLab={setShowLab} />
             </motion.div>
           )}
         </AnimatePresence>
@@ -241,32 +235,22 @@ const MainCommandCenter = () => {
 
 const IncomingModule = ({ icon, title, desc, eta, colors }: any) => (
   <div
-    className="group flex items-start gap-5 rounded-2xl border border-dashed p-6 transition-all hover:border-solid"
-    style={{
-      borderColor: colors.borderColor,
-      backgroundColor: colors.whiteColor + '02',
-    }}
+    className={`bg-card border-borderColor group flex items-start gap-5 rounded-2xl border border-dashed p-6 transition-all hover:border-solid`}
   >
-    <div
-      className="rounded-xl p-3"
-      style={{
-        backgroundColor: colors.primaryColor + '20',
-        color: colors.primaryColor,
-      }}
-    >
+    <div className="text-primaryColor rounded-xl bg-[color-mix(in_srgb,var(--primaryColor)_20%,transparent)] p-3">
       {icon}
     </div>
     <Stack gap={2}>
       <Group justify="space-between">
-        <TextComponent fontSize={18} fontWeight={800} color={colors.textColor}>
+        <TextComponent fontSize={16} fontWeight={800} color={colors.textColor}>
           {title}
         </TextComponent>
-        <Badge variant="dot" color="blue" size="xs">
+        <Badge variant="dot" color={colors.primaryColor} size="xs">
           {eta}
         </Badge>
       </Group>
       <TextComponent
-        fontSize={13}
+        fontSize={12}
         fontWeight={400}
         color={colors.textSecondary}
         className="max-w-[280px]"

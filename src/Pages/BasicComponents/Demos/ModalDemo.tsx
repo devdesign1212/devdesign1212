@@ -14,14 +14,9 @@ const ModalDemo = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleConfirm = () => {
-    console.log(t('Modal.actionConfirmed'));
-    setIsModalOpen(false);
-  };
-
   return (
     <Stack align="center" gap="xl">
-      <div className="flex flex-col items-center gap-4 p-10">
+      <div className="flex flex-col items-center gap-4 ">
         <TextComponent
           fontSize={20}
           fontWeight={700}
@@ -33,6 +28,11 @@ const ModalDemo = () => {
         <ButtonComponent
           title={t('Modal.openConfirmation')}
           onClick={() => setIsModalOpen(true)}
+          variant="outline"
+          radius={50}
+          color={colors.primaryColor}
+          backgroundColor="transparent"
+          borderColor={colors.primaryColor}
         />
 
         <ModalComponent
@@ -41,7 +41,7 @@ const ModalDemo = () => {
           title={t('Modal.finalizeAction')}
           content={t('Modal.confirmationMessage')}
           ButtonTitle={t('Modal.confirm')}
-          onClick={handleConfirm}
+          onClick={() => setIsModalOpen(false)}
         />
       </div>
     </Stack>

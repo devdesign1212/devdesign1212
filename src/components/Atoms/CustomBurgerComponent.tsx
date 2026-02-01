@@ -1,7 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { BurgerProps } from '@/Common/interface';
+import TextComponent from './TextComponent';
 
 const CustomBurgerComponent: React.FC<BurgerProps> = ({
   opened,
@@ -28,14 +29,14 @@ const CustomBurgerComponent: React.FC<BurgerProps> = ({
   };
 
   return (
-    <div className="mx-3 flex flex-col items-center justify-center gap-1">
+    <div className="mx-3 flex flex-row items-center justify-center gap-4 ">
       <button
         onClick={onClick}
         className="group relative flex h-10 w-10 items-center justify-center transition-all focus:outline-none"
         aria-label={t(label)}
       >
         <motion.div
-          className={`bg-light-${color} dark:bg-dark-${color} absolute inset-0 scale-50 rounded-xl opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-10`}
+          className={`bg-${color} absolute inset-0 scale-50 rounded-xl opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-10`}
         />
 
         <svg width="23" height="18" viewBox="0 0 23 18">
@@ -70,16 +71,19 @@ const CustomBurgerComponent: React.FC<BurgerProps> = ({
         </svg>
       </button>
 
-      <motion.span
-        initial={false}
-        animate={{
-          opacity: opened ? 1 : 0.5,
-          y: opened ? -2 : 0,
-        }}
-        className={`text-light-${textColor} dark:text-dark-${textColor} text-[19px] font-black uppercase tracking-[0.2em]`}
-      >
-        {opened ? t('menu.devDesign') : t('menu.devDesign')}
-      </motion.span>
+      {label && (
+        <AnimatePresence>
+          <motion.span
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -10 }}
+          >
+            <TextComponent fontSize={20} fontWeight={900} color={textColor}>
+              {opened ? t('menu.devDesign') : ''}
+            </TextComponent>
+          </motion.span>
+        </AnimatePresence>
+      )}
     </div>
   );
 };

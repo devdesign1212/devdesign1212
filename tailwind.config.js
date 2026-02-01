@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-const themeColor = require('./src/themes/colors');
+
+import { lightTheme, darkTheme } from './src/themes/colors';
 
 export default {
   darkMode: ['class'],
@@ -23,15 +24,22 @@ export default {
       sans: ['Manrope', 'serif'],
     },
     extend: {
-      colors: {
-        light: {
-          ...themeColor.lightTheme,
-        },
-        dark: {
-          ...themeColor.darkTheme,
-        },
-      },
+      colors: Object.fromEntries(
+        Object.keys(lightTheme).map(key => [key, `var(--${key})`]),
+      ),
     },
   },
-  plugins: [],
+  important: true,
+  plugins: [
+    function ({ addBase }) {
+      addBase({
+        ':root': Object.fromEntries(
+          Object.entries(lightTheme).map(([key, value]) => [`--${key}`, value]),
+        ),
+        'html.dark, .dark': Object.fromEntries(
+          Object.entries(darkTheme).map(([key, value]) => [`--${key}`, value]),
+        ),
+      });
+    },
+  ],
 };
