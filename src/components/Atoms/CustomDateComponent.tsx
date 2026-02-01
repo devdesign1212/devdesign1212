@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { Popover, UnstyledButton } from '@mantine/core';
 import { DatePicker, DatePickerProps } from '@mantine/dates';
-import { darkTheme, lightTheme } from '../../themes/colors';
 import { CustomDatePickerProps } from '@/Common/interface';
-import {
-  CalendarSvgIcon,
-  LeftDateArrowSvgIcon,
-  RightDateArrowSvgIcon,
-} from '@/assets/svg';
 import TextComponent from './TextComponent';
+import { motion } from 'framer-motion';
 import dayjs from 'dayjs';
 import { useTranslation } from 'react-i18next';
+import { Calendar, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { darkTheme, lightTheme } from '@/themes/colors';
+import { useSelector } from 'react-redux';
 
 const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
   value,
@@ -19,7 +16,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
   error,
   label,
   defaultDate = false,
-  type,
+  type = 'default',
   disabled = false,
   className,
   withAsterisk,
@@ -27,6 +24,14 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
   dateFormat = 'YYYY-MM-DD',
   customButtons = false,
   inputMode = 'picker',
+  placeholder,
+  radius,
+  variant = 'default',
+  minDate,
+  maxDate,
+  color,
+  backgroundColor,
+  borderColor,
 }) => {
   const { t } = useTranslation();
   const currentTheme = useSelector((state: any) => state.theme.theme);
@@ -54,10 +59,11 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
     }
   }
 
-  const handleShortcut = (type: string) => {
-    let start, end;
+  const handleShortcut = (typeShortcut: string) => {
+    let start: dayjs.Dayjs, end: dayjs.Dayjs;
     const today = dayjs();
-    switch (type) {
+
+    switch (typeShortcut) {
       case 'today':
         start = end = today;
         break;
@@ -79,9 +85,17 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
       default:
         return;
     }
+
+    if (type === 'range') {
+      onChange([start.toDate(), end.toDate()]);
+    } else {
+      onChange(start.toDate());
+    }
+
     if (onShortcutSelect) {
       onShortcutSelect(start.toDate(), end.toDate());
     }
+    setOpened(false);
   };
 
   useEffect(() => {
@@ -109,7 +123,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
 
   const handleManualInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const format = dateFormat || 'YYYY-MM-DD';
-    let rawValue = e.target.value.replace(/[^0-9\- ]/g, '');
+    const rawValue = e.target.value.replace(/[^0-9\- ]/g, '');
 
     let formattedValue = rawValue;
     if (type === 'range') {
@@ -126,7 +140,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
       const parts = formattedValue.split(' - ').slice(0, 2);
       formattedValue = parts
         .map(part => {
-          let d = part.replace(/[^0-9]/g, '');
+          const d = part.replace(/[^0-9]/g, '');
           if (format === 'YYYY-MM-DD') {
             if (d.length <= 4) return d;
             if (d.length <= 6) return `${d.slice(0, 4)}-${d.slice(4)}`;
@@ -139,7 +153,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
         })
         .join(' - ');
     } else {
-      let d = rawValue.replace(/[^0-9]/g, '');
+      const d = rawValue.replace(/[^0-9]/g, '');
       if (format === 'YYYY-MM-DD') {
         if (d.length <= 4) formattedValue = d;
         else if (d.length <= 6)
@@ -218,7 +232,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
     if (isSelected) {
       return {
         style: {
-          backgroundColor: colors.primaryColor,
+          backgroundColor: backgroundColor,
           color: colors.whiteColor,
           padding: '6px',
           borderRadius: '40px',
@@ -230,7 +244,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
     if (isInRange) {
       return {
         style: {
-          backgroundColor: colors.primaryColor,
+          backgroundColor: backgroundColor,
           color: colors.whiteColor,
           padding: '6px',
           borderRadius: '30px',
@@ -242,8 +256,8 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
     if (isSameDay(date, today)) {
       return {
         style: {
-          border: `1px solid ${colors.primaryColor}`,
-          color: colors.primaryColor,
+          border: `1px solid ${borderColor}`,
+          color: color,
           padding: '4px',
           borderRadius: '30px',
           textAlign: 'center',
@@ -254,7 +268,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
     if (date > maxDate) {
       return {
         style: {
-          color: colors.borderColor,
+          color: colors.inActive,
           padding: '4px',
           borderRadius: '40px',
         },
@@ -263,7 +277,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
 
     return {
       style: {
-        color: colors.textColor,
+        color: colors.blackColor,
         padding: '2px',
         borderRadius: '40px',
       },
@@ -284,20 +298,17 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
   return (
     <div className={` ${className}`}>
       {label && (
-        <div className="mt-1 flex items-center gap-1">
+        <div className="mt-1 flex w-max items-center gap-1 ">
           <TextComponent
-            color={colors.textColor}
+            color={color}
             fontSize={14}
             fontWeight={600}
+            className="w-max"
           >
             {label}
           </TextComponent>
           {withAsterisk && (
-            <TextComponent
-              color={colors.primaryColor}
-              fontSize={14}
-              fontWeight={600}
-            >
+            <TextComponent color={colors.maroon} fontSize={14} fontWeight={600}>
               *
             </TextComponent>
           )}
@@ -307,49 +318,73 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
         opened={opened}
         onChange={setOpened}
         position="bottom-start"
-        shadow="md"
+        shadow="xl"
+        radius={radius || 'md'}
       >
         <Popover.Target>
-          <div
-            className={`relative mt-2 flex h-10 cursor-pointer items-center rounded-md border ${error ? 'border-light-primaryColor' : isFocused ? 'border-light-textColor' : 'border-light-inActive'} pl-2 ${disabled ? 'pointer-events-none opacity-50' : ''}`}
-            onClick={() => !disabled && setOpened(o => !o)}
-          >
-            <input
-              type="text"
-              value={inputValue}
-              onChange={handleManualInput}
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
-              placeholder={
-                type === 'range'
-                  ? dateFormat === 'YYYY-MM-DD'
-                    ? 'YYYY-MM-DD - YYYY-MM-DD'
-                    : 'DD-MM-YYYY - DD-MM-YYYY'
-                  : dateFormat === 'YYYY-MM-DD'
-                    ? 'YYYY-MM-DD'
-                    : 'DD-MM-YYYY'
-              }
-              disabled={disabled}
-              className={`flex-grow cursor-text bg-transparent text-light-textColor outline-none ${error ? 'placeholder:text-light-primaryColor' : 'placeholder:text-light-inActive'} placeholder:text-[16px] placeholder:font-normal  `}
-              onClick={e => {
-                e.stopPropagation();
-                if (inputMode === 'picker' && !disabled) setOpened(o => !o);
+          <div onClick={() => !disabled && setOpened(o => !o)}>
+            <motion.div
+              whileHover={{ borderColor: borderColor }}
+              className={`relative flex h-12 items-center rounded-xl border-2 px-3 transition-all `}
+              style={{
+                backgroundColor:
+                  variant === 'default' ? 'transparent' : backgroundColor,
+                borderColor: error
+                  ? 'border-maroon'
+                  : isFocused
+                    ? borderColor
+                    : `color-mix(in srgb, ${borderColor} 20%, transparent)`,
               }}
-              readOnly={inputMode === 'picker'}
-            />
-            {inputValue && (
-              <button
-                type="button"
-                onClick={handleClear}
-                className="absolute right-12 flex cursor-pointer items-center text-base text-light-lightRed"
-                aria-label="Clear date"
-              >
-                X
-              </button>
-            )}
-            <div className="absolute -right-1 flex items-center">
-              <CalendarSvgIcon />
-            </div>
+              onClick={() => !disabled && setOpened(o => !o)}
+            >
+              <Calendar
+                size={18}
+                color={
+                  variant === 'default' ? colors.textColor : colors.whiteColor
+                }
+                className="mr-2"
+              />
+              <input
+                type="text"
+                value={inputValue}
+                onChange={handleManualInput}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
+                placeholder={
+                  placeholder
+                    ? placeholder
+                    : type === 'range'
+                      ? dateFormat === 'YYYY-MM-DD'
+                        ? 'YYYY-MM-DD - YYYY-MM-DD'
+                        : 'DD-MM-YYYY - DD-MM-YYYY'
+                      : dateFormat === 'YYYY-MM-DD'
+                        ? 'YYYY-MM-DD'
+                        : 'DD-MM-YYYY'
+                }
+                disabled={disabled}
+                style={{ border: borderColor }}
+                className={`${variant === 'default' ? 'text-textColor' : 'text-whiteColor'} flex-grow cursor-text bg-transparent outline-none ${error ? 'placeholder:text-maroon' : 'placeholder:text-inActive '} placeholder:text-[16px] placeholder:font-normal  `}
+                onClick={e => {
+                  e.stopPropagation();
+                  if (
+                    inputMode === 'picker' ||
+                    (inputMode === 'both' && !disabled)
+                  )
+                    setOpened(o => !o);
+                }}
+                readOnly={inputMode === 'picker'}
+              />
+              {inputValue && (
+                <X
+                  size={16}
+                  color={
+                    variant === 'default' ? colors.textColor : colors.whiteColor
+                  }
+                  className="cursor-pointer opacity-50 hover:opacity-100"
+                  onClick={handleClear}
+                />
+              )}
+            </motion.div>
           </div>
         </Popover.Target>
 
@@ -359,11 +394,13 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
             size="xl"
             value={value}
             onChange={handlePickerChange}
-            maxDate={new Date()}
+            maxDate={maxDate || new Date()}
+            minDate={minDate}
             withCellSpacing={false}
-            nextIcon={<RightDateArrowSvgIcon />}
-            previousIcon={<LeftDateArrowSvgIcon />}
             getDayProps={getDayProps}
+            variant={variant}
+            nextIcon={<ChevronRight size={18} />}
+            previousIcon={<ChevronLeft size={18} />}
             classNames={{
               levelsGroup: 'w-full ',
               calendarHeader: 'flex items-center justify-between gap-3',
@@ -374,102 +411,54 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
                 'flex items-center justify-center w-full flex-col gap-2',
               weekdaysRow: 'flex items-center justify-between w-full',
               monthsListRow: 'flex items-center justify-between w-full gap-3',
-              weekday: 'text-light-primaryColor',
+              weekday: 'text-primaryColor',
               monthRow: 'flex items-center justify-between w-full gap-3',
-              monthCell: 'w-full text-center ',
+              monthCell: 'w-full text-center text-primaryColor ',
               monthsList: 'w-full',
-              monthsListControl: 'text-light-textColor font-[400] text-[18px]',
+              monthsListControl: 'text-textColor font-[400] text-[18px]',
               yearsListRow: 'flex items-center justify-between w-full gap-3',
-              yearsListControl: 'text-light-textColor font-[400] text-[18px]',
+              yearsListControl: 'text-textColor font-[400] text-[18px]',
               day: 'font-[500] text-[14px] w-[30px] text-center ',
             }}
           />
           {customButtons && (
-            <div className=" flex flex-col  border-l-2 border-light-lightPink">
-              <div className="ml-4 flex flex-col gap-2">
-                <div className="flex w-32 items-center justify-center justify-self-end rounded-md border border-light-lightRed bg-light-whiteColor px-2 py-1">
+            <div
+              className="flex flex-col gap-2 border-l pl-4"
+              style={{ borderColor: borderColor }}
+            >
+              <TextComponent
+                fontSize={12}
+                fontWeight={700}
+                color={colors.textSecondary}
+                className="mb-2 uppercase tracking-tighter"
+              >
+                {t('date.shortcuts')}
+              </TextComponent>
+              {['today', 'yesterday', 'last7', 'last30', 'thisMonth'].map(
+                key => (
                   <UnstyledButton
-                    onClick={() => handleShortcut('today')}
-                    className="flex flex-row items-center justify-center text-center disabled:opacity-30"
+                    key={key}
+                    onClick={() => {
+                      handleShortcut(key);
+                      console.log('key', key);
+                    }}
+                    className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all hover:translate-x-1 `}
+                    style={{
+                      backgroundColor: `color-mix(in srgb, ${backgroundColor} 10%, transparent)`,
+                      color: color,
+                    }}
                   >
-                    <TextComponent
-                      fontSize={16}
-                      fontWeight={400}
-                      color={colors.blackColor}
-                      align="center"
-                    >
-                      {t('Today')}
-                    </TextComponent>
+                    {t(`date.${key}`)}
                   </UnstyledButton>
-                </div>
-                <div className=" flex w-32 items-center justify-center justify-self-end rounded-md border border-light-lightRed bg-light-whiteColor px-2 py-1">
-                  <UnstyledButton
-                    onClick={() => handleShortcut('yesterday')}
-                    className="flex flex-row items-center justify-center text-center disabled:opacity-30"
-                  >
-                    <TextComponent
-                      fontSize={16}
-                      fontWeight={400}
-                      color={colors.blackColor}
-                      align="center"
-                    >
-                      {t('Yesterday')}
-                    </TextComponent>
-                  </UnstyledButton>
-                </div>
-                <div className=" flex w-32 items-center justify-center justify-self-end rounded-md border border-light-lightRed bg-light-whiteColor px-2 py-1">
-                  <UnstyledButton
-                    onClick={() => handleShortcut('last7')}
-                    className="flex flex-row items-center justify-center text-center disabled:opacity-30"
-                  >
-                    <TextComponent
-                      fontSize={16}
-                      fontWeight={400}
-                      color={colors.blackColor}
-                      align="center"
-                    >
-                      {t('Last7Days')}
-                    </TextComponent>
-                  </UnstyledButton>
-                </div>
-                <div className=" flex w-32 items-center justify-center justify-self-end rounded-md border border-light-lightRed bg-light-whiteColor px-2 py-1">
-                  <UnstyledButton
-                    onClick={() => handleShortcut('last30')}
-                    className="flex flex-row items-center justify-center text-center disabled:opacity-30"
-                  >
-                    <TextComponent
-                      fontSize={16}
-                      fontWeight={400}
-                      color={colors.blackColor}
-                      align="center"
-                    >
-                      {t('Last30Days')}
-                    </TextComponent>
-                  </UnstyledButton>
-                </div>
-                <div className=" flex w-32 items-center justify-center justify-self-end rounded-md border border-light-lightRed bg-light-whiteColor px-2 py-1">
-                  <UnstyledButton
-                    onClick={() => handleShortcut('thisMonth')}
-                    className="flex flex-row items-center justify-center text-center disabled:opacity-30"
-                  >
-                    <TextComponent
-                      fontSize={16}
-                      fontWeight={400}
-                      color={colors.blackColor}
-                      align="center"
-                    >
-                      {t('ThisMonth')}
-                    </TextComponent>
-                  </UnstyledButton>
-                </div>
-              </div>
+                ),
+              )}
             </div>
           )}
         </Popover.Dropdown>
       </Popover>
 
       {error && (
-        <div className="te xt-[12px] text-right font-[400] text-light-primaryColor">
+        <div className="xt-[12px] text-maroon text-right font-[400]">
           {error}
         </div>
       )}

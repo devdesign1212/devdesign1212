@@ -1,3 +1,90 @@
 {
-  "Dashboard": "डैशबोर्ड"
- }
+  "Dashboard": "डैशबोर्ड",
+  "DesignSystemVersion": "डिज़ाइन सिस्टम v1.0",
+  "BridgingTheGapBetween": "को जोड़ने वाली कड़ी",
+  "CodeAndCreativity": "कोड और रचनात्मकता।",
+  "WelcomeToDevDesignLab": "देव डिज़ाइन इंजीनियरिंग लैब में आपका स्वागत है। हमारे मुख्य परमाणु घटकों तक पहुँचें और हमारे भविष्य के अनुकूल इंटरफ़ेस प्रोटोकॉल की नींव का पता लगाएं।",
+  "ProductEvolutionStrategy": "उत्पाद विकास रणनीति",
+  "DevDesignMemo": "देव डिज़ाइन मेमो:",
+  "OurRoadmapFocusesOnTransformingStaticUI": "हमारा रोडमैप स्थिर UI को बुद्धिमान, डेटा-संचालित अनुभवों में बदलने पर केंद्रित है।",
+  "DataIntelligenceModule": "डेटा इंटेलिजेंस मॉड्यूल",
+  "AdvancedDataVisualizationDesc": "उन्नत विज़ुअलाइज़ेशन और रीयल-टाइम एनालिटिक्स इंजन।",
+  "CognitiveUIEngine": "कॉग्निटिव UI इंजन",
+  "ContextAwareComponents": "अनुकूली मशीन लर्निंग द्वारा संचालित संदर्भ-जागरूक घटक।",
+  "Componentlab": "कंपोनेंट लैब",
+  "days": "दिन",
+  "ReturnToCommand": "कमांड पर लौटें",
+  "ActiveNodes": "सक्रिय नोड्स",
+  "NextEvolution": "अगला विकास",
+  "AdvancedDataVisualization": "उन्नत डेटा विज़ुअलाइज़ेशन (T-30d)",
+  "BaseLayerComponent": "बेस लेयर घटक",
+  "TechStack": "टेक स्टैक",
+  "buttons": {
+    "get_started": "शुरू करें",
+    "send_message": "संदेश भेजें",
+    "loading": "कृपया प्रतीक्षा करें..."
+  },
+  "menu": {
+    "dashboard": "टर्मिनल",
+    "transactions": "लेजर",
+    "security": "तिजोरी",
+    "ai_analytics": "न्यूरल लैब",
+    "biometrics": "पहचान",
+    "settings": "कॉन्फ़िगरेशन",
+    "devDesign": "DEV DESIGN",
+    "selectNodeFromCommandCenter": "कमांड सेंटर से एक नोड चुनें..."
+  },
+  "date": {
+    "placeholder": "तारीख सीमा चुनें",
+    "shortcuts": "त्वरित चयन",
+    "today": "आज",
+    "yesterday": "कल",
+    "last7": "पिछले 7 दिन",
+    "last30": "पिछले 30 दिन",
+    "thisMonth": "इस महीने"
+  },
+  "select": "एक विकल्प चुनें",
+  "fileReadyForUpload": "फ़ाइल अपलोड के लिए तैयार है",
+  "Dropdown": {
+    "systemAccessRole": "सिस्टम एक्सेस भूमिका",
+    "preferredLanguage": "पसंदीदा भाषा",
+    "regionSimulatedError": "क्षेत्र (सिम्युलेटेड त्रुटि)",
+    "thisRegionIsCurrentlyUnderMaintenance": "यह क्षेत्र वर्तमान में रखरखाव के अधीन है"
+  },
+  "FileUpload": {
+    "requiredDocument": "कृपया आवश्यक दस्तावेज़ संलग्न करें",
+    "uploadSuccess": "फ़ाइल सफलतापूर्वक अपलोड हो गई!",
+    "identityVerification": "पहचान सत्यापन",
+    "uploadInstruction": "कृपया अपनी आईडी का स्पष्ट स्कैन अपलोड करें (PDF या JPG)",
+    "documentLabel": "राष्ट्रीय आईडी / पासपोर्ट",
+    "profilePictureLabel": "प्रोफ़ाइल चित्र",
+    "documentPlaceholder": "दस्तावेज़ फ़ाइल चुनें",
+    "uploadButton": "दस्तावेज़ अपलोड करें",
+    "uploadInfo": "एन्क्रिप्टेड और सुरक्षित अपलोड। अधिकतम फ़ाइल आकार: 10MB।"
+  },
+  "TextInput": {
+    "welcomeBack": "स्वागत है",
+    "emailAddress": "ईमेल पता",
+    "emailPlaceholder": "name@company.com",
+    "password": "पासवर्ड",
+    "enterYourPassword": "अपना पासवर्ड दर्ज करें",
+    "signIn": "साइन इन करें",
+    "loginAttempt": "लॉगिन प्रयास"
+  },
+  "Modal": {
+    "actionConfirmed": "कार्रवाई की पुष्टि हो गई!",
+    "title": "मोडल सिस्टम डेमो",
+    "openConfirmation": "पुष्टि खोलें",
+    "finalizeAction": "कार्रवाई को अंतिम रूप दें",
+    "confirmationMessage": "क्या आप वाकई इस लेनदेन के साथ आगे बढ़ना चाहते हैं? इस कार्रवाई को पूर्ववत नहीं किया जा सकता है।",
+    "confirm": "पुष्टि करें"
+  },
+  "Textarea": {
+    "min10Chars": "कृपया थोड़ा और विवरण दें (न्यूनतम 10 अक्षर)",
+    "feedbackSubmitted": "प्रतिक्रिया सबमिट की गई!",
+    "howCanWeHelp": "हम आपकी क्या मदद कर सकते हैं?",
+    "issueDescription": "समस्या का विवरण",
+    "tellUsWhatOnYourMind": "हमें बताएं कि आपके मन में क्या है...",
+    "submit": "प्रतिक्रिया भेजें"
+  }
+}

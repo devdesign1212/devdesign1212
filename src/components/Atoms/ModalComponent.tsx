@@ -4,8 +4,9 @@ import ButtonComponent from './ButtonComponent';
 import TextComponent from './TextComponent';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '../../themes/colors';
+import { motion, AnimatePresence } from 'framer-motion';
 import { DynamicModalProps } from '@/Common/interface';
-import { ModalCrossSvgIcon } from '@/assets/svg';
+import { X } from 'lucide-react';
 
 const ModalComponent: React.FC<DynamicModalProps> = ({
   opened,
@@ -24,36 +25,59 @@ const ModalComponent: React.FC<DynamicModalProps> = ({
       onClose={onClose}
       title={title}
       centered
+      padding="xl"
+      radius="lg"
+      transitionProps={{ transition: 'fade', duration: 200 }}
       closeButtonProps={{
-        icon: <ModalCrossSvgIcon color={colors.textColor} />,
-        className: 'border-none',
+        icon: <X color={colors.textColor} />,
       }}
       classNames={{
-        root: 'bg-light-card_BG',
-        content: 'border border-light-primaryColor rounded-md',
+        header: 'bg-background',
+        title: 'text-textColor font-bold text-xl',
+        content:
+          'bg-background border-[1px] shadow-xl rounded-2xl border-solid border-primaryColor border-opacity-50',
+        close: 'text-textColor hover:bg-primaryColor hover:bg-opacity-15 ',
       }}
     >
-      <div className="flex w-full flex-col items-center justify-center gap-5 text-center">
-        <div>
-          <TextComponent
-            fontSize={18}
-            fontWeight={600}
-            color={colors.textColor}
+      <AnimatePresence>
+        {opened && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 10 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="flex w-full flex-col items-center justify-center gap-6 text-center"
           >
-            {content}
-          </TextComponent>
-        </div>
-        {ButtonTitle && (
-          <div className="w-[30%]">
-            <ButtonComponent
-              title={ButtonTitle}
-              variant="filled"
-              onClick={onClick}
-              radius={100}
-            />
-          </div>
+            <div className="py-2">
+              <TextComponent
+                fontSize={18}
+                fontWeight={500}
+                color={colors.textColor}
+              >
+                {content}
+              </TextComponent>
+            </div>
+
+            {ButtonTitle && (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full max-w-[150px]"
+              >
+                <ButtonComponent
+                  title={ButtonTitle}
+                  variant="filled"
+                  onClick={onClick}
+                  radius={100}
+                  color={colors.whiteColor}
+                  backgroundColor={colors.primaryColor}
+                  borderColor={colors.primaryColor}
+                />
+              </motion.div>
+            )}
+          </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </Modal>
   );
 };

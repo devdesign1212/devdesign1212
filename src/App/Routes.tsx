@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Route, Routes, Outlet } from 'react-router-dom';
-import Dashboard from '@/Pages/Home/Dashboard';
+import Dashboard from '@/Pages/Dashboard';
 
 const RouterOutlet: React.FC = () => {
   return (
