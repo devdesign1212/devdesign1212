@@ -15,8 +15,6 @@ const TextComponent: React.FC<CustomTextProps> = ({
   children,
   ...props
 }) => {
-  const isClickable = onClick && onClick !== (() => {});
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -28,7 +26,7 @@ const TextComponent: React.FC<CustomTextProps> = ({
         style={{
           fontSize: fontSize,
           transition: 'color 0.2s ease, font-weight 0.2s ease',
-          cursor: isClickable ? 'pointer' : 'default',
+          cursor: 'pointer',
         }}
         fw={fontWeight}
         c={color}
