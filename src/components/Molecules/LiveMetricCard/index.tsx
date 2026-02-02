@@ -23,7 +23,7 @@ export const LiveMetricCard = ({
       p="md"
       radius="md"
       style={{
-        background: 'rgba(10, 20, 18, 0.5)',
+        background: colors.card,
         backdropFilter: 'blur(10px)',
       }}
     >
