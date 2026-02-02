@@ -11,7 +11,6 @@
   "AdvancedDataVisualizationDesc": "उन्नत विज़ुअलाइज़ेशन और रीयल-टाइम एनालिटिक्स इंजन।",
   "CognitiveUIEngine": "कॉग्निटिव UI इंजन",
   "ContextAwareComponents": "अनुकूली मशीन लर्निंग द्वारा संचालित संदर्भ-जागरूक घटक।",
-  "Componentlab": "कंपोनेंट लैब",
   "days": "दिन",
   "ReturnToCommand": "कमांड पर लौटें",
   "ActiveNodes": "सक्रिय नोड्स",
@@ -86,5 +85,35 @@
     "issueDescription": "समस्या का विवरण",
     "tellUsWhatOnYourMind": "हमें बताएं कि आपके मन में क्या है...",
     "submit": "प्रतिक्रिया भेजें"
+  },
+  "Component": "घटक",
+  "Lab": "लैब",
+  "Documentation": "दस्तावेज़ीकरण",
+  "EngineeringSpecs": "इंजीनियरिंग विनिर्देश",
+  "LiveMetricCard": {
+    "liveStream": "लाइव स्ट्रीम",
+    "RealTimeTelemetry": "फिनटेक और वेब3 निगरानी के लिए रीयल-टाइम टेलीमेट्री स्ट्रीम।",
+    "NetworkThroughput": "नेटवर्क थ्रूपुट",
+    "ActiveValidators": "सक्रिय वैलिडेटर"
+  },
+  "Layout": {
+    "InteractionTokens": "इंटरैक्शन टोकन",
+    "ButtonsTriggers": "बटन और ट्रिगर्स",
+    "DataEntry": "डेटा प्रविष्टि",
+    "InputsValidation": "इनपुट और सत्यापन",
+    "SelectionLogic": "चयन तर्क",
+    "DropdownsLists": "ड्रॉपडाउन और सूचियां",
+    "TemporalUnits": "समय इकाइयाँ",
+    "DateTimePickers": "दिनांक और समय चयनकर्ता",
+    "AssetStream": "एसेट स्ट्रीम",
+    "FileUploaders": "फ़ाइल अपलोडर",
+    "OverlayPrototypes": "ओवरले प्रोटोटाइप",
+    "ModalsDrawers": "मोडल और ड्रावर",
+    "ContentBlocks": "कंटेंट ब्लॉक",
+    "RichTextAreas": "रिच टेक्स्ट क्षेत्र",
+    "NavigationNodes": "नेविगेशन नोड्स",
+    "ContextMenus": "संदर्भ मेनू",
+    "DataIntelligence": "डेटा इंटेलिजेंस",
+    "RealTimeAnalytics": "रियल-टाइम एनालिटिक्स इंजन"
   }
 }

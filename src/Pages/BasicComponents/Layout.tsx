@@ -1,5 +1,5 @@
-import { useState, useMemo, useEffect } from 'react';
-import { Box, ActionIcon, Tooltip, Button } from '@mantine/core';
+import { useState, useMemo } from 'react';
+import { Box, ActionIcon, Group, Stack, SimpleGrid } from '@mantine/core';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowLeft,
@@ -8,10 +8,12 @@ import {
   Calendar,
   FileCode,
   Type,
-  Layout,
   AlignLeft,
   Menu as MenuIcon,
-  Rocket,
+  LayoutIcon,
+  Activity,
+  Layers,
+  MonitorCheck,
 } from 'lucide-react';
 
 import TextComponent from '@/components/Atoms/TextComponent';
@@ -25,6 +27,7 @@ import DateDemo from './Demos/DateComponentDemo';
 import MenuDemo from './Demos/MenuDemo';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '@/themes/colors';
+import LiveMetricCardDemo from '../DataIntelligenceDemo/LiveMetricCardDemo';
 import { useTranslation } from 'react-i18next';
 
 const LaboratoryGallery = ({
@@ -36,260 +39,254 @@ const LaboratoryGallery = ({
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
   const [activePortal, setActivePortal] = useState<string | null>(null);
-  const [winSize, setWinSize] = useState({ w: 1000, h: 800 });
-
-  useEffect(() => {
-    const handleResize = () =>
-      setWinSize({ w: window.innerWidth, h: window.innerHeight });
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const components = useMemo(
     () => [
       {
         id: 'Btn',
-        label: 'Buttons',
-        icon: <MousePointer2 size={20} />,
+        label: t('Layout.InteractionTokens'),
+        sub: t('Layout.ButtonsTriggers'),
+        icon: <MousePointer2 />,
         view: <ButtonDemo />,
-      },
-      {
-        id: 'Drop',
-        label: 'Selects',
-        icon: <List size={20} />,
-        view: <DropdownDemo />,
-      },
-      {
-        id: 'Date',
-        label: 'Pickers',
-        icon: <Calendar size={20} />,
-        view: <DateDemo />,
-      },
-      {
-        id: 'File',
-        label: 'Assets',
-        icon: <FileCode size={20} />,
-        view: <FileInputDemo />,
+        span: 1,
       },
       {
         id: 'TextInput',
-        label: 'Inputs',
-        icon: <Type size={20} />,
+        label: t('Layout.DataEntry'),
+        sub: t('Layout.InputsValidation'),
+        icon: <Type />,
         view: <TextInputDemo />,
+        span: 2,
+      },
+      {
+        id: 'Drop',
+        label: t('Layout.SelectionLogic'),
+        sub: t('Layout.DropdownsLists'),
+        icon: <List />,
+        view: <DropdownDemo />,
+        span: 1,
+      },
+      {
+        id: 'Date',
+        label: t('Layout.TemporalUnits'),
+        sub: t('Layout.DateTimePickers'),
+        icon: <Calendar />,
+        view: <DateDemo />,
+        span: 1,
+      },
+      {
+        id: 'File',
+        label: t('Layout.AssetStream'),
+        sub: t('Layout.FileUploaders'),
+        icon: <FileCode />,
+        view: <FileInputDemo />,
+        span: 1,
       },
       {
         id: 'Modal',
-        label: 'Overlays',
-        icon: <Layout size={20} />,
+        label: t('Layout.OverlayPrototypes'),
+        sub: t('Layout.ModalsDrawers'),
+        icon: <LayoutIcon />,
         view: <ModalDemo />,
+        span: 2,
       },
       {
         id: 'Textarea',
-        label: 'Rich Text',
-        icon: <AlignLeft size={20} />,
+        label: t('Layout.ContentBlocks'),
+        sub: t('Layout.RichTextAreas'),
+        icon: <AlignLeft />,
         view: <TextareaDemo />,
+        span: 1,
       },
       {
         id: 'Menu',
-        label: 'Navigation',
-        icon: <MenuIcon size={20} />,
+        label: t('Layout.NavigationNodes'),
+        sub: t('Layout.ContextMenus'),
+        icon: <MenuIcon />,
         view: <MenuDemo />,
+        span: 1,
+      },
+      {
+        id: 'Intel',
+        label: t('Layout.DataIntelligence'),
+        sub: t('Layout.RealTimeAnalytics'),
+        icon: <Activity />,
+        view: <LiveMetricCardDemo />,
+        span: 2,
       },
     ],
-    [],
+    [t],
   );
 
-  const getPosition = (index: number, total: number) => {
-    const baseRadius = Math.min(winSize.w, winSize.h) * 0.32;
-    const angle = (index / total) * 2 * Math.PI;
-    const x = Math.cos(angle) * baseRadius;
-    const y = Math.sin(angle) * baseRadius;
-    return { x, y };
-  };
-
   return (
-    <Box className="bg-background selection:bg-secondaryColor relative h-screen w-screen overflow-hidden ">
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="bg-secondaryColor absolute -left-[10%] -top-[10%] h-[50%] w-[50%] rounded-full blur-[120px]"
-        />
-        <motion.div
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.05, 0.15, 0.05] }}
-          transition={{ duration: 10, repeat: Infinity }}
-          className="bg-secondaryColor absolute -bottom-[10%] -right-[10%] h-[40%] w-[40%] rounded-full blur-[100px]"
-        />
-      </div>
-
+    <Box className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-background p-6 md:p-12">
       <div
-        className="pointer-events-none absolute inset-0 z-0 opacity-10"
+        className="pointer-events-none absolute inset-0 opacity-20"
         style={{
-          backgroundImage:
-            'linear-gradient(var(--borderColor) 1px, transparent 1px), linear-gradient(90deg, var(--borderColor) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
+          backgroundImage: `radial-gradient(${colors.primaryColor} 0.5px, transparent 0.5px)`,
+          backgroundSize: '24px 24px',
         }}
       />
-
       <AnimatePresence mode="wait">
         {!activePortal ? (
           <motion.div
-            key="orbit"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
-            className="relative z-10 flex h-full w-full items-center justify-center"
+            key="grid-view"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.98 }}
+            className="relative z-10 mx-auto max-w-7xl"
           >
-            <div className="absolute left-10 top-10 z-[100]">
-              <Button
-                leftSection={<ArrowLeft size={16} />}
-                variant="subtle"
-                color="gray"
-                onClick={() => setShowLab(false)}
-              >
-                {t('ReturnToCommand')}
-              </Button>
-            </div>
-            <div className="relative flex items-center justify-center">
-              <div className="pointer-events-none absolute h-[64%] w-[64%] rounded-full border border-[color-mix(in_srgb,var(--whiteColor)_5%,transparent)] " />
-              <div className="pointer-events-none absolute h-[40%] w-[40%] rounded-full border border-[color-mix(in_srgb,var(--whiteColor)_2%,transparent)]" />
+            <Group justify="space-between" mb={50}>
+              <Stack gap={0}>
+                <ActionIcon
+                  variant="light"
+                  size="xl"
+                  radius="md"
+                  onClick={() => setShowLab(false)}
+                >
+                  <ArrowLeft />
+                </ActionIcon>
 
-              <div className="relative z-20 flex flex-col items-center justify-center text-center">
-                <div className="mt-6 flex items-center gap-3 rounded-full border border-[color-mix(in_srgb,var(--whiteColor)_10%,transparent)] bg-[color-mix(in_srgb,var(--whiteColor)_5%,transparent)] px-4 py-1.5">
-                  <div className="bg-activeColor h-1.5 w-1.5 animate-pulse rounded-full" />
-                  <span className="text-secondaryColor text-[10px] font-bold uppercase tracking-widest">
-                    {components.length} {t('ActiveNodes')}
-                  </span>
-                </div>
+                <TextComponent
+                  fontSize={48}
+                  fontWeight={900}
+                  color={colors.secondaryColor}
+                  className="tracking-tighter"
+                >
+                  {t('Component')}
+                  <span className="text-primaryColor">{t('Lab')}</span>
+                </TextComponent>
+              </Stack>
+
+              <div className="hidden md:block">
+                <Group gap="xl">
+                  <StatBox
+                    icon={<Layers size={16} />}
+                    label="Library"
+                    value="Atomic"
+                  />
+                  <StatBox
+                    icon={<Activity size={16} />}
+                    label="Status"
+                    value="Stable"
+                  />
+                </Group>
               </div>
+            </Group>
 
-              {components.map((sat, index) => {
-                const { x, y } = getPosition(index, components.length);
-                return (
-                  <motion.div
-                    key={sat.id}
-                    className="absolute"
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1, x, y }}
-                    transition={{
-                      delay: index * 0.04,
-                      type: 'spring',
-                      damping: 15,
-                    }}
-                    whileHover={{ scale: 1.15, zIndex: 50 }}
-                  >
-                    <Tooltip
-                      label={sat.label}
-                      position="top"
-                      withArrow
-                      offset={14}
-                      color={colors.primaryColor}
-                    >
-                      <button
-                        onClick={() => setActivePortal(sat.id)}
-                        className="text-textSecondary hover:text-primaryColor bg-secondaryColor group relative flex h-14 w-14 items-center justify-center rounded-2xl border border-[color-mix(in_srgb,var(--whiteColor)_10%,transparent)] backdrop-blur-md transition-all hover:border-[color-mix(in_srgb,var(--primaryColor)_50%,transparent)] hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]"
+            <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="lg">
+              {components.map(comp => (
+                <motion.div
+                  key={comp.id}
+                  whileHover={{ y: -5 }}
+                  onClick={() => setActivePortal(comp.id)}
+                  className={`group cursor-pointer overflow-y-auto overflow-x-hidden rounded-3xl border border-borderColor  bg-card p-6 transition-all hover:border-primaryColor hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] ${comp.span === 2 ? 'lg:col-span-2' : ''}`}
+                >
+                  <Stack justify="space-between" h="100%">
+                    <div className="flex items-start justify-between">
+                      <div className="rounded-2xl border border-borderColor bg-background p-3 text-primaryColor transition-colors group-hover:bg-primaryColor group-hover:text-white">
+                        {comp.icon}
+                      </div>
+                      <MonitorCheck
+                        size={14}
+                        className="opacity-20 transition-opacity group-hover:opacity-100"
+                      />
+                    </div>
+                    <div>
+                      <TextComponent
+                        fontSize={18}
+                        fontWeight={800}
+                        mb={4}
+                        color={colors.textColor}
                       >
-                        {sat.icon}
-                        <div className="from-textSecondary absolute -bottom-10 -z-10 h-10 w-[1px] bg-gradient-to-b to-transparent" />
-                      </button>
-                    </Tooltip>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            <div className="absolute bottom-10 left-10 flex items-center gap-4 opacity-40 transition-opacity hover:opacity-100">
-              <div className="border-secondaryColor rounded-xl border border-dashed p-3">
-                <Rocket size={18} className={colors.textSecondary} />
-              </div>
-              <div>
-                <TextComponent
-                  fontSize={10}
-                  fontWeight={800}
-                  color={colors.secondaryColor}
-                  className="uppercase tracking-widest"
-                >
-                  {t('NextEvolution')}
-                </TextComponent>
-                <TextComponent
-                  fontSize={12}
-                  fontWeight={600}
-                  color={colors.secondaryColor}
-                >
-                  {t('AdvancedDataVisualization')}
-                </TextComponent>
-              </div>
-            </div>
+                        {comp.label}
+                      </TextComponent>
+                      <TextComponent
+                        fontSize={12}
+                        fontWeight={400}
+                        color={colors.textSecondary}
+                      >
+                        {comp.sub}
+                      </TextComponent>
+                    </div>
+                  </Stack>
+                </motion.div>
+              ))}
+            </SimpleGrid>
           </motion.div>
         ) : (
           <motion.div
-            key="portal"
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            className="bg-background absolute inset-0 z-50 overflow-y-auto p-3 md:p-12"
+            key="active-demo"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            className="relative z-50 mx-auto max-w-7xl pb-20"
           >
-            <div className="mx-auto flex min-h-full max-w-7xl flex-col">
-              <header className="mb-3 flex items-center justify-between">
-                <ActionIcon
-                  variant="subtle"
-                  color={colors.textSecondary}
-                  size="xl"
-                  onClick={() => setActivePortal(null)}
+            <header className="mb-10 flex items-center justify-between">
+              <ActionIcon
+                variant="light"
+                size="xl"
+                radius="md"
+                onClick={() => setActivePortal(null)}
+              >
+                <ArrowLeft />
+              </ActionIcon>
+              <Stack gap={0} align="flex-end">
+                <TextComponent
+                  fontSize={12}
+                  fontWeight={800}
+                  color={colors.primaryColor}
+                  className="uppercase tracking-widest"
                 >
-                  <ArrowLeft size={22} />
-                </ActionIcon>
-                <div className="flex flex-col items-end">
-                  <Badge mb={4}>{t('BaseLayerComponent')}</Badge>
-                  <TextComponent
-                    fontSize={32}
-                    fontWeight={900}
-                    color={colors.secondaryColor}
-                  >
-                    {components.find(s => s.id === activePortal)?.label}
-                  </TextComponent>
-                </div>
-              </header>
+                  {t('Documentation')} / {activePortal}
+                </TextComponent>
+                <TextComponent
+                  fontSize={32}
+                  fontWeight={900}
+                  color={colors.textColor}
+                >
+                  {components.find(s => s.id === activePortal)?.label}
+                </TextComponent>
+              </Stack>
+            </header>
 
-              <main className="grid flex-1 grid-cols-1 gap-8 lg:grid-cols-12">
-                <div className="border-borderColor bg-card relative flex min-h-[400px] items-center justify-center overflow-hidden rounded-[40px] border p-8 shadow-2xl lg:col-span-8">
-                  <div
-                    className="absolute inset-0 opacity-[0.03]"
-                    style={{
-                      backgroundImage:
-                        'radial-gradient(var(--whiteColor) 1.5px, transparent 0)',
-                      backgroundSize: '32px 32px',
-                    }}
-                  />
-                  <div className="relative z-10 w-full max-w-lg">
-                    {components.find(s => s.id === activePortal)?.view}
-                  </div>
+            <main className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+              <div className="relative flex min-h-[500px] items-center justify-center rounded-[40px] border  border-borderColor bg-card p-12 lg:col-span-8">
+                <div
+                  className="absolute inset-0 opacity-5"
+                  style={{
+                    backgroundImage:
+                      'repeating-linear-gradient(45deg, #ccc 0, #ccc 1px, transparent 0, transparent 50%)',
+                    backgroundSize: '10px 10px',
+                  }}
+                />
+                <div className="relative z-10 w-full">
+                  {components.find(s => s.id === activePortal)?.view}
                 </div>
+              </div>
 
-                <div className="flex flex-col gap-6 lg:col-span-4">
-                  <div className="bg-card border-borderColor rounded-[32px] border p-8">
-                    <div className="mb-6 flex items-center gap-2">
-                      <div className="bg-secondaryColor h-4 w-1 rounded-full" />
-                      <TextComponent
-                        fontSize={12}
-                        fontWeight={800}
-                        color={colors.secondaryColor}
-                        className="uppercase tracking-widest"
-                      >
-                        {t('TechStack')}
-                      </TextComponent>
-                    </div>
-                    <div className="space-y-4">
-                      <SpecRow label="Runtime" value="React 18 Engine" />
-                      <SpecRow label="Physics" value="Framer Motion" />
-                      <SpecRow label="Styling" value="Tailwind + Mantine" />
-                      <SpecRow label="Accessibility" value="Aria-Compliant" />
-                    </div>
+              <div className="lg:col-span-4">
+                <Stack gap="lg">
+                  <div className="rounded-[32px] border border-borderColor bg-card p-8">
+                    <TextComponent
+                      fontSize={14}
+                      fontWeight={800}
+                      mb="xl"
+                      className=" uppercase tracking-widest"
+                      color={colors.textColor}
+                    >
+                      {t('EngineeringSpecs')}
+                    </TextComponent>
+                    <Stack gap="md">
+                      <SpecRow label="Framework" value="React 18" />
+                      <SpecRow label="Type Safety" value="TypeScript 5.0" />
+                      <SpecRow label="Animation" value="Framer Motion" />
+                      <SpecRow label="Architecture" value="Atomic Design" />
+                    </Stack>
                   </div>
-                </div>
-              </main>
-            </div>
+                </Stack>
+              </div>
+            </main>
           </motion.div>
         )}
       </AnimatePresence>
@@ -297,25 +294,39 @@ const LaboratoryGallery = ({
   );
 };
 
-const SpecRow = ({ label, value }: { label: string; value: string }) => (
-  <div className="flex justify-between border-b border-white/[0.03] pb-2 last:border-0">
-    <TextComponent fontSize={11} fontWeight={700} color="#475569">
-      {label}
-    </TextComponent>
-    <TextComponent fontSize={12} fontWeight={600} color="#cbd5e1">
-      {value}
-    </TextComponent>
-  </div>
-);
+const StatBox = ({ icon, label, value }: any) => {
+  const currentTheme = useSelector((state: any) => state.theme.theme);
+  const colors = currentTheme === 'light' ? lightTheme : darkTheme;
+  return (
+    <Group gap="sm">
+      <div className="rounded-lg border border-borderColor bg-card p-2">
+        {icon}
+      </div>
+      <Stack gap={0}>
+        <TextComponent fontSize={10} fontWeight={700} color="gray">
+          {label}
+        </TextComponent>
+        <TextComponent fontSize={12} fontWeight={800} color={colors.textColor}>
+          {value}
+        </TextComponent>
+      </Stack>
+    </Group>
+  );
+};
 
-const Badge = ({ children, mb }: any) => (
-  <div
-    style={{ marginBottom: mb }}
-    className="border-secondaryColor bg-card text-textSecondary flex items-center gap-2 rounded-full border px-3 py-1 text-[9px] font-black uppercase tracking-[0.15em]"
-  >
-    <div className="bg-textSecondary h-1 w-1 rounded-full" />
-    {children}
-  </div>
-);
+const SpecRow = ({ label, value }: { label: string; value: string }) => {
+  const currentTheme = useSelector((state: any) => state.theme.theme);
+  const colors = currentTheme === 'light' ? lightTheme : darkTheme;
+  return (
+    <div className="flex justify-between border-b border-borderColor pb-3 last:border-0">
+      <TextComponent fontSize={11} fontWeight={700} color="gray">
+        {label}
+      </TextComponent>
+      <TextComponent fontSize={12} fontWeight={600} color={colors.textColor}>
+        {value}
+      </TextComponent>
+    </div>
+  );
+};
 
 export default LaboratoryGallery;

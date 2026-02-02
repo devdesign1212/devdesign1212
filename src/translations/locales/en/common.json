@@ -5,28 +5,25 @@
   "CodeAndCreativity": "Code & Creativity.",
   "WelcomeToDevDesignLab": "Welcome to the Dev Design Engineering Lab. Access our core atomic components and explore the foundations of our future-proof interface protocols.",
   "ProductEvolutionStrategy": "Product Evolution Strategy",
-  "DevDesignMemo": "ev Design Memo:",
+  "DevDesignMemo": "Dev Design Memo:",
   "OurRoadmapFocusesOnTransformingStaticUI": "Our roadmap focuses on transforming static UI into intelligent, data-driven experiences.",
   "DataIntelligenceModule": "Data Intelligence Module",
   "AdvancedDataVisualizationDesc": "Advanced visualization and real-time analytics engine.",
   "CognitiveUIEngine": "Cognitive UI Engine",
   "ContextAwareComponents": "Context-aware components powered by adaptive machine learning.",
-  
-  "Componentlab":"Component Lab",
-  "days":"Days",
-  
-  "ReturnToCommand":"Return to Command",
-  "ActiveNodes":"Active Nodes",
-  "NextEvolution":"Next Evolution",
-  "AdvancedDataVisualization":"Advanced Data Visualization (T-30d)",
-  "BaseLayerComponent":"Base Layer Component",
-  "TechStack":"Tech Stack",
+  "days": "Days",
+  "ReturnToCommand": "Return to Command",
+  "ActiveNodes": "Active Nodes",
+  "NextEvolution": "Next Evolution",
+  "AdvancedDataVisualization": "Advanced Data Visualization (T-30d)",
+  "BaseLayerComponent": "Base Layer Component",
+  "TechStack": "Tech Stack",
   "buttons": {
     "get_started": "Get Started",
     "send_message": "Send Message",
     "loading": "Please wait..."
-    },
-    "menu": {
+  },
+  "menu": {
     "dashboard": "Terminal",
     "transactions": "Ledger",
     "security": "Vault",
@@ -47,13 +44,13 @@
   },
   "select": "Select an option",
   "fileReadyForUpload": "File ready for upload",
-  "Dropdown":{
+  "Dropdown": {
     "systemAccessRole": "System Access Role",
     "preferredLanguage": "Preferred Language",
     "regionSimulatedError": "Region (Simulated Error)",
     "thisRegionIsCurrentlyUnderMaintenance": "This region is currently under maintenance"
   },
-  "FileUpload":{
+  "FileUpload": {
     "requiredDocument": "Please attach the required document",
     "uploadSuccess": "File uploaded successfully!",
     "identityVerification": "Identity Verification",
@@ -64,29 +61,59 @@
     "uploadButton": "Upload Document",
     "uploadInfo": "Encrypted and secure upload. Max file size: 10MB."
   },
-  "TextInput":{
-    "welcomeBack":"Welcome Back",
-    "emailAddress":"Email Address",
-    "emailPlaceholder":"name@company.com",
-    "password":"Password",
-    "enterYourPassword":"Enter your password",
-    "signIn":"Sign In",
-    "loginAttempt":"Login attempt"
+  "TextInput": {
+    "welcomeBack": "Welcome Back",
+    "emailAddress": "Email Address",
+    "emailPlaceholder": "name@company.com",
+    "password": "Password",
+    "enterYourPassword": "Enter your password",
+    "signIn": "Sign In",
+    "loginAttempt": "Login attempt"
   },
-  "Modal":{
-    "actionConfirmed":"Action Confirmed!", 
-    "title":"Modal System Demo",
-    "openConfirmation":"Open Confirmation",
-    "finalizeAction":"Finalize Action",
-    "confirmationMessage":"Are you sure you want to proceed with this transaction? This action cannot be undone.",
-    "confirm":"Confirm"
+  "Modal": {
+    "actionConfirmed": "Action Confirmed!",
+    "title": "Modal System Demo",
+    "openConfirmation": "Open Confirmation",
+    "finalizeAction": "Finalize Action",
+    "confirmationMessage": "Are you sure you want to proceed with this transaction? This action cannot be undone.",
+    "confirm": "Confirm"
   },
-  "Textarea":{
-    "min10Chars":"Please provide a bit more detail (min 10 chars)",
-    "feedbackSubmitted":"Feedback submitted!",
-    "howCanWeHelp":"How can we help?",
-    "issueDescription":"Issue Description",
-    "tellUsWhatOnYourMind":"Tell us what's on your mind...",
-    "submit":"Send Feedback"
+  "Textarea": {
+    "min10Chars": "Please provide a bit more detail (min 10 chars)",
+    "feedbackSubmitted": "Feedback submitted!",
+    "howCanWeHelp": "How can we help?",
+    "issueDescription": "Issue Description",
+    "tellUsWhatOnYourMind": "Tell us what's on your mind...",
+    "submit": "Send Feedback"
+  },
+  "Component": "Component ",
+  "Lab": "Lab",
+  "Documentation": "Documentation",
+  "EngineeringSpecs": "Engineering Specs",
+  "LiveMetricCard": {
+    "liveStream": "Live Stream",
+    "RealTimeTelemetry": "Real-time telemetry streams for Fintech & Web3 monitoring.",
+    "NetworkThroughput": "Network Throughput",
+    "ActiveValidators": "Active Validators"
+  },
+  "Layout": {
+    "InteractionTokens": "Interaktions-Token",
+    "ButtonsTriggers": "Schaltflächen & Trigger",
+    "DataEntry": "Datenerfassung",
+    "InputsValidation": "Eingaben & Validierung",
+    "SelectionLogic": "Selektionslogik",
+    "DropdownsLists": "Dropdowns & Listen",
+    "TemporalUnits": "Zeitliche Einheiten",
+    "DateTimePickers": "Datum- & Zeit-Picker",
+    "AssetStream": "Asset-Stream",
+    "FileUploaders": "Datei-Uploader",
+    "OverlayPrototypes": "Overlay-Prototypen",
+    "ModalsDrawers": "Modale & Schubladen",
+    "ContentBlocks": "Inhaltsblöcke",
+    "RichTextAreas": "Rich-Text-Bereiche",
+    "NavigationNodes": "Navigationsknoten",
+    "ContextMenus": "Kontextmenüs",
+    "DataIntelligence": "Datenintelligenz",
+    "RealTimeAnalytics": "Echtzeit-Analyse-Engine"
   }
 }

@@ -56,7 +56,7 @@ const MainCommandCenter = () => {
 
   return (
     <Box
-      className={`text-textColor bg-background  relative min-h-screen w-screen overflow-x-hidden transition-all ease-in-out `}
+      className={`text-textColor bg-background  relative min-h-screen w-screen overflow-x-hidden overflow-y-scroll transition-all ease-in-out `}
     >
       <header className="border-borderColor fixed top-0 z-[100] flex w-full items-center justify-between border-b px-6 py-4 backdrop-blur-md">
         <Group gap="xs" className="flex-row">
@@ -222,7 +222,7 @@ const MainCommandCenter = () => {
               key="laboratory"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className={`bg-background fixed inset-0 z-[150]`}
+              className={`bg-background absolute inset-0 z-[150] overflow-y-auto`}
             >
               <LaboratoryGallery setShowLab={setShowLab} />
             </motion.div>

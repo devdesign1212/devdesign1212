@@ -11,7 +11,6 @@
   "AdvancedDataVisualizationDesc": "Erweiterte Visualisierung und Echtzeit-Analyse-Engine.",
   "CognitiveUIEngine": "Kognitive UI-Engine",
   "ContextAwareComponents": "Kontextsensitive Komponenten, angetrieben durch adaptives maschinelles Lernen.",
-  "Componentlab": "Komponenten-Labor",
   "days": "Tage",
   "ReturnToCommand": "Zurück zum Befehl",
   "ActiveNodes": "Aktive Knoten",
@@ -86,5 +85,35 @@
     "issueDescription": "Problembeschreibung",
     "tellUsWhatOnYourMind": "Sagen Sie uns, was Sie beschäftigt...",
     "submit": "Feedback senden"
+  },
+  "Component": "Komponente",
+  "Lab": "Labor",
+  "Documentation": "Dokumentation",
+  "EngineeringSpecs": "Technische Spezifikationen",
+  "LiveMetricCard": {
+    "liveStream": "Live-Stream",
+    "RealTimeTelemetry": "Echtzeit-Telemetrieströme für Fintech- und Web3-Überwachung.",
+    "NetworkThroughput": "Netzwerkdurchsatz",
+    "ActiveValidators": "Aktive Validatoren"
+  },
+  "Layout": {
+    "InteractionTokens": "Interaktions-Token",
+    "ButtonsTriggers": "Schaltflächen & Trigger",
+    "DataEntry": "Datenerfassung",
+    "InputsValidation": "Eingaben & Validierung",
+    "SelectionLogic": "Selektionslogik",
+    "DropdownsLists": "Dropdowns & Listen",
+    "TemporalUnits": "Zeitliche Einheiten",
+    "DateTimePickers": "Datum- & Zeit-Picker",
+    "AssetStream": "Asset-Stream",
+    "FileUploaders": "Datei-Uploader",
+    "OverlayPrototypes": "Overlay-Prototypen",
+    "ModalsDrawers": "Modale & Schubladen",
+    "ContentBlocks": "Inhaltsblöcke",
+    "RichTextAreas": "Rich-Text-Bereiche",
+    "NavigationNodes": "Navigationsknoten",
+    "ContextMenus": "Kontextmenüs",
+    "DataIntelligence": "Datenintelligenz",
+    "RealTimeAnalytics": "Echtzeit-Analyse-Engine"
   }
 }
