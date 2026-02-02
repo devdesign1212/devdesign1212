@@ -11,7 +11,6 @@
   "AdvancedDataVisualizationDesc": "Moteur de visualisation avancée et d'analyse en temps réel.",
   "CognitiveUIEngine": "Moteur d'Interface Cognitive",
   "ContextAwareComponents": "Composants sensibles au contexte alimentés par l'apprentissage automatique adaptatif.",
-  "Componentlab": "Labo de Composants",
   "days": "Jours",
   "ReturnToCommand": "Retour au Commandement",
   "ActiveNodes": "Nœuds Actifs",
@@ -86,5 +85,35 @@
     "issueDescription": "Description du Problème",
     "tellUsWhatOnYourMind": "Dites-nous ce que vous avez en tête...",
     "submit": "Envoyer le Commentaire"
+  },
+  "Component": "Composant",
+  "Lab": "Labo",
+  "Documentation": "Documentation",
+  "EngineeringSpecs": "Spécifications Techniques",
+  "LiveMetricCard": {
+    "liveStream": "Flux en Direct",
+    "RealTimeTelemetry": "Flux de télémétrie en temps réel pour la surveillance Fintech & Web3.",
+    "NetworkThroughput": "Débit Réseau",
+    "ActiveValidators": "Validateurs Actifs"
+  },
+  "Layout": {
+    "InteractionTokens": "Jetons d'interaction",
+    "ButtonsTriggers": "Boutons et Déclencheurs",
+    "DataEntry": "Saisie de données",
+    "InputsValidation": "Entrées et Validation",
+    "SelectionLogic": "Logique de sélection",
+    "DropdownsLists": "Listes déroulantes",
+    "TemporalUnits": "Unités temporelles",
+    "DateTimePickers": "Sélecteurs de date et d'heure",
+    "AssetStream": "Flux d'actifs",
+    "FileUploaders": "Téléchargeurs de fichiers",
+    "OverlayPrototypes": "Prototypes de superposition",
+    "ModalsDrawers": "Modaux et Tiroirs",
+    "ContentBlocks": "Blocs de contenu",
+    "RichTextAreas": "Zones de texte enrichi",
+    "NavigationNodes": "Nœuds de navigation",
+    "ContextMenus": "Menus contextuels",
+    "DataIntelligence": "Intelligence des données",
+    "RealTimeAnalytics": "Moteur d'analyse en temps réel"
   }
 }

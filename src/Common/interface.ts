@@ -241,3 +241,11 @@ export type DynamicModalProps = {
   onClick?: () => void;
   loading?: boolean;
 };
+
+export type MetricProps = {
+  title: string;
+  value: string;
+  diff: number;
+  data: { value: number }[];
+  subTitle: string;
+};

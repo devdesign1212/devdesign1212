@@ -21,6 +21,7 @@ export interface ThemeColors {
   borderColor: string;
   card: string;
   maroon: string;
+  grayColor: string;
 }
 
 // Light theme colors
@@ -41,6 +42,7 @@ export const lightTheme: ThemeColors = {
   borderColor: '#D1DBDB',
   card: 'rgba(0, 133, 133, 0.04)',
   maroon: '#800000',
+  grayColor: '#808080',
 };
 
 export const darkTheme: ThemeColors = {
@@ -60,6 +62,7 @@ export const darkTheme: ThemeColors = {
   borderColor: '#1A2E2E',
   card: 'rgba(0, 163, 163, 0.03)',
   maroon: '#800000',
+  grayColor: '#808080',
 };
 
 export const colors = {
