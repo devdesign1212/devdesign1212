@@ -115,5 +115,17 @@
     "ContextMenus": "Menus contextuels",
     "DataIntelligence": "Intelligence des données",
     "RealTimeAnalytics": "Moteur d'analyse en temps réel"
+  },
+  "table": {
+    "viewAll": "Voir toutes les transactions",
+    "noDataAvailable": "Aucun flux de données disponible",
+    "displaying": "Affichage de",
+    "of": "sur",
+    "txHash": "HASH DE TRANSACTION",
+    "timestamp": "HORODATAGE",
+    "asset": "ACTIF RÉSEAU",
+    "status": "ÉTAT DU NŒUD",
+    "amount": "VALEUR / MONTANT",
+    "security": "PROTOCOLE DE SÉCURITÉ"
   }
 }

@@ -56,11 +56,11 @@ const MainCommandCenter = () => {
 
   return (
     <Box
-      className={`text-textColor bg-background  relative min-h-screen w-screen overflow-x-hidden overflow-y-scroll transition-all ease-in-out `}
+      className={`relative min-h-screen  w-screen overflow-x-hidden overflow-y-scroll bg-background text-textColor transition-all ease-in-out `}
     >
-      <header className="border-borderColor fixed top-0 z-[100] flex w-full items-center justify-between border-b px-6 py-4 backdrop-blur-md">
+      <header className="fixed top-0 z-[100] flex w-full items-center justify-between border-b border-borderColor px-6 py-4 backdrop-blur-md">
         <Group gap="xs" className="flex-row">
-          <div className={`bg-primaryColor rounded-lg p-2`}>
+          <div className={`rounded-lg bg-primaryColor p-2`}>
             <Zap size={20} color={colors.whiteColor} fill={colors.whiteColor} />
           </div>
           <div>
@@ -165,7 +165,7 @@ const MainCommandCenter = () => {
                     </TextComponent>
 
                     <ButtonComponent
-                      title={t('Componentlab')}
+                      title={t('Component') + ' ' + t('Lab')}
                       onClick={() => setShowLab(true)}
                       rightIcon={<ChevronRight size={18} />}
                       size={60}
@@ -203,7 +203,7 @@ const MainCommandCenter = () => {
                       colors={colors}
                     />
 
-                    <div className="border-secondaryColor bg-secondaryColor mt-4 rounded-2xl border border-opacity-10 bg-opacity-5 p-6">
+                    <div className="mt-4 rounded-2xl border border-secondaryColor border-opacity-10 bg-secondaryColor bg-opacity-5 p-6">
                       <TextComponent
                         fontSize={14}
                         fontWeight={500}
@@ -222,7 +222,7 @@ const MainCommandCenter = () => {
               key="laboratory"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className={`bg-background absolute inset-0 z-[150] overflow-y-auto`}
+              className={`absolute inset-0 overflow-y-auto bg-background pt-9`}
             >
               <LaboratoryGallery setShowLab={setShowLab} />
             </motion.div>
@@ -235,9 +235,9 @@ const MainCommandCenter = () => {
 
 const IncomingModule = ({ icon, title, desc, eta, colors }: any) => (
   <div
-    className={`bg-card border-borderColor group flex items-start gap-5 rounded-2xl border border-dashed p-6 transition-all hover:border-solid`}
+    className={`group flex items-start gap-5 rounded-2xl border border-dashed border-borderColor bg-card p-6 transition-all hover:border-solid`}
   >
-    <div className="text-primaryColor rounded-xl bg-[color-mix(in_srgb,var(--primaryColor)_20%,transparent)] p-3">
+    <div className="rounded-xl bg-[color-mix(in_srgb,var(--primaryColor)_20%,transparent)] p-3 text-primaryColor">
       {icon}
     </div>
     <Stack gap={2}>

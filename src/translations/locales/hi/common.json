@@ -115,5 +115,17 @@
     "ContextMenus": "संदर्भ मेनू",
     "DataIntelligence": "डेटा इंटेलिजेंस",
     "RealTimeAnalytics": "रियल-टाइम एनालिटिक्स इंजन"
+  },
+  "table": {
+    "viewAll": "सभी लेनदेन देखें",
+    "noDataAvailable": "कोई डेटा स्ट्रीम उपलब्ध नहीं है",
+    "displaying": "प्रदर्शित",
+    "of": "का",
+    "txHash": "ट्रांजैक्शन हैश",
+    "timestamp": "समय-सीमा",
+    "asset": "नेटवर्क एसेट",
+    "status": "नोड स्थिति",
+    "amount": "मूल्य / राशि",
+    "security": "सुरक्षा प्रोटोकॉल"
   }
 }

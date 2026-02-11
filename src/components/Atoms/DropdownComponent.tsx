@@ -121,7 +121,7 @@ const DropdownComponent: React.FC<CustomDropdownProps> = ({
                 ? borderColor
                 : 'border-borderColor'
           }
-            focus-within:ring-2  -translate-y-[1px] placeholder:text-textColor placeholder:opacity-80 
+            focus-within:ring-2  -translate-y-[1px] placeholder:text-placeholderColor
           `,
           label: `${error ? 'text-maroon' : labelColor} font-extrabold text-xs  mb-[6px] `,
           dropdown: `bg-whiteColor rounded-2xl border border-solid p-2 shadow-xl`,

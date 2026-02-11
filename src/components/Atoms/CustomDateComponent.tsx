@@ -325,7 +325,13 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
           <div onClick={() => !disabled && setOpened(o => !o)}>
             <motion.div
               whileHover={{ borderColor: borderColor }}
-              className={`relative flex h-12 items-center rounded-xl border-2 px-3 transition-all `}
+              className={`relative flex h-12  items-center rounded-xl border-2 px-3 transition-all ${
+                error
+                  ? 'border-maroon'
+                  : isFocused
+                    ? 'shadow-primaryColor/10 -translate-y-[1px] border-primaryColor shadow-lg'
+                    : 'hover:border-primaryColor/50 border-borderColor'
+              } `}
               style={{
                 backgroundColor:
                   variant === 'default' ? 'transparent' : backgroundColor,
@@ -333,7 +339,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
                   ? 'border-maroon'
                   : isFocused
                     ? borderColor
-                    : `color-mix(in srgb, ${borderColor} 20%, transparent)`,
+                    : borderColor,
               }}
               onClick={() => !disabled && setOpened(o => !o)}
             >
@@ -363,7 +369,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
                 }
                 disabled={disabled}
                 style={{ border: borderColor }}
-                className={`${variant === 'default' ? 'text-textColor' : 'text-whiteColor'} flex-grow cursor-text bg-transparent outline-none ${error ? 'placeholder:text-maroon' : 'placeholder:text-inActive '} placeholder:text-[16px] placeholder:font-normal  `}
+                className={`w-full ${variant === 'default' ? 'text-textColor' : 'text-whiteColor'} flex-grow cursor-text bg-transparent outline-none ${error ? 'placeholder:text-maroon' : 'placeholder:text-placeholderColor '} `}
                 onClick={e => {
                   e.stopPropagation();
                   if (
@@ -458,7 +464,7 @@ const CustomDateComponent: React.FC<CustomDatePickerProps> = ({
       </Popover>
 
       {error && (
-        <div className="xt-[12px] text-maroon text-right font-[400]">
+        <div className="xt-[12px] text-right font-[400] text-maroon">
           {error}
         </div>
       )}
