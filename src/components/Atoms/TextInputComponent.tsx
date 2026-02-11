@@ -75,36 +75,33 @@ const TextInputComponent: React.FC<CustomTextInputProps> = ({
         {...props}
         classNames={{
           root: 'relative w-full',
-          label: `text-sm font-black tracking-widest mb-2 transition-colors
+          label: `mb-2 text-sm font-black tracking-widest transition-colors
                   ${error ? 'text-maroon' : isFocused ? 'text-primaryColor' : labelColor}`,
-          wrapper: ` w-full
-            h-[52px] rounded-xl border-2 transition-all duration-300 !ease-in-out pl-12 pr-12
+          wrapper: ` h-12 w-full rounded-xl border-2 transition-all duration-300 !ease-in-out px-9
             ${
               error
-                ? 'border-maroon'
+                ? 'border-maroon placeholder:text-maroon'
                 : isFocused
-                  ? 'border-primaryColor -translate-y-[1px] shadow-lg shadow-primaryColor/10'
-                  : 'border-borderColor hover:border-primaryColor/50'
+                  ? 'shadow-primaryColor/10 -translate-y-[1px] border-primaryColor shadow-lg placeholder:text-placeholderColor'
+                  : 'hover:border-primaryColor/50 border-borderColor placeholder:text-placeholderColor'
             }
-             
           `,
-          input: `
-          
-            h-full border-none bg-transparent text-textColor font-medium text-sm bg-red-500 `,
+          input: ` h-full focus:ring-0 border-none bg-transparent text-sm font-medium placeholder:text-placeholderColor `,
           section: `transition-colors ${isFocused ? 'text-primaryColor' : 'text-textSecondary'} `,
           error:
-            'text-maroon font-bold text-[10px] uppercase text-right mt-1.5',
+            'mt-1.5 text-right text-[10px] font-bold uppercase text-maroon',
         }}
         styles={{
           wrapper: {
             borderRadius: radius ? radius : '12px',
             backgroundColor:
               variant === 'default' ? 'transparent' : backgroundColor,
-            color: variant === 'default' ? colors.textColor : colors.whiteColor,
-
             '&:focus, &:focus-within': {
               borderColor: borderColor,
             },
+          },
+          input: {
+            color: variant === 'default' ? colors.textColor : colors.whiteColor,
           },
           section: {
             color: color,

@@ -90,7 +90,7 @@ const FileInputComponent: React.FC<customFileinputProps> = ({
                   ? borderColor
                   : 'border-borderColor'
             }
-                focus-within:ring-2  -translate-y-[1px] placeholder:text-textColor placeholder:opacity-80
+                focus-within:ring-2  -translate-y-[1px] placeholder:text-placeholderColor 
           `,
           error: `text-maroon font-bold text-xs text-right mt-2 `,
         }}

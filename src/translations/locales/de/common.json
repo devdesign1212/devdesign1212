@@ -115,5 +115,17 @@
     "ContextMenus": "Kontextmenüs",
     "DataIntelligence": "Datenintelligenz",
     "RealTimeAnalytics": "Echtzeit-Analyse-Engine"
+  },
+  "table": {
+    "viewAll": "Alle Transaktionen anzeigen",
+    "noDataAvailable": "Kein Datenstrom verfügbar",
+    "displaying": "Anzeige von",
+    "of": "von",
+    "txHash": "TRANSAKTIONS-HASH",
+    "timestamp": "ZEITSTEMPEL",
+    "asset": "NETWORK-ASSET",
+    "status": "KNOTEN-STATUS",
+    "amount": "WERT / BETRAG",
+    "security": "SICHERHEITSPROTOKOLL"
   }
 }

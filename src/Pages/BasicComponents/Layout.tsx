@@ -29,6 +29,7 @@ import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '@/themes/colors';
 import LiveMetricCardDemo from '../DataIntelligenceDemo/LiveMetricCardDemo';
 import { useTranslation } from 'react-i18next';
+import IntelligenceTableDemo from '../DataIntelligenceDemo/IntelligenceTableDemo';
 
 const LaboratoryGallery = ({
   setShowLab,
@@ -96,7 +97,7 @@ const LaboratoryGallery = ({
         sub: t('Layout.RichTextAreas'),
         icon: <AlignLeft />,
         view: <TextareaDemo />,
-        span: 1,
+        span: 2,
       },
       {
         id: 'Menu',
@@ -112,7 +113,15 @@ const LaboratoryGallery = ({
         sub: t('Layout.RealTimeAnalytics'),
         icon: <Activity />,
         view: <LiveMetricCardDemo />,
-        span: 2,
+        span: 1,
+      },
+      {
+        id: 'IntelTable',
+        label: t('Layout.DataIntelligence'),
+        sub: t('Layout.RealTimeAnalytics'),
+        icon: <Activity />,
+        view: <IntelligenceTableDemo />,
+        span: 1,
       },
     ],
     [t],

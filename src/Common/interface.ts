@@ -29,7 +29,7 @@ export type CustomDropdownProps = {
   color: string;
   backgroundColor: string;
   borderColor: string;
-  labelColor: string;
+  labelColor?: string;
 };
 
 export type CustomTextareaProps = Omit<
