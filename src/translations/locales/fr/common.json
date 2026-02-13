@@ -137,5 +137,15 @@
     "Thehashhasbeensuccessfullyrecordedonchain": "Le hash a été enregistré avec succès sur la blockchain",
     "SecurityBreach": "Brèche de Sécurité",
     "UnauthorizedaccessdetectedinNode04": "Accès non autorisé détecté dans le Nœud 04"
+  },
+  "Switch": {
+    "NavigationNodes": "Nœuds de Navigation",
+    "LogicSwitchers": "Commutateurs Logiques",
+    "SelectionChanged": "Sélection Modifiée",
+    "NodeActivated": "Nœud Activé",
+    "Analytics": "Analytique",
+    "Security": "Sécurité",
+    "RawCode": "Code Brut",
+    "CurrentView": "Vue Actuelle"
   }
 }

@@ -137,5 +137,15 @@
     "Thehashhasbeensuccessfullyrecordedonchain": "The hash has been successfully recorded on-chain",
     "SecurityBreach": "Security Breach",
     "UnauthorizedaccessdetectedinNode04": "Unauthorized access detected in Node 04"
+  },
+  "Switch": {
+    "NavigationNodes": "Navigation Nodes",
+    "LogicSwitchers": "Logic Switchers",
+    "SelectionChanged": "Selection Changed",
+    "NodeActivated": "Node activated",
+    "Analytics": "Analytics",
+    "Security": "Security",
+    "RawCode": "Raw Code",
+    "CurrentView": "Current View"
   }
 }

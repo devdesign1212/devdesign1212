@@ -137,5 +137,15 @@
     "Thehashhasbeensuccessfullyrecordedonchain": "हॅश यशस्वीरित्या ऑन-चेन रेकॉर्ड झाला आहे",
     "SecurityBreach": "सुरक्षा उल्लंघन (ब्रिच)",
     "UnauthorizedaccessdetectedinNode04": "नोड ०४ मध्ये अनधिकृत प्रवेश आढळला"
+  },
+  "Switch": {
+    "NavigationNodes": "नेव्हिगेशन नोड्स",
+    "LogicSwitchers": "लॉजिक स्विचर्स्",
+    "SelectionChanged": "निवड बदलली आहे",
+    "NodeActivated": "नोड सक्रिय झाला",
+    "Analytics": "ॲनालिटिक्स",
+    "Security": "सुरक्षा",
+    "RawCode": "रॉ कोड",
+    "CurrentView": "सध्याचा व्ह्यू"
   }
 }
