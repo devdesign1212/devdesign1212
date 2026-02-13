@@ -15,6 +15,7 @@ import {
   Layers,
   MonitorCheck,
   BellRing,
+  Split,
 } from 'lucide-react';
 
 import TextComponent from '@/components/Atoms/TextComponent';
@@ -32,6 +33,7 @@ import LiveMetricCardDemo from '../DataIntelligenceDemo/LiveMetricCardDemo';
 import { useTranslation } from 'react-i18next';
 import IntelligenceTableDemo from '../DataIntelligenceDemo/IntelligenceTableDemo';
 import FeedbackDemo from '../DataIntelligenceDemo/FeedbackDemo';
+import SwitchDemo from '../DataIntelligenceDemo/SwitchDemo';
 
 const LaboratoryGallery = ({
   setShowLab,
@@ -131,6 +133,14 @@ const LaboratoryGallery = ({
         sub: t('feedback.ToastsSystemAlerts'),
         icon: <BellRing />,
         view: <FeedbackDemo />,
+        span: 1,
+      },
+      {
+        id: 'Switch',
+        label: t('Switch.NavigationNodes'),
+        sub: t('Switch.LogicSwitchers'),
+        icon: <Split />,
+        view: <SwitchDemo />,
         span: 1,
       },
     ],

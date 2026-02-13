@@ -249,3 +249,9 @@ export type MetricProps = {
   data: { value: number }[];
   subTitle: string;
 };
+
+export type SwitchProps = {
+  data: { label: string; value: string }[];
+  value: string;
+  onChange: (value: string) => void;
+};

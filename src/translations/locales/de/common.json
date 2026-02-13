@@ -137,5 +137,15 @@
     "Thehashhasbeensuccessfullyrecordedonchain": "Der Hash wurde erfolgreich on-chain aufgezeichnet",
     "SecurityBreach": "Sicherheitslücke",
     "UnauthorizedaccessdetectedinNode04": "Unbefugter Zugriff in Knoten 04 erkannt"
+  },
+  "Switch": {
+    "NavigationNodes": "Navigationsknoten",
+    "LogicSwitchers": "Logik-Umschalter",
+    "SelectionChanged": "Auswahl Geändert",
+    "NodeActivated": "Knoten Aktiviert",
+    "Analytics": "Analytik",
+    "Security": "Sicherheit",
+    "RawCode": "Quellcode",
+    "CurrentView": "Aktuelle Ansicht"
   }
 }
