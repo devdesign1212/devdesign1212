@@ -127,5 +127,15 @@
     "status": "KNOTEN-STATUS",
     "amount": "WERT / BETRAG",
     "security": "SICHERHEITSPROTOKOLL"
+  },
+  "feedback": {
+    "FeedbackNodes": "Feedback-Knoten",
+    "ToastsSystemAlerts": "Toasts & Systembenachrichtigungen",
+    "TriggerSuccess": "Erfolg Auslösen",
+    "SystemAlert": "Systemalarm",
+    "TransactionVerified": "Transaktion Verifiziert",
+    "Thehashhasbeensuccessfullyrecordedonchain": "Der Hash wurde erfolgreich on-chain aufgezeichnet",
+    "SecurityBreach": "Sicherheitslücke",
+    "UnauthorizedaccessdetectedinNode04": "Unbefugter Zugriff in Knoten 04 erkannt"
   }
 }

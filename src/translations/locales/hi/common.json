@@ -127,5 +127,15 @@
     "status": "नोड स्थिति",
     "amount": "मूल्य / राशि",
     "security": "सुरक्षा प्रोटोकॉल"
+  },
+  "feedback": {
+    "FeedbackNodes": "फीडबैक नोड्स",
+    "ToastsSystemAlerts": "टोस्ट और सिस्टम अलर्ट",
+    "TriggerSuccess": "सफलता ट्रिगर करें",
+    "SystemAlert": "सिस्टम अलर्ट",
+    "TransactionVerified": "लेन-देन सत्यापित",
+    "Thehashhasbeensuccessfullyrecordedonchain": "हैश को सफलतापूर्वक ऑन-चेन रिकॉर्ड किया गया है",
+    "SecurityBreach": "सुरक्षा उल्लंघन",
+    "UnauthorizedaccessdetectedinNode04": "नोड 04 में अनधिकृत पहुंच का पता चला है"
   }
 }

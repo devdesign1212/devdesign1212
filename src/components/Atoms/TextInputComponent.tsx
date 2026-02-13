@@ -77,7 +77,8 @@ const TextInputComponent: React.FC<CustomTextInputProps> = ({
           root: 'relative w-full',
           label: `mb-2 text-sm font-black tracking-widest transition-colors
                   ${error ? 'text-maroon' : isFocused ? 'text-primaryColor' : labelColor}`,
-          wrapper: ` h-12 w-full rounded-xl border-2 transition-all duration-300 !ease-in-out px-9
+          wrapper: ` h-12 w-full rounded-xl border-2 transition-all duration-300 !ease-in-out 
+          ${leftSection || rightSection ? 'px-9' : 'px-2'}
             ${
               error
                 ? 'border-maroon placeholder:text-maroon'

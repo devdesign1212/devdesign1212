@@ -200,10 +200,11 @@ const TableComponent: React.FC<TableProps> = ({
                           handleSearch(column.key, e.target.value)
                         }
                         placeholder={`${t('Filter')}...`}
-                        color={colors.primaryColor}
-                        backgroundColor={colors.background}
-                        borderColor={colors.borderColor}
+                        variant="default"
                         labelColor={colors.primaryColor}
+                        borderColor={colors.primaryColor}
+                        backgroundColor={colors.primaryColor}
+                        color={colors.primaryColor}
                       />
                     )}
                   </Table.Th>
