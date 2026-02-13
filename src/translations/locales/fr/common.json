@@ -127,5 +127,15 @@
     "status": "ÉTAT DU NŒUD",
     "amount": "VALEUR / MONTANT",
     "security": "PROTOCOLE DE SÉCURITÉ"
+  },
+  "feedback": {
+    "FeedbackNodes": "Nœuds de Rétroaction",
+    "ToastsSystemAlerts": "Toasts et Alertes Système",
+    "TriggerSuccess": "Déclencher le Succès",
+    "SystemAlert": "Alerte Système",
+    "TransactionVerified": "Transaction Vérifiée",
+    "Thehashhasbeensuccessfullyrecordedonchain": "Le hash a été enregistré avec succès sur la blockchain",
+    "SecurityBreach": "Brèche de Sécurité",
+    "UnauthorizedaccessdetectedinNode04": "Accès non autorisé détecté dans le Nœud 04"
   }
 }

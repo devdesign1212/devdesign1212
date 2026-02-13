@@ -23,6 +23,8 @@ export interface ThemeColors {
   maroon: string;
   grayColor: string;
   placeholderColor: string;
+  warningColor: string;
+  infoColor: string;
 }
 
 // Light theme colors
@@ -45,6 +47,8 @@ export const lightTheme: ThemeColors = {
   maroon: '#800000',
   grayColor: '#808080',
   placeholderColor: '#e3e4e6',
+  warningColor: '#f1c40f',
+  infoColor: '#3498db',
 };
 
 export const darkTheme: ThemeColors = {
@@ -66,6 +70,8 @@ export const darkTheme: ThemeColors = {
   maroon: '#800000',
   grayColor: '#808080',
   placeholderColor: '#4c4c4d',
+  warningColor: '#f1c40f',
+  infoColor: '#3498db',
 };
 
 export const colors = {

@@ -93,6 +93,9 @@ const MainCommandCenter = () => {
               <Menu.Item onClick={() => handleLanguageSelect('hi')}>
                 Hindi
               </Menu.Item>
+              <Menu.Item onClick={() => handleLanguageSelect('mr')}>
+                Marathi
+              </Menu.Item>
               <Menu.Item onClick={() => handleLanguageSelect('fr')}>
                 Français
               </Menu.Item>

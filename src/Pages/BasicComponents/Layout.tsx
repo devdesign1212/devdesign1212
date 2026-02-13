@@ -14,6 +14,7 @@ import {
   Activity,
   Layers,
   MonitorCheck,
+  BellRing,
 } from 'lucide-react';
 
 import TextComponent from '@/components/Atoms/TextComponent';
@@ -30,6 +31,7 @@ import { darkTheme, lightTheme } from '@/themes/colors';
 import LiveMetricCardDemo from '../DataIntelligenceDemo/LiveMetricCardDemo';
 import { useTranslation } from 'react-i18next';
 import IntelligenceTableDemo from '../DataIntelligenceDemo/IntelligenceTableDemo';
+import FeedbackDemo from '../DataIntelligenceDemo/FeedbackDemo';
 
 const LaboratoryGallery = ({
   setShowLab,
@@ -121,6 +123,14 @@ const LaboratoryGallery = ({
         sub: t('Layout.RealTimeAnalytics'),
         icon: <Activity />,
         view: <IntelligenceTableDemo />,
+        span: 1,
+      },
+      {
+        id: 'Feedback',
+        label: t('feedback.FeedbackNodes'),
+        sub: t('feedback.ToastsSystemAlerts'),
+        icon: <BellRing />,
+        view: <FeedbackDemo />,
         span: 1,
       },
     ],

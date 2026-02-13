@@ -127,5 +127,15 @@
     "status": "NODE STATUS",
     "amount": "VALUE / AMOUNT",
     "security": "SECURITY"
+  },
+  "feedback": {
+    "FeedbackNodes": "Feedback Nodes",
+    "ToastsSystemAlerts": "Toasts & System Alerts",
+    "TriggerSuccess": "Trigger Success",
+    "SystemAlert": "System Alert",
+    "TransactionVerified": "Transaction Verified",
+    "Thehashhasbeensuccessfullyrecordedonchain": "The hash has been successfully recorded on-chain",
+    "SecurityBreach": "Security Breach",
+    "UnauthorizedaccessdetectedinNode04": "Unauthorized access detected in Node 04"
   }
 }

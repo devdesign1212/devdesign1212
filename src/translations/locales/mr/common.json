@@ -1,0 +1,141 @@
+{
+  "Dashboard": "डॅशबोर्ड",
+  "DesignSystemVersion": "डिझाइन सिस्टम v1.0",
+  "BridgingTheGapBetween": "दुवा जोडत आहे",
+  "CodeAndCreativity": "कोड आणि कल्पकता यांचा.",
+  "WelcomeToDevDesignLab": "देव डिझाइन इंजिनिअरिंग लॅबमध्ये आपले स्वागत आहे. आमचे मुख्य अ‍ॅटॉमिक घटक वापरा आणि भविष्यातील इंटरफेस प्रोटोकॉलचा पाया एक्सप्लोर करा.",
+  "ProductEvolutionStrategy": "उत्पादन उत्क्रांती धोरण",
+  "DevDesignMemo": "देव डिझाइन मेमो:",
+  "OurRoadmapFocusesOnTransformingStaticUI": "आमचा रोडमॅप स्टॅटिक UI ला इंटेलिजेंट आणि डेटा-ड्रिव्हन अनुभवांमध्ये बदलण्यावर केंद्रित आहे.",
+  "DataIntelligenceModule": "डेटा इंटेलिजन्स मॉड्यूल",
+  "AdvancedDataVisualizationDesc": "प्रगत व्हिज्युअलायझेशन आणि रिअल-टाइम ॲनालिटिक्स इंजिन.",
+  "CognitiveUIEngine": "कॉग्निटिव्ह UI इंजिन",
+  "ContextAwareComponents": "अडॅप्टिव्ह मशीन लर्निंगवर आधारित कॉन्टेक्स्ट-अवेअर घटक.",
+  "days": "दिवस",
+  "ReturnToCommand": "कमांडवर परत जा",
+  "ActiveNodes": "सक्रिय नोड्स",
+  "NextEvolution": "पुढील उत्क्रांती",
+  "AdvancedDataVisualization": "प्रगत डेटा व्हिज्युअलायझेशन (T-30d)",
+  "BaseLayerComponent": "बेस लेयर घटक",
+  "TechStack": "टेक स्टॅक",
+  "buttons": {
+    "get_started": "सुरू करा",
+    "send_message": "संदेश पाठवा",
+    "loading": "कृपया प्रतीक्षा करा..."
+  },
+  "menu": {
+    "dashboard": "टर्मिनल",
+    "transactions": "लेजर",
+    "security": "व्हॉल्ट",
+    "ai_analytics": "न्यूरल लॅब",
+    "biometrics": "ओळख",
+    "settings": "कॉन्फिगरेशन",
+    "devDesign": "देव डिझाइन",
+    "selectNodeFromCommandCenter": "कमांड सेंटरमधून नोड निवडा..."
+  },
+  "date": {
+    "placeholder": "तारीख निवडा",
+    "shortcuts": "क्विक सिलेक्ट",
+    "today": "आज",
+    "yesterday": "काल",
+    "last7": "मागील ७ दिवस",
+    "last30": "मागील ३० दिवस",
+    "thisMonth": "हा महिना"
+  },
+  "select": "पर्याय निवडा",
+  "fileReadyForUpload": "फाईल अपलोडसाठी तयार आहे",
+  "Dropdown": {
+    "systemAccessRole": "सिस्टम ॲक्सेस रोल",
+    "preferredLanguage": "पसंतीची भाषा",
+    "regionSimulatedError": "प्रादेशिक त्रुटी (सिम्युलेटेड)",
+    "thisRegionIsCurrentlyUnderMaintenance": "हा विभाग सध्या देखभालीखाली आहे"
+  },
+  "FileUpload": {
+    "requiredDocument": "कृपया आवश्यक कागदपत्र जोडा",
+    "uploadSuccess": "फाईल यशस्वीरित्या अपलोड झाली!",
+    "identityVerification": "ओळख पडताळणी",
+    "uploadInstruction": "कृपया तुमच्या आयडीचे स्पष्ट स्कॅन अपलोड करा (PDF किंवा JPG)",
+    "documentLabel": "राष्ट्रीय ओळखपत्र / पासपोर्ट",
+    "profilePictureLabel": "प्रोफाईल चित्र",
+    "documentPlaceholder": "कागदपत्र फाईल निवडा",
+    "uploadButton": "कागदपत्र अपलोड करा",
+    "uploadInfo": "एनक्रिप्टेड आणि सुरक्षित अपलोड. कमाल फाईल आकार: १० MB."
+  },
+  "TextInput": {
+    "welcomeBack": "पुन्हा स्वागत आहे",
+    "emailAddress": "ईमेल पत्ता",
+    "emailPlaceholder": "name@company.com",
+    "password": "पासवर्ड",
+    "enterYourPassword": "तुमचा पासवर्ड टाका",
+    "signIn": "साइन इन करा",
+    "loginAttempt": "लॉगिनचा प्रयत्न"
+  },
+  "Modal": {
+    "actionConfirmed": "कृती निश्चित झाली!",
+    "title": "मोडल सिस्टम डेमो",
+    "openConfirmation": "कन्फर्मेशन उघडा",
+    "finalizeAction": "कृती पूर्ण करा",
+    "confirmationMessage": "तुम्हाला खात्री आहे की तुम्ही हा व्यवहार पुढे नेऊ इच्छिता? ही कृती परत घेता येणार नाही.",
+    "confirm": "निश्चित करा"
+  },
+  "Textarea": {
+    "min10Chars": "कृपया थोडे अधिक तपशील द्या (किमान १० अक्षरे)",
+    "feedbackSubmitted": "प्रतिक्रिया सबमिट केली!",
+    "howCanWeHelp": "आम्ही कशी मदत करू शकतो?",
+    "issueDescription": "समस्येचे वर्णन",
+    "tellUsWhatOnYourMind": "तुमच्या मनात काय आहे ते आम्हाला सांगा...",
+    "submit": "प्रतिक्रिया पाठवा"
+  },
+  "Component": "घटक ",
+  "Lab": "लॅब",
+  "Documentation": "दस्तऐवजीकरण",
+  "EngineeringSpecs": "इंजिनिअरिंग स्पेक्स",
+  "LiveMetricCard": {
+    "liveStream": "लाईव्ह स्ट्रीम",
+    "RealTimeTelemetry": "फिनटेक आणि वेब३ मॉनिटरिंगसाठी रिअल-टाइम टेलिमेट्री स्ट्रीम्स.",
+    "NetworkThroughput": "नेटवर्क थ्रूपुट",
+    "ActiveValidators": "सक्रिय व्हॅलिडेटर्स"
+  },
+  "Layout": {
+    "InteractionTokens": "इंटरअ‍ॅक्शन टोकन्स",
+    "ButtonsTriggers": "बटणे आणि ट्रिगर्स",
+    "DataEntry": "डेटा एंट्री",
+    "InputsValidation": "इनपुट्स आणि व्हॅलिडेशन",
+    "SelectionLogic": "निवड लॉजिक",
+    "DropdownsLists": "ड्रॉपडाउन आणि लिस्ट",
+    "TemporalUnits": "वेळ एकके (टेंपोरल)",
+    "DateTimePickers": "तारीख आणि वेळ पिकर्स",
+    "AssetStream": "अ‍ॅसेट स्ट्रीम",
+    "FileUploaders": "फाईल अपलोडर्स",
+    "OverlayPrototypes": "ओव्हरले प्रोटोटाइप्स",
+    "ModalsDrawers": "मोडल्स आणि ड्रॉअर्स",
+    "ContentBlocks": "कंटेंट ब्लॉक्स",
+    "RichTextAreas": "रिच टेक्स्ट एरिया",
+    "NavigationNodes": "नेव्हिगेशन नोड्स",
+    "ContextMenus": "कॉन्टेक्स्ट मेनू",
+    "DataIntelligence": "डेटा इंटेलिजन्स",
+    "RealTimeAnalytics": "रिअल-टाइम ॲनालिटिक्स इंजिन"
+  },
+  "table": {
+    "viewAll": "सर्व व्यवहार पहा",
+    "noDataAvailable": "डेटा स्ट्रीम उपलब्ध नाही",
+    "displaying": "दर्शवित आहे",
+    "of": "पैकी",
+    "txHash": "ट्रान्झॅक्शन हॅश",
+    "timestamp": "टाइमस्टॅम्प",
+    "asset": "नेटवर्क अ‍ॅसेट",
+    "status": "नोड स्थिती",
+    "amount": "मूल्य / रक्कम",
+    "security": "सुरक्षा"
+  },
+  "feedback": {
+    "FeedbackNodes": "फीडबॅक नोड्स",
+    "ToastsSystemAlerts": "टोस्ट आणि सिस्टम अलर्ट्स",
+    "TriggerSuccess": "यशस्वी ट्रिगर",
+    "SystemAlert": "सिस्टम अलर्ट",
+    "TransactionVerified": "व्यवहार पडताळला",
+    "Thehashhasbeensuccessfullyrecordedonchain": "हॅश यशस्वीरित्या ऑन-चेन रेकॉर्ड झाला आहे",
+    "SecurityBreach": "सुरक्षा उल्लंघन (ब्रिच)",
+    "UnauthorizedaccessdetectedinNode04": "नोड ०४ मध्ये अनधिकृत प्रवेश आढळला"
+  }
+}
