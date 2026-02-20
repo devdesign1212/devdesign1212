@@ -39,7 +39,15 @@ const ModalDemo = () => {
           opened={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           title={t('Modal.finalizeAction')}
-          content={t('Modal.confirmationMessage')}
+          content={
+            <TextComponent
+              fontSize={18}
+              fontWeight={500}
+              color={colors.textColor}
+            >
+              {t('Modal.confirmationMessage')}
+            </TextComponent>
+          }
           ButtonTitle={t('Modal.confirm')}
           onClick={() => setIsModalOpen(false)}
         />

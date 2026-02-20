@@ -147,5 +147,16 @@
     "Security": "Sicherheit",
     "RawCode": "Quellcode",
     "CurrentView": "Aktuelle Ansicht"
+  },
+  "NuralMap": {
+    "NodeMapping": "Knoten-Mapping",
+    "AlphaCore": "Alpha-Kern",
+    "Optimal": "Optimal",
+    "SecurityNode": "Sicherheitsknoten",
+    "Active": "Aktiv",
+    "NeuralLink": "Neural-Link",
+    "Processing": "Verarbeitung",
+    "Load": "Auslastung",
+    "Status": "Status"
   }
 }

@@ -16,6 +16,7 @@ import {
   MonitorCheck,
   BellRing,
   Split,
+  BrainCircuit,
 } from 'lucide-react';
 
 import TextComponent from '@/components/Atoms/TextComponent';
@@ -34,6 +35,7 @@ import { useTranslation } from 'react-i18next';
 import IntelligenceTableDemo from '../DataIntelligenceDemo/IntelligenceTableDemo';
 import FeedbackDemo from '../DataIntelligenceDemo/FeedbackDemo';
 import SwitchDemo from '../DataIntelligenceDemo/SwitchDemo';
+import NeuralMap from '../DataIntelligenceDemo/NeuralMap';
 
 const LaboratoryGallery = ({
   setShowLab,
@@ -141,6 +143,14 @@ const LaboratoryGallery = ({
         sub: t('Switch.LogicSwitchers'),
         icon: <Split />,
         view: <SwitchDemo />,
+        span: 1,
+      },
+      {
+        id: 'Neural',
+        label: t('Layout.DataIntelligence'),
+        sub: t('NuralMap.NodeMapping'),
+        icon: <BrainCircuit />,
+        view: <NeuralMap />,
         span: 1,
       },
     ],
