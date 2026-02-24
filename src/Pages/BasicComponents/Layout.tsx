@@ -17,6 +17,7 @@ import {
   BellRing,
   Split,
   BrainCircuit,
+  ScanHeart,
 } from 'lucide-react';
 
 import TextComponent from '@/components/Atoms/TextComponent';
@@ -36,6 +37,7 @@ import IntelligenceTableDemo from '../DataIntelligenceDemo/IntelligenceTableDemo
 import FeedbackDemo from '../DataIntelligenceDemo/FeedbackDemo';
 import SwitchDemo from '../DataIntelligenceDemo/SwitchDemo';
 import NeuralMap from '../DataIntelligenceDemo/NeuralMap';
+import BioScanner from '../DataIntelligenceDemo/Scanner';
 
 const LaboratoryGallery = ({
   setShowLab,
@@ -151,6 +153,14 @@ const LaboratoryGallery = ({
         sub: t('NuralMap.NodeMapping'),
         icon: <BrainCircuit />,
         view: <NeuralMap />,
+        span: 1,
+      },
+      {
+        id: 'BioScanner',
+        label: t('Layout.DataIntelligence'),
+        sub: t('NuralMap.NodeMapping'),
+        icon: <ScanHeart />,
+        view: <BioScanner />,
         span: 1,
       },
     ],

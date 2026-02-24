@@ -158,5 +158,12 @@
     "Processing": "Traitement",
     "Load": "Charge",
     "Status": "État"
+  },
+  "BioScanner": {
+    "threatDetected": "MENACE DÉTECTÉE",
+    "neuralSignatureMismatch": "SIGNATURE NEURALE INCORRECTE",
+    "reInitializeSystem": "RÉINITIALISER LE SYSTÈME",
+    "identityVerified": "IDENTITÉ VÉRIFIÉE",
+    "logout": "DÉCONNEXION"
   }
 }

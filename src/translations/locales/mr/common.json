@@ -158,5 +158,12 @@
     "Processing": "प्रक्रिया सुरू आहे",
     "Load": "भार",
     "Status": "स्थिती"
+  },
+  "BioScanner": {
+    "threatDetected": "धोका आढळला",
+    "neuralSignatureMismatch": "न्यूरल स्वाक्षरी जुळत नाही",
+    "reInitializeSystem": "सिस्टम पुन्हा सुरू करा",
+    "identityVerified": "ओळख पटली",
+    "logout": "लॉग आउट"
   }
 }
