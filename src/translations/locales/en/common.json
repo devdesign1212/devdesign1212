@@ -147,5 +147,16 @@
     "Security": "Security",
     "RawCode": "Raw Code",
     "CurrentView": "Current View"
+  },
+  "NuralMap": {
+    "NodeMapping": "Neural Node Mapping",
+    "AlphaCore": "Alpha Core",
+    "Optimal": "Optimal",
+    "SecurityNode": "Security Node",
+    "Active": "Active",
+    "NeuralLink": "Neural Link",
+    "Processing": "Processing",
+    "Load": "Load",
+    "Status": "Status"
   }
 }

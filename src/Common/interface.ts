@@ -1,4 +1,5 @@
 import { TextareaProps, TextInputProps, TextProps } from '@mantine/core';
+import { MotionValue } from 'framer-motion';
 import React, { ChangeEvent, FocusEvent } from 'react';
 
 export type ApiResponse<T = any> = {
@@ -254,4 +255,26 @@ export type SwitchProps = {
   data: { label: string; value: string }[];
   value: string;
   onChange: (value: string) => void;
+};
+
+export type NeuralNodeData = {
+  id: string;
+  label: string;
+  icon: React.ReactNode;
+  color: string;
+  status: string;
+  load: string;
+  mvX: MotionValue<number>;
+  mvY: MotionValue<number>;
+};
+
+export type Connection = {
+  from: string;
+  to: string;
+};
+
+export type NodeProps = {
+  node: NeuralNodeData;
+  constraintsRef: React.RefObject<HTMLDivElement>;
+  onSelect: (node: NeuralNodeData) => void;
 };

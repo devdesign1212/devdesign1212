@@ -147,5 +147,16 @@
     "Security": "सुरक्षा",
     "RawCode": "रॉ कोड",
     "CurrentView": "वर्तमान दृश्य"
+  },
+  "NuralMap": {
+    "NodeMapping": "नोड मैपिंग",
+    "AlphaCore": "अल्फा कोर",
+    "Optimal": "इष्टतम",
+    "SecurityNode": "सुरक्षा नोड",
+    "Active": "सक्रिय",
+    "NeuralLink": "न्यूरल लिंक",
+    "Processing": "प्रसंस्करण",
+    "Load": "लोड",
+    "Status": "स्थिति"
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Modal } from '@mantine/core';
 import ButtonComponent from './ButtonComponent';
-import TextComponent from './TextComponent';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '../../themes/colors';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -25,7 +24,7 @@ const ModalComponent: React.FC<DynamicModalProps> = ({
       onClose={onClose}
       title={title}
       centered
-      padding="xl"
+      padding="sm"
       radius="lg"
       transitionProps={{ transition: 'fade', duration: 200 }}
       closeButtonProps={{
@@ -49,13 +48,7 @@ const ModalComponent: React.FC<DynamicModalProps> = ({
             className="flex w-full flex-col items-center justify-center gap-6 text-center"
           >
             <div className="py-2">
-              <TextComponent
-                fontSize={18}
-                fontWeight={500}
-                color={colors.textColor}
-              >
-                {content}
-              </TextComponent>
+              <div>{content}</div>
             </div>
 
             {ButtonTitle && (

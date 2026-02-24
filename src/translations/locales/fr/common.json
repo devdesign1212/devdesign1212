@@ -147,5 +147,16 @@
     "Security": "Sécurité",
     "RawCode": "Code Brut",
     "CurrentView": "Vue Actuelle"
+  },
+  "NuralMap": {
+    "NodeMapping": "Cartographie des nœuds",
+    "AlphaCore": "Cœur Alpha",
+    "Optimal": "Optimal",
+    "SecurityNode": "Nœud de sécurité",
+    "Active": "Actif",
+    "NeuralLink": "Liaison neurale",
+    "Processing": "Traitement",
+    "Load": "Charge",
+    "Status": "État"
   }
 }
