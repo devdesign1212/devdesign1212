@@ -158,5 +158,12 @@
     "Processing": "प्रसंस्करण",
     "Load": "लोड",
     "Status": "स्थिति"
+  },
+  "BioScanner": {
+    "threatDetected": "खतरे का पता चला",
+    "neuralSignatureMismatch": "न्यूरल सिग्नेचर मेल नहीं खा रहा",
+    "reInitializeSystem": "सिस्टम को री-इनिशियलाइज़ करें",
+    "identityVerified": "पहचान सत्यापित",
+    "logout": "लॉग आउट"
   }
 }

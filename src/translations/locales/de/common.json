@@ -158,5 +158,12 @@
     "Processing": "Verarbeitung",
     "Load": "Auslastung",
     "Status": "Status"
+  },
+  "BioScanner": {
+    "threatDetected": "BEDROHUNG ERKANNT",
+    "neuralSignatureMismatch": "NEURALE SIGNATUR FEHLERHAFT",
+    "reInitializeSystem": "SYSTEM NEU INITIALISIEREN",
+    "identityVerified": "IDENTITÄT BESTÄTIGT",
+    "logout": "ABMELDEN"
   }
 }

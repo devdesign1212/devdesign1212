@@ -158,5 +158,12 @@
     "Processing": "Processing",
     "Load": "Load",
     "Status": "Status"
+  },
+  "BioScanner": {
+    "threatDetected": "THREAT DETECTED",
+    "neuralSignatureMismatch": "NEURAL SIGNATURE MISMATCH",
+    "reInitializeSystem": "RE-INITIALIZE SYSTEM",
+    "identityVerified": "IDENTITY VERIFIED",
+    "logout": "LOGOUT"
   }
 }

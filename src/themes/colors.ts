@@ -25,6 +25,7 @@ export interface ThemeColors {
   placeholderColor: string;
   warningColor: string;
   infoColor: string;
+  scanGlow: string;
 }
 
 // Light theme colors
@@ -49,6 +50,7 @@ export const lightTheme: ThemeColors = {
   placeholderColor: '#e3e4e6',
   warningColor: '#f1c40f',
   infoColor: '#3498db',
+  scanGlow: 'rgba(0, 133, 133, 0.3)',
 };
 
 export const darkTheme: ThemeColors = {
@@ -72,6 +74,7 @@ export const darkTheme: ThemeColors = {
   placeholderColor: '#4c4c4d',
   warningColor: '#f1c40f',
   infoColor: '#3498db',
+  scanGlow: 'rgba(0, 133, 133, 0.3)',
 };
 
 export const colors = {
