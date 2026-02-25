@@ -18,6 +18,7 @@ import {
   Split,
   BrainCircuit,
   ScanHeart,
+  ScanQrCode,
 } from 'lucide-react';
 
 import TextComponent from '@/components/Atoms/TextComponent';
@@ -37,7 +38,8 @@ import IntelligenceTableDemo from '../DataIntelligenceDemo/IntelligenceTableDemo
 import FeedbackDemo from '../DataIntelligenceDemo/FeedbackDemo';
 import SwitchDemo from '../DataIntelligenceDemo/SwitchDemo';
 import NeuralMap from '../DataIntelligenceDemo/NeuralMap';
-import BioScanner from '../DataIntelligenceDemo/Scanner';
+import BioScanner from '../DataIntelligenceDemo/Scanner/BioScanner';
+import QRScanner from '../DataIntelligenceDemo/Scanner/QRScanner';
 
 const LaboratoryGallery = ({
   setShowLab,
@@ -117,7 +119,7 @@ const LaboratoryGallery = ({
       },
       {
         id: 'Intel',
-        label: t('Layout.DataIntelligence'),
+        label: t('Layout.LiveMetrics'),
         sub: t('Layout.RealTimeAnalytics'),
         icon: <Activity />,
         view: <LiveMetricCardDemo />,
@@ -125,7 +127,7 @@ const LaboratoryGallery = ({
       },
       {
         id: 'IntelTable',
-        label: t('Layout.DataIntelligence'),
+        label: t('Layout.IntelligenceRegistry'),
         sub: t('Layout.RealTimeAnalytics'),
         icon: <Activity />,
         view: <IntelligenceTableDemo />,
@@ -149,7 +151,7 @@ const LaboratoryGallery = ({
       },
       {
         id: 'Neural',
-        label: t('Layout.DataIntelligence'),
+        label: t('NuralMap.NeuralNetwork'),
         sub: t('NuralMap.NodeMapping'),
         icon: <BrainCircuit />,
         view: <NeuralMap />,
@@ -157,10 +159,18 @@ const LaboratoryGallery = ({
       },
       {
         id: 'BioScanner',
-        label: t('Layout.DataIntelligence'),
-        sub: t('NuralMap.NodeMapping'),
+        label: t('BioScanner.BiometricAnalysis'),
+        sub: t('BioScanner.VitalNodeSync'),
         icon: <ScanHeart />,
         view: <BioScanner />,
+        span: 1,
+      },
+      {
+        id: 'QRScanner',
+        label: t('QrScanner.SecureScanner'),
+        sub: t('QrScanner.DataStreamAnalysis'),
+        icon: <ScanQrCode />,
+        view: <QRScanner />,
         span: 1,
       },
     ],

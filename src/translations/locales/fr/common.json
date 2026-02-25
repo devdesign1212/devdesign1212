@@ -114,7 +114,9 @@
     "NavigationNodes": "Nœuds de navigation",
     "ContextMenus": "Menus contextuels",
     "DataIntelligence": "Intelligence des données",
-    "RealTimeAnalytics": "Moteur d'analyse en temps réel"
+    "RealTimeAnalytics": "Moteur d'analyse en temps réel",
+    "LiveMetrics": "Métriques en direct",
+    "IntelligenceRegistry": "Registre d'intelligence"
   },
   "table": {
     "viewAll": "Voir toutes les transactions",
@@ -157,13 +159,28 @@
     "NeuralLink": "Liaison neurale",
     "Processing": "Traitement",
     "Load": "Charge",
-    "Status": "État"
+    "Status": "État",
+    "NeuralNetwork": "Réseau neuronal"
   },
   "BioScanner": {
     "threatDetected": "MENACE DÉTECTÉE",
     "neuralSignatureMismatch": "SIGNATURE NEURALE INCORRECTE",
     "reInitializeSystem": "RÉINITIALISER LE SYSTÈME",
     "identityVerified": "IDENTITÉ VÉRIFIÉE",
-    "logout": "DÉCONNEXION"
+    "logout": "DÉCONNEXION",
+    "BiometricAnalysis": "Analyse biométrique",
+    "VitalNodeSync": "Synchro des nœuds vitaux"
+  },
+  "QrScanner": {
+    "AnalyzingDataStream": "Analyse du flux de données...",
+    "TapToInitializeCamera": "Appuyer pour lancer la caméra",
+    "EncryptedKeyFound": "CLÉ CHIFFRÉE TROUVÉE",
+    "CorruptedOrUnknownQrSource": "SOURCE QR CORROMPUE OU INCONNUE",
+    "Hash": "HACHAGE : 0x7f...8921e",
+    "ScanAnother": "Scanner un autre",
+    "InvalidProtocol": "PROTOCOLE INVALIDE",
+    "RetryScan": "Réessayer le scan",
+    "SecureScanner": "Scanner sécurisé",
+    "DataStreamAnalysis": "Analyse du flux de données"
   }
 }

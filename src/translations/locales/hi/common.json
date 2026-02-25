@@ -114,7 +114,9 @@
     "NavigationNodes": "नेविगेशन नोड्स",
     "ContextMenus": "संदर्भ मेनू",
     "DataIntelligence": "डेटा इंटेलिजेंस",
-    "RealTimeAnalytics": "रियल-टाइम एनालिटिक्स इंजन"
+    "RealTimeAnalytics": "रियल-टाइम एनालिटिक्स इंजन",
+    "LiveMetrics": "लाइव मेट्रिक्स",
+    "IntelligenceRegistry": "इंटेलिजेंस रजिस्ट्री"
   },
   "table": {
     "viewAll": "सभी लेनदेन देखें",
@@ -157,13 +159,28 @@
     "NeuralLink": "न्यूरल लिंक",
     "Processing": "प्रसंस्करण",
     "Load": "लोड",
-    "Status": "स्थिति"
+    "Status": "स्थिति",
+    "NeuralNetwork": "न्यूरल नेटवर्क"
   },
   "BioScanner": {
     "threatDetected": "खतरे का पता चला",
     "neuralSignatureMismatch": "न्यूरल सिग्नेचर मेल नहीं खा रहा",
     "reInitializeSystem": "सिस्टम को री-इनिशियलाइज़ करें",
     "identityVerified": "पहचान सत्यापित",
-    "logout": "लॉग आउट"
+    "logout": "लॉग आउट",
+    "BiometricAnalysis": "बायोमेट्रिक विश्लेषण",
+    "VitalNodeSync": "वाइटल नोड सिंक"
+  },
+  "QrScanner": {
+    "AnalyzingDataStream": "डेटा स्ट्रीम का विश्लेषण...",
+    "TapToInitializeCamera": "कैमरा शुरू करने के लिए टैप करें",
+    "EncryptedKeyFound": "एन्क्रिप्टेड की मिली",
+    "CorruptedOrUnknownQrSource": "दूषित या अज्ञात QR स्रोत",
+    "Hash": "हैश: 0x7f...8921e",
+    "ScanAnother": "दूसरा स्कैन करें",
+    "InvalidProtocol": "अवैध प्रोटोकॉल",
+    "RetryScan": "पुन: स्कैन करें",
+    "SecureScanner": "सुरक्षित स्कैनर",
+    "DataStreamAnalysis": "डेटा स्ट्रीम विश्लेषण"
   }
 }

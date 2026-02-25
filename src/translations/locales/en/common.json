@@ -114,7 +114,9 @@
     "NavigationNodes": "Navigation Nodes",
     "ContextMenus": "Context Menus",
     "DataIntelligence": "Data Intelligence",
-    "RealTimeAnalytics": "Real-time Analytics Engine"
+    "RealTimeAnalytics": "Real-time Analytics Engine",
+    "LiveMetrics": "Live Metrics",
+    "IntelligenceRegistry": "Intelligence Registry"
   },
   "table": {
     "viewAll": "View All Transactions",
@@ -157,13 +159,28 @@
     "NeuralLink": "Neural Link",
     "Processing": "Processing",
     "Load": "Load",
-    "Status": "Status"
+    "Status": "Status",
+    "NeuralNetwork": "Neural Network"
   },
   "BioScanner": {
     "threatDetected": "THREAT DETECTED",
     "neuralSignatureMismatch": "NEURAL SIGNATURE MISMATCH",
     "reInitializeSystem": "RE-INITIALIZE SYSTEM",
     "identityVerified": "IDENTITY VERIFIED",
-    "logout": "LOGOUT"
+    "logout": "LOGOUT",
+    "BiometricAnalysis": "Biometric Analysis",
+    "VitalNodeSync": "Vital Node Sync"
+  },
+  "QrScanner": {
+    "AnalyzingDataStream": "Analyzing Data Stream...",
+    "TapToInitializeCamera": "Tap to Initialize Camera",
+    "EncryptedKeyFound": "ENCRYPTED KEY FOUND",
+    "CorruptedOrUnknownQrSource": "CORRUPTED OR UNKNOWN QR SOURCE",
+    "Hash": "HASH: 0x7f...8921e",
+    "ScanAnother": "Scan Another",
+    "InvalidProtocol": "INVALID PROTOCOL",
+    "RetryScan": "Retry Scan",
+    "SecureScanner": "Secure Scanner",
+    "DataStreamAnalysis": "Data Stream Analysis"
   }
 }
