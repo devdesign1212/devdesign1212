@@ -165,5 +165,15 @@
     "reInitializeSystem": "RÉINITIALISER LE SYSTÈME",
     "identityVerified": "IDENTITÉ VÉRIFIÉE",
     "logout": "DÉCONNEXION"
+  },
+  "QrScanner": {
+    "AnalyzingDataStream": "Analyse du flux de données...",
+    "TapToInitializeCamera": "Appuyer pour lancer la caméra",
+    "EncryptedKeyFound": "CLÉ CHIFFRÉE TROUVÉE",
+    "CorruptedOrUnknownQrSource": "SOURCE QR CORROMPUE OU INCONNUE",
+    "Hash": "HACHAGE : 0x7f...8921e",
+    "ScanAnother": "Scanner un autre",
+    "InvalidProtocol": "PROTOCOLE INVALIDE",
+    "RetryScan": "Réessayer le scan"
   }
 }

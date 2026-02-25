@@ -18,6 +18,7 @@ import {
   Split,
   BrainCircuit,
   ScanHeart,
+  ScanQrCode,
 } from 'lucide-react';
 
 import TextComponent from '@/components/Atoms/TextComponent';
@@ -37,7 +38,8 @@ import IntelligenceTableDemo from '../DataIntelligenceDemo/IntelligenceTableDemo
 import FeedbackDemo from '../DataIntelligenceDemo/FeedbackDemo';
 import SwitchDemo from '../DataIntelligenceDemo/SwitchDemo';
 import NeuralMap from '../DataIntelligenceDemo/NeuralMap';
-import BioScanner from '../DataIntelligenceDemo/Scanner';
+import BioScanner from '../DataIntelligenceDemo/Scanner/BioScanner';
+import QRScanner from '../DataIntelligenceDemo/Scanner/QRScanner';
 
 const LaboratoryGallery = ({
   setShowLab,
@@ -161,6 +163,14 @@ const LaboratoryGallery = ({
         sub: t('NuralMap.NodeMapping'),
         icon: <ScanHeart />,
         view: <BioScanner />,
+        span: 1,
+      },
+      {
+        id: 'QRScanner',
+        label: t('Layout.DataIntelligence'),
+        sub: t('NuralMap.NodeMapping'),
+        icon: <ScanQrCode />,
+        view: <QRScanner />,
         span: 1,
       },
     ],

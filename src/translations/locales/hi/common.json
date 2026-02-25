@@ -165,5 +165,15 @@
     "reInitializeSystem": "सिस्टम को री-इनिशियलाइज़ करें",
     "identityVerified": "पहचान सत्यापित",
     "logout": "लॉग आउट"
+  },
+  "QrScanner": {
+    "AnalyzingDataStream": "डेटा स्ट्रीम का विश्लेषण...",
+    "TapToInitializeCamera": "कैमरा शुरू करने के लिए टैप करें",
+    "EncryptedKeyFound": "एन्क्रिप्टेड की मिली",
+    "CorruptedOrUnknownQrSource": "दूषित या अज्ञात QR स्रोत",
+    "Hash": "हैश: 0x7f...8921e",
+    "ScanAnother": "दूसरा स्कैन करें",
+    "InvalidProtocol": "अवैध प्रोटोकॉल",
+    "RetryScan": "पुन: स्कैन करें"
   }
 }

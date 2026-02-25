@@ -165,5 +165,15 @@
     "reInitializeSystem": "SYSTEM NEU INITIALISIEREN",
     "identityVerified": "IDENTITÄT BESTÄTIGT",
     "logout": "ABMELDEN"
+  },
+  "QrScanner": {
+    "AnalyzingDataStream": "Datenstrom wird analysiert...",
+    "TapToInitializeCamera": "Zum Starten der Kamera tippen",
+    "EncryptedKeyFound": "VERSCHLÜSSELTER KEY GEFUNDEN",
+    "CorruptedOrUnknownQrSource": "BESCHÄDIGTE ODER UNBEKANNTE QR-QUELLE",
+    "Hash": "HASH: 0x7f...8921e",
+    "ScanAnother": "Erneut scannen",
+    "InvalidProtocol": "UNGÜLTIGES PROTOKOLL",
+    "RetryScan": "Scan wiederholen"
   }
 }
