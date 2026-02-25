@@ -114,7 +114,9 @@
     "NavigationNodes": "नेव्हिगेशन नोड्स",
     "ContextMenus": "कॉन्टेक्स्ट मेनू",
     "DataIntelligence": "डेटा इंटेलिजन्स",
-    "RealTimeAnalytics": "रिअल-टाइम ॲनालिटिक्स इंजिन"
+    "RealTimeAnalytics": "रिअल-टाइम ॲनालिटिक्स इंजिन",
+    "LiveMetrics": "थेट मेट्रिक्स",
+    "IntelligenceRegistry": "इंटेलिजन्स नोंदणी"
   },
   "table": {
     "viewAll": "सर्व व्यवहार पहा",
@@ -157,14 +159,17 @@
     "NeuralLink": "न्यूरल लिंक",
     "Processing": "प्रक्रिया सुरू आहे",
     "Load": "भार",
-    "Status": "स्थिती"
+    "Status": "स्थिती",
+    "NeuralNetwork": "न्यूरल नेटवर्क"
   },
   "BioScanner": {
     "threatDetected": "धोका आढळला",
     "neuralSignatureMismatch": "न्यूरल स्वाक्षरी जुळत नाही",
     "reInitializeSystem": "सिस्टम पुन्हा सुरू करा",
     "identityVerified": "ओळख पटली",
-    "logout": "लॉग आउट"
+    "logout": "लॉग आउट",
+    "BiometricAnalysis": "बायोमेट्रिक विश्लेषण",
+    "VitalNodeSync": "व्हायटल नोड सिंक"
   },
   "QrScanner": {
     "AnalyzingDataStream": "डेटा प्रवाह विश्लेषण सुरू आहे...",
@@ -174,6 +179,8 @@
     "Hash": "हॅश: 0x7f...8921e",
     "ScanAnother": "दुसरे स्कॅन करा",
     "InvalidProtocol": "अवैध प्रोटोकॉल",
-    "RetryScan": "पुन्हा स्कॅन करा"
+    "RetryScan": "पुन्हा स्कॅन करा",
+    "SecureScanner": "सुरक्षित स्कॅनर",
+    "DataStreamAnalysis": "डेटा प्रवाह विश्लेषण"
   }
 }
