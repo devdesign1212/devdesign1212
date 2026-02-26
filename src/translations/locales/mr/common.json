@@ -176,11 +176,14 @@
     "TapToInitializeCamera": "कॅमेरा सुरू करण्यासाठी टॅप करा",
     "EncryptedKeyFound": "एनक्रिप्टेड की सापडली",
     "CorruptedOrUnknownQrSource": "खराब किंवा अज्ञात QR स्रोत",
-    "Hash": "हॅश: 0x7f...8921e",
     "ScanAnother": "दुसरे स्कॅन करा",
     "InvalidProtocol": "अवैध प्रोटोकॉल",
     "RetryScan": "पुन्हा स्कॅन करा",
     "SecureScanner": "सुरक्षित स्कॅनर",
-    "DataStreamAnalysis": "डेटा प्रवाह विश्लेषण"
+    "DataStreamAnalysis": "डेटा प्रवाह विश्लेषण",
+    "Error": "त्रुटी",
+    "NoQrFoundInImage": "प्रतिमेमध्ये कोणताही QR सापडला नाही",
+    "OpenLink": "लिंक उघडा",
+    "Upload": "अपलोड करा"
   }
 }

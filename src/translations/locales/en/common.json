@@ -176,11 +176,14 @@
     "TapToInitializeCamera": "Tap to Initialize Camera",
     "EncryptedKeyFound": "ENCRYPTED KEY FOUND",
     "CorruptedOrUnknownQrSource": "CORRUPTED OR UNKNOWN QR SOURCE",
-    "Hash": "HASH: 0x7f...8921e",
     "ScanAnother": "Scan Another",
     "InvalidProtocol": "INVALID PROTOCOL",
     "RetryScan": "Retry Scan",
     "SecureScanner": "Secure Scanner",
-    "DataStreamAnalysis": "Data Stream Analysis"
+    "DataStreamAnalysis": "Data Stream Analysis",
+    "Error": "Error",
+    "NoQrFoundInImage": "No QR found in image",
+    "OpenLink": "Open Link",
+    "Upload": "Upload"
   }
 }
