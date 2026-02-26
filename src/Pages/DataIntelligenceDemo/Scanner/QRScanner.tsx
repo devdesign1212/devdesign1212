@@ -7,7 +7,7 @@ import { AlertTriangle, CheckCircle2, Maximize, QrCode } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import jsQR from 'jsQR';
+import jsQR from 'jsqr';
 
 const QRScanner = () => {
   const { t } = useTranslation();
