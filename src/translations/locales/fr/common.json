@@ -1,5 +1,8 @@
 {
   "Dashboard": "Tableau de Bord",
+  "footer": {
+    "copyright": "2026 Concevoir l'avenir de l'UI/UX."
+  },
   "DesignSystemVersion": "Système de Design v1.0",
   "BridgingTheGapBetween": "Combler le fossé entre",
   "CodeAndCreativity": "Code et Créativité.",
@@ -141,7 +144,7 @@
     "UnauthorizedaccessdetectedinNode04": "Accès non autorisé détecté dans le Nœud 04"
   },
   "Switch": {
-    "NavigationNodes": "Nœuds de Navigation",
+    "SwitchNodes": "Changer de nœuds",
     "LogicSwitchers": "Commutateurs Logiques",
     "SelectionChanged": "Sélection Modifiée",
     "NodeActivated": "Nœud Activé",

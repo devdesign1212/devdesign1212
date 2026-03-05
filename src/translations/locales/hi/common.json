@@ -1,5 +1,8 @@
 {
   "Dashboard": "डैशबोर्ड",
+  "footer": {
+    "copyright": "2026 UI/UX के भविष्य का निर्माण।"
+  },
   "DesignSystemVersion": "डिज़ाइन सिस्टम v1.0",
   "BridgingTheGapBetween": "को जोड़ने वाली कड़ी",
   "CodeAndCreativity": "कोड और रचनात्मकता।",
@@ -141,7 +144,7 @@
     "UnauthorizedaccessdetectedinNode04": "नोड 04 में अनधिकृत पहुंच का पता चला है"
   },
   "Switch": {
-    "NavigationNodes": "नेविगेशन नोड्स",
+    "SwitchNodes": "स्विच नोड्स",
     "LogicSwitchers": "लॉजिक स्विचर्स",
     "SelectionChanged": "चयन बदल गया",
     "NodeActivated": "नोड सक्रिय हुआ",
