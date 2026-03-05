@@ -1,5 +1,8 @@
 {
   "Dashboard": "Dashboard",
+  "footer": {
+    "copyright": "2026 Wir gestalten die Zukunft von UI/UX."
+  },
   "DesignSystemVersion": "Design System v1.0",
   "BridgingTheGapBetween": "Die Brücke zwischen",
   "CodeAndCreativity": "Code & Kreativität.",
@@ -141,7 +144,7 @@
     "UnauthorizedaccessdetectedinNode04": "Unbefugter Zugriff in Knoten 04 erkannt"
   },
   "Switch": {
-    "NavigationNodes": "Navigationsknoten",
+    "SwitchNodes": "Knoten wechseln",
     "LogicSwitchers": "Logik-Umschalter",
     "SelectionChanged": "Auswahl Geändert",
     "NodeActivated": "Knoten Aktiviert",

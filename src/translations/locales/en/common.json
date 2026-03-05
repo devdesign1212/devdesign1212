@@ -1,5 +1,8 @@
 {
   "Dashboard": "Dashboard",
+  "footer": {
+    "copyright": "2026 Engineering the future of UI/UX."
+  },
   "DesignSystemVersion": "Design System v1.0",
   "BridgingTheGapBetween": "Bridging the gap between",
   "CodeAndCreativity": "Code & Creativity.",
@@ -141,7 +144,7 @@
     "UnauthorizedaccessdetectedinNode04": "Unauthorized access detected in Node 04"
   },
   "Switch": {
-    "NavigationNodes": "Navigation Nodes",
+    "SwitchNodes": "Switch Nodes",
     "LogicSwitchers": "Logic Switchers",
     "SelectionChanged": "Selection Changed",
     "NodeActivated": "Node activated",

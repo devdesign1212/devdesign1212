@@ -19,17 +19,10 @@ import {
   BrainCircuit,
   ScanHeart,
   ScanQrCode,
+  PercentDiamondIcon,
 } from 'lucide-react';
 
 import TextComponent from '@/components/Atoms/TextComponent';
-import ButtonDemo from './Demos/ButtonDemo';
-import DropdownDemo from './Demos/DropdownDemo';
-import FileInputDemo from './Demos/FileInputDemo';
-import TextInputDemo from './Demos/InputDemo';
-import ModalDemo from './Demos/ModalDemo';
-import TextareaDemo from './Demos/TextareaDemo';
-import DateDemo from './Demos/DateComponentDemo';
-import MenuDemo from './Demos/MenuDemo';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '@/themes/colors';
 import LiveMetricCardDemo from '../DataIntelligenceDemo/LiveMetricCardDemo';
@@ -40,15 +33,22 @@ import SwitchDemo from '../DataIntelligenceDemo/SwitchDemo';
 import NeuralMap from '../DataIntelligenceDemo/NeuralMap';
 import BioScanner from '../DataIntelligenceDemo/Scanner/BioScanner';
 import QRScanner from '../DataIntelligenceDemo/Scanner/QRScanner';
+import SecureGate from '../SecureGate';
+import ButtonDemo from '../BasicComponentsDemo/ButtonDemo';
+import TextInputDemo from '../BasicComponentsDemo/InputDemo';
+import DropdownDemo from '../BasicComponentsDemo/DropdownDemo';
+import DateDemo from '../BasicComponentsDemo/DateComponentDemo';
+import FileInputDemo from '../BasicComponentsDemo/FileInputDemo';
+import ModalDemo from '../BasicComponentsDemo/ModalDemo';
+import TextareaDemo from '../BasicComponentsDemo/TextareaDemo';
+import MenuDemo from '../BasicComponentsDemo/MenuDemo';
+import { useNavigate } from 'react-router-dom';
 
-const LaboratoryGallery = ({
-  setShowLab,
-}: {
-  setShowLab: (show: boolean) => void;
-}) => {
+const LaboratoryGallery = () => {
   const { t } = useTranslation();
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
+  const navigate = useNavigate();
   const [activePortal, setActivePortal] = useState<string | null>(null);
 
   const components = useMemo(
@@ -59,7 +59,7 @@ const LaboratoryGallery = ({
         sub: t('Layout.ButtonsTriggers'),
         icon: <MousePointer2 />,
         view: <ButtonDemo />,
-        span: 1,
+        span: 2,
       },
       {
         id: 'TextInput',
@@ -67,7 +67,7 @@ const LaboratoryGallery = ({
         sub: t('Layout.InputsValidation'),
         icon: <Type />,
         view: <TextInputDemo />,
-        span: 2,
+        span: 1,
       },
       {
         id: 'Drop',
@@ -91,7 +91,7 @@ const LaboratoryGallery = ({
         sub: t('Layout.FileUploaders'),
         icon: <FileCode />,
         view: <FileInputDemo />,
-        span: 1,
+        span: 2,
       },
       {
         id: 'Modal',
@@ -99,7 +99,7 @@ const LaboratoryGallery = ({
         sub: t('Layout.ModalsDrawers'),
         icon: <LayoutIcon />,
         view: <ModalDemo />,
-        span: 2,
+        span: 1,
       },
       {
         id: 'Textarea',
@@ -107,7 +107,7 @@ const LaboratoryGallery = ({
         sub: t('Layout.RichTextAreas'),
         icon: <AlignLeft />,
         view: <TextareaDemo />,
-        span: 2,
+        span: 1,
       },
       {
         id: 'Menu',
@@ -123,7 +123,7 @@ const LaboratoryGallery = ({
         sub: t('Layout.RealTimeAnalytics'),
         icon: <Activity />,
         view: <LiveMetricCardDemo />,
-        span: 1,
+        span: 2,
       },
       {
         id: 'IntelTable',
@@ -131,7 +131,7 @@ const LaboratoryGallery = ({
         sub: t('Layout.RealTimeAnalytics'),
         icon: <Activity />,
         view: <IntelligenceTableDemo />,
-        span: 1,
+        span: 2,
       },
       {
         id: 'Feedback',
@@ -143,7 +143,7 @@ const LaboratoryGallery = ({
       },
       {
         id: 'Switch',
-        label: t('Switch.NavigationNodes'),
+        label: t('Switch.SwitchNodes'),
         sub: t('Switch.LogicSwitchers'),
         icon: <Split />,
         view: <SwitchDemo />,
@@ -163,7 +163,7 @@ const LaboratoryGallery = ({
         sub: t('BioScanner.VitalNodeSync'),
         icon: <ScanHeart />,
         view: <BioScanner />,
-        span: 1,
+        span: 2,
       },
       {
         id: 'QRScanner',
@@ -171,6 +171,14 @@ const LaboratoryGallery = ({
         sub: t('QrScanner.DataStreamAnalysis'),
         icon: <ScanQrCode />,
         view: <QRScanner />,
+        span: 1,
+      },
+      {
+        id: 'secureGate',
+        label: t('Security'),
+        sub: t('QrScanner.DataStreamAnalysis'),
+        icon: <PercentDiamondIcon />,
+        view: <SecureGate />,
         span: 1,
       },
     ],
@@ -201,7 +209,7 @@ const LaboratoryGallery = ({
                   variant="light"
                   size="xl"
                   radius="md"
-                  onClick={() => setShowLab(false)}
+                  onClick={() => navigate('/')}
                 >
                   <ArrowLeft />
                 </ActionIcon>
