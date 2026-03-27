@@ -19,10 +19,12 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
   loading = false,
   fullWidth = false,
   size = 'sm',
+  width,
   radius,
   from,
   to,
   deg,
+  titleSize,
 }) => {
   const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null);
@@ -70,9 +72,10 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
         gradient={{ from: from || 'teal', to: to || 'green', deg: deg || 90 }}
         styles={{
           root: {
-            height: size || 54,
-            padding: '0 15px',
-            backgroundColor: backgroundColor,
+            height: size || 50,
+            width: fullWidth ? '100%' : width,
+            padding: '0 6px',
+            backgroundColor: variant === 'filled' ? backgroundColor : '',
             color: color,
             borderColor: borderColor,
             borderRadius: radius ? `${radius}px` : '12px',
@@ -81,31 +84,36 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
             '&:active': { transform: 'scale(0.97)' },
           },
           inner: {
-            gap: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           },
         }}
       >
-        <div className="relative z-10 flex items-center justify-center gap-3">
+        <div className="relative z-10 flex items-center justify-center">
           {leftIcon && (
             <motion.span
+              className={`${title ? 'mr-2' : ''} flex items-center`}
               animate={{ y: [0, -2, 2, 0] }}
               transition={{ repeat: Infinity, duration: 3 }}
             >
               {leftIcon}
             </motion.span>
           )}
-
-          <TextComponent
-            color={color}
-            fontSize={14}
-            fontWeight={800}
-            className="uppercase tracking-[1.5px]"
-          >
-            {t(title)}
-          </TextComponent>
+          {title && (
+            <TextComponent
+              color={color || 'teal'}
+              fontSize={titleSize || 14}
+              fontWeight={titleSize ? 400 : 700}
+              className="uppercase tracking-[1px]"
+            >
+              {t(title)}
+            </TextComponent>
+          )}
 
           {rightIcon && (
             <motion.span
+              className={`${title ? 'mr-2' : ''} flex items-center`}
               animate={!disabled ? { x: [0, 4, 0] } : {}}
               transition={{
                 repeat: Infinity,

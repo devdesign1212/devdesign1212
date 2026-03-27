@@ -188,5 +188,32 @@
     "NoQrFoundInImage": "प्रतिमेमध्ये कोणताही QR सापडला नाही",
     "OpenLink": "लिंक उघडा",
     "Upload": "अपलोड करा"
+  },
+  "Chat": {
+    "WelcomeToChat": "नमस्कार 👋 Dev Design सपोर्टमध्ये आपले स्वागत आहे. मी आज तुम्हाला कशी मदत करू शकतो?",
+    "YouCanAlsoAsk": "तुम्ही हेही विचारू शकता:",
+    "ThanksForYourQuestion": "तुमच्या प्रश्नाबद्दल धन्यवाद! आमची टीम लवकरच तुमच्याशी संपर्क साधेल.",
+    "Sending": "पाठवत आहे...",
+    "BotTyping": "बॉट टायपिंग करत आहे",
+    "TypeMessage": "मेसेज टाइप करा..."
+  },
+  "faq": {
+    "q1": "Dev Design म्हणजे काय?",
+    "a1": "Dev Design हे एक scalable frontend system आहे जे modern UI तयार करण्यासाठी वापरले जाते.",
+
+    "q2": "मी हे production मध्ये वापरू शकते का?",
+    "a2": "हो, हे production-ready applications साठी डिझाइन केलेले आहे.",
+
+    "q3": "हे themes support करते का?",
+    "a3": "हो, हे light, dark आणि custom themes support करते.",
+
+    "q4": "हे मोठ्या applications साठी योग्य आहे का?",
+    "a4": "हो, हे scalable आणि enterprise apps साठी बनवलेले आहे.",
+
+    "q5": "हे integrate करणे सोपे आहे का?",
+    "a5": "हो, हे React आणि Next.js सोबत सहज integrate होते.",
+
+    "q6": "हे performance improve करते का?",
+    "a6": "हो, हे optimized rendering वापरते."
   }
 }

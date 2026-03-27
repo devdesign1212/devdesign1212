@@ -20,6 +20,7 @@ import {
   ScanHeart,
   ScanQrCode,
   PercentDiamondIcon,
+  MessageCirclePlusIcon,
 } from 'lucide-react';
 
 import TextComponent from '@/components/Atoms/TextComponent';
@@ -33,16 +34,17 @@ import SwitchDemo from '../DataIntelligenceDemo/SwitchDemo';
 import NeuralMap from '../DataIntelligenceDemo/NeuralMap';
 import BioScanner from '../DataIntelligenceDemo/Scanner/BioScanner';
 import QRScanner from '../DataIntelligenceDemo/Scanner/QRScanner';
-import SecureGate from '../SecureGate';
-import ButtonDemo from '../BasicComponentsDemo/ButtonDemo';
-import TextInputDemo from '../BasicComponentsDemo/InputDemo';
-import DropdownDemo from '../BasicComponentsDemo/DropdownDemo';
-import DateDemo from '../BasicComponentsDemo/DateComponentDemo';
-import FileInputDemo from '../BasicComponentsDemo/FileInputDemo';
-import ModalDemo from '../BasicComponentsDemo/ModalDemo';
-import TextareaDemo from '../BasicComponentsDemo/TextareaDemo';
-import MenuDemo from '../BasicComponentsDemo/MenuDemo';
+import SecureGate from '../Components/SecureGate';
+import ButtonDemo from '../Components/BasicComponentsDemo/ButtonDemo';
+import TextInputDemo from '../Components/BasicComponentsDemo/InputDemo';
+import DropdownDemo from '../Components/BasicComponentsDemo/DropdownDemo';
+import DateDemo from '../Components/BasicComponentsDemo/DateComponentDemo';
+import FileInputDemo from '../Components/BasicComponentsDemo/FileInputDemo';
+import ModalDemo from '../Components/BasicComponentsDemo/ModalDemo';
+import TextareaDemo from '../Components/BasicComponentsDemo/TextareaDemo';
+import MenuDemo from '../Components/BasicComponentsDemo/MenuDemo';
 import { useNavigate } from 'react-router-dom';
+import ChatLab from '../Components/Chat';
 
 const LaboratoryGallery = () => {
   const { t } = useTranslation();
@@ -171,6 +173,14 @@ const LaboratoryGallery = () => {
         sub: t('QrScanner.DataStreamAnalysis'),
         icon: <ScanQrCode />,
         view: <QRScanner />,
+        span: 1,
+      },
+      {
+        id: 'SocketLab',
+        label: t('SocketLab.SocketLab'),
+        sub: t('SocketLab.DataStreamAnalysis'),
+        icon: <MessageCirclePlusIcon />,
+        view: <ChatLab />,
         span: 1,
       },
       {

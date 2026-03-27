@@ -188,5 +188,32 @@
     "NoQrFoundInImage": "Kein QR-Code im Bild gefunden",
     "OpenLink": "Link öffnen",
     "Upload": "Hochladen"
+  },
+  "Chat": {
+    "WelcomeToChat": "Hi 👋 Welcome to Dev Design Support. How can I help you today?",
+    "YouCanAlsoAsk": "You can also ask:",
+    "ThanksForYourQuestion": "Thanks for your question! Our team will get back to you soon.",
+    "Sending": "Sending...",
+    "BotTyping": "Bot typing",
+    "TypeMessage": "Type message..."
+  },
+  "faq": {
+    "q1": "Qu'est-ce que Dev Design ?",
+    "a1": "Dev Design est un système frontend évolutif pour créer des interfaces modernes.",
+
+    "q2": "Puis-je l'utiliser en production ?",
+    "a2": "Oui, il est conçu pour des applications prêtes pour la production.",
+
+    "q3": "Prend-il en charge les thèmes ?",
+    "a3": "Oui, il supporte les thèmes clair, sombre et personnalisés.",
+
+    "q4": "Convient-il aux grandes applications ?",
+    "a4": "Oui, il est conçu pour les applications évolutives et d'entreprise.",
+
+    "q5": "Peut-on l'intégrer facilement ?",
+    "a5": "Oui, il s'intègre facilement avec React et Next.js.",
+
+    "q6": "Améliore-t-il les performances ?",
+    "a6": "Oui, il utilise un rendu optimisé."
   }
 }
