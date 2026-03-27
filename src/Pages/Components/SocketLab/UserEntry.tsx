@@ -3,7 +3,6 @@ import TextInputComponent from '@/components/Atoms/TextInputComponent';
 import { darkTheme, lightTheme } from '@/themes/colors';
 import { SendIcon } from 'lucide-react';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 
@@ -12,7 +11,6 @@ type Props = {
 };
 
 const UserEntry = ({ onSave }: Props) => {
-  const { t } = useTranslation();
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
   const [name, setName] = useState('');
