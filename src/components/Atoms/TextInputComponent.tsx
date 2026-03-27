@@ -25,6 +25,7 @@ const TextInputComponent: React.FC<CustomTextInputProps> = ({
   borderColor,
   backgroundColor,
   radius,
+  onKeyDown,
   color,
   ...props
 }) => {
@@ -59,6 +60,13 @@ const TextInputComponent: React.FC<CustomTextInputProps> = ({
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
+        onKeyDown={e => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+          }
+
+          onKeyDown?.(e);
+        }}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         error={error}
@@ -72,6 +80,7 @@ const TextInputComponent: React.FC<CustomTextInputProps> = ({
         label={label}
         leftSection={leftSection}
         rightSection={rightSection}
+        rightSectionPointerEvents="all"
         {...props}
         classNames={{
           root: 'relative w-full',

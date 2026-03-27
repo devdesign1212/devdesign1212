@@ -10,7 +10,7 @@ const CommandFooter = () => {
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
   return (
-    <footer className="bg-card/30 mt-10 border-t border-borderColor py-4 backdrop-blur-sm">
+    <footer className="bg-card/30 mt-4 border-t border-borderColor py-2 backdrop-blur-sm">
       <Container size="xl">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <Stack gap={4}>

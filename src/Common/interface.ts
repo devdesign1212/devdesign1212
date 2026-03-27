@@ -101,14 +101,15 @@ export type CustomTextInputProps = Omit<
   radius?: string;
   variant?: 'default' | 'filled';
   withAsterisk?: boolean | false;
-  labelColor: string;
+  labelColor?: string;
   borderColor: string;
   backgroundColor: string;
   color: string;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export type ButtonComponentProps = {
-  title: string;
+  title?: string;
   onClick?: () => void;
   variant?: 'filled' | 'outline' | 'gradient';
   className?: string;
@@ -118,13 +119,15 @@ export type ButtonComponentProps = {
   loading?: boolean;
   size?: number;
   fullWidth?: boolean;
+  width?: number;
   radius?: number;
-  color: string;
+  color?: string;
   backgroundColor?: string;
   borderColor: string;
   from?: string;
   to?: string;
   deg?: number;
+  titleSize?: number;
 };
 
 export type CustomDatePickerProps = {
@@ -277,4 +280,29 @@ export type NodeProps = {
   node: NeuralNodeData;
   constraintsRef: React.RefObject<HTMLDivElement>;
   onSelect: (node: NeuralNodeData) => void;
+};
+
+export type ChatMessage = {
+  id: string;
+  text: string;
+  createdAt: number;
+  isBot?: boolean;
+  isPending?: boolean;
+};
+
+export type ConnectionStatus = 'connecting' | 'connected' | 'error';
+
+export type FAQ = {
+  id: number;
+  questionKey: string;
+  answerKey: string;
+  category: 'general' | 'performance' | 'integration' | 'features';
+  keywords: string[];
+};
+
+export type ChatPanelProps = {
+  messages: ChatMessage[];
+  sendMessage: (text: string) => void;
+  sendBotMessage: (text: string) => void;
+  isTyping: boolean;
 };

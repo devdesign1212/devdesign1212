@@ -13,7 +13,7 @@ const CommandHeader = ({
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
 
   return (
-    <header className="fixed top-0 z-[100] flex w-full items-center justify-between border-b border-borderColor px-6 py-4 backdrop-blur-md">
+    <header className="fixed top-0 z-[100] flex w-full items-center justify-between border-b border-borderColor px-6 py-2 backdrop-blur-md">
       <Group gap="xs" className="flex-row">
         <div className={`rounded-lg bg-primaryColor p-2`}>
           <Zap size={20} color={colors.whiteColor} fill={colors.whiteColor} />

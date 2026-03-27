@@ -7,6 +7,7 @@ import { darkTheme, lightTheme } from '@/themes/colors';
 import ButtonComponent from '@/components/Atoms/ButtonComponent';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import ChatWidget from '@/components/Organisms/ChatWidget';
 
 const Dashboard = () => {
   const { t } = useTranslation();
@@ -112,6 +113,9 @@ const Dashboard = () => {
           </Container>
         </motion.div>
       </AnimatePresence>
+      <motion.div className="flex h-full flex-col">
+        <ChatWidget />
+      </motion.div>
     </div>
   );
 };
