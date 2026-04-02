@@ -3,14 +3,22 @@ import { Sun, Moon, Languages, Zap } from 'lucide-react';
 import TextComponent from '@/components/Atoms/TextComponent';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '@/themes/colors';
+import { CommandHeaderProps } from '@/Common/interface';
+import { useComponent } from '@/Context/ComponentContext';
+import { useLocation, useNavigate } from 'react-router-dom';
+import GlobalSearch from '@/components/Molecules/GlobalSearch';
 
 const CommandHeader = ({
   toggleTheme,
   selectLanguage,
   handleLanguageSelect,
-}: any) => {
+}: CommandHeaderProps) => {
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
+  const { setActivePortal } = useComponent();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const showSearch = location.pathname === '/component-lab';
 
   return (
     <header className="fixed top-0 z-[100] flex w-full items-center justify-between border-b border-borderColor px-6 py-2 backdrop-blur-md">
@@ -31,6 +39,18 @@ const CommandHeader = ({
       </Group>
 
       <Group gap="lg">
+        {showSearch && (
+          <div className="relative w-56">
+            <GlobalSearch
+              dataOnclick={cmd => {
+                setActivePortal(cmd.id);
+                navigate(`/component-lab/${cmd.id}`);
+              }}
+              header={true}
+            />
+          </div>
+        )}
+
         <Menu shadow="md" width={120}>
           <Menu.Target>
             <Button

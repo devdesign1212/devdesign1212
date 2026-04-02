@@ -11,6 +11,7 @@ import { Outlet } from 'react-router-dom';
 const MainLayout = () => {
   const [selectLanguage, setSelectedLanguage] = useState('en');
   const currentTheme = useSelector((state: any) => state.theme.theme);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (selectLanguage) {
@@ -19,7 +20,6 @@ const MainLayout = () => {
     }
   }, [selectLanguage]);
 
-  const dispatch = useDispatch();
   const handleLanguageSelect = (language: string) => {
     i18n.changeLanguage(language);
     setSelectedLanguage(language);

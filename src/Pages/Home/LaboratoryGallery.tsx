@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Box, ActionIcon, Group, Stack, SimpleGrid } from '@mantine/core';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -43,20 +43,27 @@ import FileInputDemo from '../Components/BasicComponentsDemo/FileInputDemo';
 import ModalDemo from '../Components/BasicComponentsDemo/ModalDemo';
 import TextareaDemo from '../Components/BasicComponentsDemo/TextareaDemo';
 import MenuDemo from '../Components/BasicComponentsDemo/MenuDemo';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import ChatLab from '../Components/Chat';
+import { useComponent } from '@/Context/ComponentContext';
+import GlobalSearch from '@/components/Molecules/GlobalSearch';
 
 const LaboratoryGallery = () => {
   const { t } = useTranslation();
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
   const navigate = useNavigate();
-  const [activePortal, setActivePortal] = useState<string | null>(null);
+  const [paletteOpen, setPaletteOpen] = useState(false);
+  const { setComponents, activePortal, setActivePortal } = useComponent();
+  const { componentId } = useParams();
+  const location = useLocation();
+
+  const showSearch = location.pathname === '/component-lab';
 
   const components = useMemo(
     () => [
       {
-        id: 'Btn',
+        id: 'Button',
         label: t('Layout.InteractionTokens'),
         sub: t('Layout.ButtonsTriggers'),
         icon: <MousePointer2 />,
@@ -72,7 +79,7 @@ const LaboratoryGallery = () => {
         span: 1,
       },
       {
-        id: 'Drop',
+        id: 'Dropdown',
         label: t('Layout.SelectionLogic'),
         sub: t('Layout.DropdownsLists'),
         icon: <List />,
@@ -88,7 +95,7 @@ const LaboratoryGallery = () => {
         span: 1,
       },
       {
-        id: 'File',
+        id: 'FileUpload',
         label: t('Layout.AssetStream'),
         sub: t('Layout.FileUploaders'),
         icon: <FileCode />,
@@ -120,7 +127,7 @@ const LaboratoryGallery = () => {
         span: 1,
       },
       {
-        id: 'Intel',
+        id: 'LiveMetrics',
         label: t('Layout.LiveMetrics'),
         sub: t('Layout.RealTimeAnalytics'),
         icon: <Activity />,
@@ -128,7 +135,7 @@ const LaboratoryGallery = () => {
         span: 2,
       },
       {
-        id: 'IntelTable',
+        id: 'Table',
         label: t('Layout.IntelligenceRegistry'),
         sub: t('Layout.RealTimeAnalytics'),
         icon: <Activity />,
@@ -136,7 +143,7 @@ const LaboratoryGallery = () => {
         span: 2,
       },
       {
-        id: 'Feedback',
+        id: 'Toast',
         label: t('feedback.FeedbackNodes'),
         sub: t('feedback.ToastsSystemAlerts'),
         icon: <BellRing />,
@@ -152,7 +159,7 @@ const LaboratoryGallery = () => {
         span: 1,
       },
       {
-        id: 'Neural',
+        id: 'NeuralMap',
         label: t('NuralMap.NeuralNetwork'),
         sub: t('NuralMap.NodeMapping'),
         icon: <BrainCircuit />,
@@ -194,6 +201,29 @@ const LaboratoryGallery = () => {
     ],
     [t],
   );
+
+  useEffect(() => {
+    setComponents(components);
+  }, [components, setComponents]);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (!showSearch) return;
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        setPaletteOpen(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [showSearch]);
+
+  useEffect(() => {
+    if (componentId) {
+      setActivePortal(componentId);
+    }
+  }, [componentId, setActivePortal]);
 
   return (
     <Box className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-background p-6 md:p-12">
@@ -256,7 +286,10 @@ const LaboratoryGallery = () => {
                 <motion.div
                   key={comp.id}
                   whileHover={{ y: -5 }}
-                  onClick={() => setActivePortal(comp.id)}
+                  onClick={() => {
+                    setActivePortal(comp.id);
+                    navigate(`/component-lab/${comp.id}`);
+                  }}
                   className={`group cursor-pointer overflow-y-auto overflow-x-hidden rounded-3xl border border-borderColor  bg-card p-6 transition-all hover:border-primaryColor hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] ${comp.span === 2 ? 'lg:col-span-2' : ''}`}
                 >
                   <Stack justify="space-between" h="100%">
@@ -304,7 +337,10 @@ const LaboratoryGallery = () => {
                 variant="light"
                 size="xl"
                 radius="md"
-                onClick={() => setActivePortal(null)}
+                onClick={() => {
+                  setActivePortal(null);
+                  navigate('/component-lab');
+                }}
               >
                 <ArrowLeft />
               </ActionIcon>
@@ -365,6 +401,36 @@ const LaboratoryGallery = () => {
               </div>
             </main>
           </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {paletteOpen && (
+          <>
+            <motion.div
+              className="fixed inset-0 z-[200] bg-black/40 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setPaletteOpen(false)}
+            />
+
+            <motion.div
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ type: 'spring', stiffness: 250, damping: 25 }}
+              className="fixed left-1/2 top-[20%] z-[201] w-[520px] -translate-x-1/2 overflow-hidden rounded-2xl border border-borderColor bg-background shadow-2xl"
+            >
+              <GlobalSearch
+                dataOnclick={cmd => {
+                  setActivePortal(cmd.id);
+                  navigate(`/component-lab/${cmd.id}`);
+                  setPaletteOpen(false);
+                }}
+                header={false}
+              />
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </Box>
