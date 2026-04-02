@@ -5,6 +5,7 @@ import { Notifications } from '@mantine/notifications';
 import { store } from '@/Redux/Store/store';
 import { Provider } from 'react-redux';
 import { ThemeColorInjector } from '@/utils/ThemeInjector';
+import { ComponentProvider } from '@/Context/ComponentContext';
 
 const AppContent = () => {
   return (
@@ -19,7 +20,9 @@ const AppContent = () => {
 const App = () => {
   return (
     <Provider store={store}>
-      <AppContent />
+      <ComponentProvider>
+        <AppContent />
+      </ComponentProvider>
     </Provider>
   );
 };

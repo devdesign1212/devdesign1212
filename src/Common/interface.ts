@@ -306,3 +306,43 @@ export type ChatPanelProps = {
   sendBotMessage: (text: string) => void;
   isTyping: boolean;
 };
+
+export type CommandItem = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+export type CommandHeaderProps = {
+  toggleTheme: () => void;
+  selectLanguage: string;
+  handleLanguageSelect: (lang: string) => void;
+};
+
+export type ComponentItem = {
+  id: string;
+  label: string;
+  sub: string;
+  icon?: React.ReactNode;
+  view?: React.ReactNode;
+  span?: number;
+};
+
+export type ComponentContextType = {
+  components: ComponentItem[];
+  setComponents: React.Dispatch<React.SetStateAction<ComponentItem[]>>;
+  activePortal: string | null;
+  setActivePortal: React.Dispatch<React.SetStateAction<string | null>>;
+};
+
+export type SearchItem = {
+  id: string;
+  label: string;
+  sub: string;
+  icon?: React.ReactNode;
+};
+
+export type GlobalSearchProps = {
+  dataOnclick: (item: SearchItem) => void;
+  header: boolean | false;
+};

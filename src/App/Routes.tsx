@@ -19,7 +19,10 @@ const RouterOutlet: React.FC = () => {
         <Route element={<MainLayout />}>
           <Route index element={<Dashboard />} />
           {/* {user && ( */}
-          <Route path="component-lab" element={<LaboratoryGallery />} />
+          <Route
+            path="component-lab/:componentId?"
+            element={<LaboratoryGallery />}
+          />
           {/* )} */}
         </Route>
       </Routes>
