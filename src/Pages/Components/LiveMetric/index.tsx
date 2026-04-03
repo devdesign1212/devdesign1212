@@ -66,14 +66,22 @@ export const LiveMetricCard = ({
             <AreaChart data={data}>
               <defs>
                 <linearGradient id="gradientColor" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#00A67E" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="#00A67E" stopOpacity={0} />
+                  <stop
+                    offset="5%"
+                    stopColor={colors.activeColor}
+                    stopOpacity={0.3}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor={colors.activeColor}
+                    stopOpacity={0}
+                  />
                 </linearGradient>
               </defs>
               <Area
                 type="monotone"
                 dataKey="value"
-                stroke="#00A67E"
+                stroke={colors.activeColor}
                 strokeWidth={2}
                 fillOpacity={1}
                 fill="url(#gradientColor)"

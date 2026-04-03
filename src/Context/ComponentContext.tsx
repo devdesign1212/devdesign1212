@@ -1,5 +1,6 @@
 import { ComponentContextType, ComponentItem } from '@/Common/interface';
 import { createContext, useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ComponentContext = createContext<ComponentContextType | null>(null);
 
@@ -26,9 +27,10 @@ export const ComponentProvider = ({
 };
 
 export const useComponent = () => {
+  const { t } = useTranslation();
   const context = useContext(ComponentContext);
   if (!context) {
-    throw new Error('useComponent must be used inside DevDesignProvider');
+    throw new Error(t('GlobalSearch.useComponentError'));
   }
   return context;
 };

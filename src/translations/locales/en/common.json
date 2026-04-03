@@ -15,11 +15,7 @@
   "CognitiveUIEngine": "Cognitive UI Engine",
   "ContextAwareComponents": "Context-aware components powered by adaptive machine learning.",
   "days": "Days",
-  "ReturnToCommand": "Return to Command",
-  "ActiveNodes": "Active Nodes",
-  "NextEvolution": "Next Evolution",
   "AdvancedDataVisualization": "Advanced Data Visualization (T-30d)",
-  "BaseLayerComponent": "Base Layer Component",
   "TechStack": "Tech Stack",
   "buttons": {
     "get_started": "Get Started",
@@ -37,7 +33,10 @@
     "selectNodeFromCommandCenter": "Select a node from the Command Center..."
   },
   "date": {
-    "placeholder": "Select a date range",
+    "label1": "Date Range",
+    "label2": "Date",
+    "placeholder1": "Enter",
+    "placeholder2": "Select/Enter",
     "shortcuts": "Quick Select",
     "today": "Today",
     "yesterday": "Yesterday",
@@ -56,8 +55,6 @@
   "FileUpload": {
     "requiredDocument": "Please attach the required document",
     "uploadSuccess": "File uploaded successfully!",
-    "identityVerification": "Identity Verification",
-    "uploadInstruction": "Please upload a clear scan of your ID (PDF or JPG)",
     "documentLabel": "National ID / Passport",
     "profilePictureLabel": "Profile Picture",
     "documentPlaceholder": "Select document file",
@@ -69,12 +66,9 @@
     "emailAddress": "Email Address",
     "emailPlaceholder": "name@company.com",
     "password": "Password",
-    "enterYourPassword": "Enter your password",
-    "signIn": "Sign In",
-    "loginAttempt": "Login attempt"
+    "enterYourPassword": "Enter your password"
   },
   "Modal": {
-    "actionConfirmed": "Action Confirmed!",
     "title": "Modal System Demo",
     "openConfirmation": "Open Confirmation",
     "finalizeAction": "Finalize Action",
@@ -83,11 +77,9 @@
   },
   "Textarea": {
     "min10Chars": "Please provide a bit more detail (min 10 chars)",
-    "feedbackSubmitted": "Feedback submitted!",
     "howCanWeHelp": "How can we help?",
     "issueDescription": "Issue Description",
-    "tellUsWhatOnYourMind": "Tell us what's on your mind...",
-    "submit": "Send Feedback"
+    "tellUsWhatOnYourMind": "Tell us what's on your mind..."
   },
   "Component": "Component ",
   "Lab": "Lab",
@@ -178,10 +170,8 @@
     "AnalyzingDataStream": "Analyzing Data Stream...",
     "TapToInitializeCamera": "Tap to Initialize Camera",
     "EncryptedKeyFound": "ENCRYPTED KEY FOUND",
-    "CorruptedOrUnknownQrSource": "CORRUPTED OR UNKNOWN QR SOURCE",
     "ScanAnother": "Scan Another",
     "InvalidProtocol": "INVALID PROTOCOL",
-    "RetryScan": "Retry Scan",
     "SecureScanner": "Secure Scanner",
     "DataStreamAnalysis": "Data Stream Analysis",
     "Error": "Error",
@@ -200,20 +190,20 @@
   "faq": {
     "q1": "What is Dev Design?",
     "a1": "Dev Design is a scalable frontend system for building modern UI.",
-
     "q2": "Can I use it in production?",
     "a2": "Yes, it's designed for production-ready applications.",
-
     "q3": "Does it support themes?",
     "a3": "Yes, it supports light, dark, and custom themes.",
-
     "q4": "Is it suitable for large apps?",
     "a4": "Yes, it's built for scalable and enterprise applications.",
-
     "q5": "Can I integrate it easily?",
     "a5": "Yes, it integrates seamlessly with React and Next.js.",
-
     "q6": "Does it improve performance?",
     "a6": "Yes, it uses optimized rendering and architecture."
+  },
+  "search": "Search",
+  "noComponentsFound": "No components found",
+  "GlobalSearch": {
+    "useComponentError": "useComponent must be used inside DevDesignProvider"
   }
 }

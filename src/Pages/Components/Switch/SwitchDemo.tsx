@@ -1,6 +1,6 @@
 import TextComponent from '@/components/Atoms/TextComponent';
-import useNotify from '@/components/Molecules/NotificationProvider';
-import SegmentedControlComponent from '@/components/Molecules/SegmentedControl';
+import useNotify from '@/Pages/Components/Feedback';
+import SegmentedControlComponent from '@/Pages/Components/Switch';
 import { darkTheme, lightTheme } from '@/themes/colors';
 import { Center, Stack } from '@mantine/core';
 import { useState } from 'react';

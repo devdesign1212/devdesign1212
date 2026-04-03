@@ -104,7 +104,7 @@ const MenuDemo = () => {
               color={colors.textSecondary}
               className="italic"
             >
-              {t('selectNodeFromCommandCenter')}
+              {t('menu.selectNodeFromCommandCenter')}
             </TextComponent>
           </motion.div>
         </main>

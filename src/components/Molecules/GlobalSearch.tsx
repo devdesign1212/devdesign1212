@@ -5,8 +5,10 @@ import { darkTheme, lightTheme } from '@/themes/colors';
 import { useComponent } from '@/Context/ComponentContext';
 import { GlobalSearchProps } from '@/Common/interface';
 import React, { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const GlobalSearch: React.FC<GlobalSearchProps> = ({ dataOnclick, header }) => {
+  const { t } = useTranslation();
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
   const { components } = useComponent();
@@ -26,7 +28,7 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ dataOnclick, header }) => {
     <div>
       {header ? (
         <TextInputComponent
-          placeholder="Search components..."
+          placeholder={t('search')}
           value={search}
           onChange={e => setSearch(e.target.value)}
           leftSection={
@@ -46,7 +48,7 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ dataOnclick, header }) => {
       ) : (
         <input
           autoFocus
-          placeholder="Search DevDesign components..."
+          placeholder={t('search')}
           value={search}
           onChange={e => setSearch(e.target.value)}
           className="w-full border-b border-borderColor bg-transparent p-4 outline-none"
@@ -88,7 +90,9 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ dataOnclick, header }) => {
             </div>
           ))}
           {filteredCommands.length === 0 && (
-            <div className="p-4 text-sm opacity-60">No components found</div>
+            <div className="p-4 text-sm opacity-60">
+              {t('noComponentsFound')}
+            </div>
           )}
         </div>
       )}

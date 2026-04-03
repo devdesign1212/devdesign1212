@@ -1,5 +1,5 @@
 import ButtonComponent from '@/components/Atoms/ButtonComponent';
-import useNotify from '@/components/Molecules/NotificationProvider';
+import useNotify from '@/Pages/Components/Feedback';
 import { darkTheme, lightTheme } from '@/themes/colors';
 import { Group, Stack } from '@mantine/core';
 import { CheckCircle, ShieldAlert } from 'lucide-react';
