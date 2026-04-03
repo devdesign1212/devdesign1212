@@ -36,7 +36,7 @@ const DropdownDemo = () => {
           onChange={setAccessRole}
           leftSection={<Shield size={18} color={colors.textColor} />}
           variant="default"
-          placeholder="Search"
+          placeholder={t('search')}
           withAsterisk
           searchable
           withCheckIcon

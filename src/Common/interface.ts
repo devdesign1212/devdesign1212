@@ -307,12 +307,6 @@ export type ChatPanelProps = {
   isTyping: boolean;
 };
 
-export type CommandItem = {
-  id: string;
-  title: string;
-  description: string;
-};
-
 export type CommandHeaderProps = {
   toggleTheme: () => void;
   selectLanguage: string;

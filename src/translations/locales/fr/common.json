@@ -1,45 +1,44 @@
 {
-  "Dashboard": "Tableau de Bord",
+  "Dashboard": "Tableau de bord",
   "footer": {
-    "copyright": "2026 Concevoir l'avenir de l'UI/UX."
+    "copyright": "2026 Ingénierie de l'avenir de l'UI/UX."
   },
   "DesignSystemVersion": "Système de Design v1.0",
   "BridgingTheGapBetween": "Combler le fossé entre",
   "CodeAndCreativity": "Code et Créativité.",
-  "WelcomeToDevDesignLab": "Bienvenue au laboratoire d'ingénierie Dev Design. Accédez à nos composants atomiques de base et explorez les fondements de nos protocoles d'interface évolutifs.",
-  "ProductEvolutionStrategy": "Stratégie d'Évolution du Produit",
+  "WelcomeToDevDesignLab": "Bienvenue dans le laboratoire d’ingénierie Dev Design. Accédez à nos composants atomiques principaux et explorez les bases de nos protocoles d’interface tournés vers l’avenir.",
+  "ProductEvolutionStrategy": "Stratégie d’évolution du produit",
   "DevDesignMemo": "Note Dev Design :",
-  "OurRoadmapFocusesOnTransformingStaticUI": "Notre feuille de route se concentre sur la transformation des interfaces statiques en expériences intelligentes pilotées par les données.",
-  "DataIntelligenceModule": "Module d'Intelligence des Données",
-  "AdvancedDataVisualizationDesc": "Moteur de visualisation avancée et d'analyse en temps réel.",
-  "CognitiveUIEngine": "Moteur d'Interface Cognitive",
-  "ContextAwareComponents": "Composants sensibles au contexte alimentés par l'apprentissage automatique adaptatif.",
+  "OurRoadmapFocusesOnTransformingStaticUI": "Notre feuille de route vise à transformer une UI statique en expériences intelligentes et pilotées par les données.",
+  "DataIntelligenceModule": "Module d'intelligence des données",
+  "AdvancedDataVisualizationDesc": "Moteur de visualisation avancée et d’analytique en temps réel.",
+  "CognitiveUIEngine": "Moteur UI cognitif",
+  "ContextAwareComponents": "Composants contextuels alimentés par l’apprentissage automatique adaptatif.",
   "days": "Jours",
-  "ReturnToCommand": "Retour au Commandement",
-  "ActiveNodes": "Nœuds Actifs",
-  "NextEvolution": "Prochaine Évolution",
-  "AdvancedDataVisualization": "Visualisation de Données Avancée (J-30)",
-  "BaseLayerComponent": "Composant Couche de Base",
-  "TechStack": "Pile Technique",
+  "AdvancedDataVisualization": "Visualisation avancée des données (T-30j)",
+  "TechStack": "Pile technologique",
   "buttons": {
     "get_started": "Commencer",
-    "send_message": "Envoyer le Message",
+    "send_message": "Envoyer un message",
     "loading": "Veuillez patienter..."
   },
   "menu": {
     "dashboard": "Terminal",
-    "transactions": "Grand Livre",
+    "transactions": "Grand livre",
     "security": "Coffre-fort",
-    "ai_analytics": "Laboratoire Neural",
+    "ai_analytics": "Laboratoire neuronal",
     "biometrics": "Identité",
     "settings": "Configuration",
     "devDesign": "DEV DESIGN",
-    "selectNodeFromCommandCenter": "Sélectionnez un nœud depuis le Centre de Commandement..."
+    "selectNodeFromCommandCenter": "Sélectionnez un nœud depuis le centre de commande..."
   },
   "date": {
-    "placeholder": "Sélectionnez une période",
-    "shortcuts": "Sélection Rapide",
-    "today": "Aujourd'hui",
+    "label1": "Plage de dates",
+    "label2": "Date",
+    "placeholder1": "Entrer",
+    "placeholder2": "Sélectionner / Entrer",
+    "shortcuts": "Sélection rapide",
+    "today": "Aujourd’hui",
     "yesterday": "Hier",
     "last7": "7 derniers jours",
     "last30": "30 derniers jours",
@@ -48,70 +47,63 @@
   "select": "Sélectionnez une option",
   "fileReadyForUpload": "Fichier prêt pour le téléchargement",
   "Dropdown": {
-    "systemAccessRole": "Rôle d'Accès Système",
-    "preferredLanguage": "Langue Préférée",
-    "regionSimulatedError": "Région (Erreur Simulée)",
+    "systemAccessRole": "Rôle d'accès système",
+    "preferredLanguage": "Langue préférée",
+    "regionSimulatedError": "Région (Erreur simulée)",
     "thisRegionIsCurrentlyUnderMaintenance": "Cette région est actuellement en maintenance"
   },
   "FileUpload": {
     "requiredDocument": "Veuillez joindre le document requis",
     "uploadSuccess": "Fichier téléchargé avec succès !",
-    "identityVerification": "Vérification d'Identité",
-    "uploadInstruction": "Veuillez télécharger un scan clair de votre pièce d'identité (PDF ou JPG)",
-    "documentLabel": "ID Nationale / Passeport",
-    "profilePictureLabel": "Photo de Profil",
+    "documentLabel": "Carte d'identité / Passeport",
+    "profilePictureLabel": "Photo de profil",
     "documentPlaceholder": "Sélectionner le fichier du document",
-    "uploadButton": "Télécharger le Document",
-    "uploadInfo": "Téléchargement crypté et sécurisé. Taille max : 10 Mo."
+    "uploadButton": "Télécharger le document",
+    "uploadInfo": "Téléchargement sécurisé et chiffré. Taille maximale : 10 Mo."
   },
   "TextInput": {
     "welcomeBack": "Bon retour",
-    "emailAddress": "Adresse E-mail",
+    "emailAddress": "Adresse e-mail",
     "emailPlaceholder": "nom@entreprise.com",
     "password": "Mot de passe",
-    "enterYourPassword": "Entrez votre mot de passe",
-    "signIn": "Se connecter",
-    "loginAttempt": "Tentative de connexion"
+    "enterYourPassword": "Entrez votre mot de passe"
   },
   "Modal": {
-    "actionConfirmed": "Action Confirmée !",
-    "title": "Démo du Système Modal",
-    "openConfirmation": "Ouvrir la Confirmation",
-    "finalizeAction": "Finaliser l'Action",
-    "confirmationMessage": "Êtes-vous sûr de vouloir procéder à cette transaction ? Cette action est irréversible.",
+    "title": "Démo du système de modale",
+    "openConfirmation": "Ouvrir la confirmation",
+    "finalizeAction": "Finaliser l'action",
+    "confirmationMessage": "Êtes-vous sûr de vouloir continuer cette transaction ? Cette action est irréversible.",
     "confirm": "Confirmer"
   },
   "Textarea": {
-    "min10Chars": "Veuillez fournir un peu plus de détails (min 10 caract.)",
-    "feedbackSubmitted": "Commentaire envoyé !",
+    "min10Chars": "Veuillez fournir un peu plus de détails (min. 10 caractères)",
     "howCanWeHelp": "Comment pouvons-nous vous aider ?",
-    "issueDescription": "Description du Problème",
-    "tellUsWhatOnYourMind": "Dites-nous ce que vous avez en tête...",
-    "submit": "Envoyer le Commentaire"
+    "issueDescription": "Description du problème",
+    "tellUsWhatOnYourMind": "Dites-nous ce que vous avez en tête..."
   },
-  "Component": "Composant",
-  "Lab": "Labo",
+  "Component": "Composant ",
+  "Lab": "Laboratoire",
   "Documentation": "Documentation",
-  "EngineeringSpecs": "Spécifications Techniques",
+  "EngineeringSpecs": "Spécifications techniques",
   "LiveMetricCard": {
-    "liveStream": "Flux en Direct",
+    "liveStream": "Flux en direct",
     "RealTimeTelemetry": "Flux de télémétrie en temps réel pour la surveillance Fintech & Web3.",
-    "NetworkThroughput": "Débit Réseau",
-    "ActiveValidators": "Validateurs Actifs"
+    "NetworkThroughput": "Débit du réseau",
+    "ActiveValidators": "Validateurs actifs"
   },
   "Layout": {
     "InteractionTokens": "Jetons d'interaction",
-    "ButtonsTriggers": "Boutons et Déclencheurs",
+    "ButtonsTriggers": "Boutons et déclencheurs",
     "DataEntry": "Saisie de données",
-    "InputsValidation": "Entrées et Validation",
+    "InputsValidation": "Entrées et validation",
     "SelectionLogic": "Logique de sélection",
     "DropdownsLists": "Listes déroulantes",
     "TemporalUnits": "Unités temporelles",
     "DateTimePickers": "Sélecteurs de date et d'heure",
     "AssetStream": "Flux d'actifs",
-    "FileUploaders": "Téléchargeurs de fichiers",
+    "FileUploaders": "Téléverseurs de fichiers",
     "OverlayPrototypes": "Prototypes de superposition",
-    "ModalsDrawers": "Modaux et Tiroirs",
+    "ModalsDrawers": "Modales et tiroirs",
     "ContentBlocks": "Blocs de contenu",
     "RichTextAreas": "Zones de texte enrichi",
     "NavigationNodes": "Nœuds de navigation",
@@ -124,96 +116,94 @@
   "table": {
     "viewAll": "Voir toutes les transactions",
     "noDataAvailable": "Aucun flux de données disponible",
-    "displaying": "Affichage de",
-    "of": "sur",
+    "displaying": "Affichage",
+    "of": "de",
     "txHash": "HASH DE TRANSACTION",
     "timestamp": "HORODATAGE",
-    "asset": "ACTIF RÉSEAU",
-    "status": "ÉTAT DU NŒUD",
+    "asset": "ACTIF DU RÉSEAU",
+    "status": "STATUT DU NŒUD",
     "amount": "VALEUR / MONTANT",
-    "security": "PROTOCOLE DE SÉCURITÉ"
+    "security": "SÉCURITÉ"
   },
   "feedback": {
-    "FeedbackNodes": "Nœuds de Rétroaction",
-    "ToastsSystemAlerts": "Toasts et Alertes Système",
-    "TriggerSuccess": "Déclencher le Succès",
-    "SystemAlert": "Alerte Système",
-    "TransactionVerified": "Transaction Vérifiée",
+    "FeedbackNodes": "Nœuds de feedback",
+    "ToastsSystemAlerts": "Toasts et alertes système",
+    "TriggerSuccess": "Succès déclenché",
+    "SystemAlert": "Alerte système",
+    "TransactionVerified": "Transaction vérifiée",
     "Thehashhasbeensuccessfullyrecordedonchain": "Le hash a été enregistré avec succès sur la blockchain",
-    "SecurityBreach": "Brèche de Sécurité",
-    "UnauthorizedaccessdetectedinNode04": "Accès non autorisé détecté dans le Nœud 04"
+    "SecurityBreach": "Violation de sécurité",
+    "UnauthorizedaccessdetectedinNode04": "Accès non autorisé détecté dans le nœud 04"
   },
   "Switch": {
-    "SwitchNodes": "Changer de nœuds",
-    "LogicSwitchers": "Commutateurs Logiques",
-    "SelectionChanged": "Sélection Modifiée",
-    "NodeActivated": "Nœud Activé",
+    "SwitchNodes": "Nœuds de commutation",
+    "LogicSwitchers": "Commutateurs logiques",
+    "SelectionChanged": "Sélection modifiée",
+    "NodeActivated": "Nœud activé",
     "Analytics": "Analytique",
     "Security": "Sécurité",
-    "RawCode": "Code Brut",
-    "CurrentView": "Vue Actuelle"
+    "RawCode": "Code brut",
+    "CurrentView": "Vue actuelle"
   },
   "NuralMap": {
-    "NodeMapping": "Cartographie des nœuds",
+    "NodeMapping": "Cartographie des nœuds neuronaux",
     "AlphaCore": "Cœur Alpha",
     "Optimal": "Optimal",
     "SecurityNode": "Nœud de sécurité",
     "Active": "Actif",
-    "NeuralLink": "Liaison neurale",
+    "NeuralLink": "Lien neuronal",
     "Processing": "Traitement",
     "Load": "Charge",
-    "Status": "État",
+    "Status": "Statut",
     "NeuralNetwork": "Réseau neuronal"
   },
   "BioScanner": {
     "threatDetected": "MENACE DÉTECTÉE",
-    "neuralSignatureMismatch": "SIGNATURE NEURALE INCORRECTE",
+    "neuralSignatureMismatch": "NON-CONCORDANCE DE SIGNATURE NEURONALE",
     "reInitializeSystem": "RÉINITIALISER LE SYSTÈME",
     "identityVerified": "IDENTITÉ VÉRIFIÉE",
     "logout": "DÉCONNEXION",
     "BiometricAnalysis": "Analyse biométrique",
-    "VitalNodeSync": "Synchro des nœuds vitaux"
+    "VitalNodeSync": "Synchronisation des nœuds vitaux"
   },
   "QrScanner": {
     "AnalyzingDataStream": "Analyse du flux de données...",
-    "TapToInitializeCamera": "Appuyer pour lancer la caméra",
+    "TapToInitializeCamera": "Appuyez pour initialiser la caméra",
     "EncryptedKeyFound": "CLÉ CHIFFRÉE TROUVÉE",
-    "CorruptedOrUnknownQrSource": "SOURCE QR CORROMPUE OU INCONNUE",
     "ScanAnother": "Scanner un autre",
     "InvalidProtocol": "PROTOCOLE INVALIDE",
-    "RetryScan": "Réessayer le scan",
     "SecureScanner": "Scanner sécurisé",
     "DataStreamAnalysis": "Analyse du flux de données",
     "Error": "Erreur",
     "NoQrFoundInImage": "Aucun QR trouvé dans l'image",
     "OpenLink": "Ouvrir le lien",
-    "Upload": "Télécharger"
+    "Upload": "Téléverser"
   },
   "Chat": {
-    "WelcomeToChat": "Bonjour 👋 Bienvenue sur le support Dev Design. Comment puis-je vous aider aujourd’hui ?",
+    "WelcomeToChat": "Bonjour 👋 Bienvenue dans le support Dev Design. Comment puis-je vous aider aujourd’hui ?",
     "YouCanAlsoAsk": "Vous pouvez aussi demander :",
     "ThanksForYourQuestion": "Merci pour votre question ! Notre équipe vous répondra bientôt.",
-    "Sending": "Envoi en cours...",
-    "BotTyping": "Le bot est en train d’écrire",
+    "Sending": "Envoi...",
+    "BotTyping": "Le bot écrit",
     "TypeMessage": "Tapez un message..."
   },
   "faq": {
     "q1": "Qu'est-ce que Dev Design ?",
-    "a1": "Dev Design est un système frontend évolutif pour créer des interfaces modernes.",
-
+    "a1": "Dev Design est un système frontend évolutif pour créer des interfaces utilisateur modernes.",
     "q2": "Puis-je l'utiliser en production ?",
     "a2": "Oui, il est conçu pour des applications prêtes pour la production.",
-
     "q3": "Prend-il en charge les thèmes ?",
-    "a3": "Oui, il supporte les thèmes clair, sombre et personnalisés.",
-
-    "q4": "Convient-il aux grandes applications ?",
-    "a4": "Oui, il est conçu pour les applications évolutives et d'entreprise.",
-
-    "q5": "Peut-on l'intégrer facilement ?",
+    "a3": "Oui, il prend en charge les thèmes clair, sombre et personnalisés.",
+    "q4": "Est-il adapté aux grandes applications ?",
+    "a4": "Oui, il est conçu pour des applications évolutives et d'entreprise.",
+    "q5": "Puis-je l'intégrer facilement ?",
     "a5": "Oui, il s'intègre facilement avec React et Next.js.",
-
     "q6": "Améliore-t-il les performances ?",
-    "a6": "Oui, il utilise un rendu optimisé."
+    "a6": "Oui, il utilise un rendu et une architecture optimisés."
+  },
+  "search": "Rechercher",
+  "noComponentsFound": "Aucun composant trouvé",
+  "GlobalSearch": {
+    "useComponentError": "useComponent doit être utilisé à l'intérieur de DevDesignProvider"
   }
 }

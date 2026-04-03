@@ -1,5 +1,5 @@
 import TextComponent from '@/components/Atoms/TextComponent';
-import { LiveMetricCard } from '@/components/Molecules/LiveMetricCard';
+import { LiveMetricCard } from '@/Pages/Components/LiveMetric';
 import { SimpleGrid, Stack } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 

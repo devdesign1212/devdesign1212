@@ -3,8 +3,10 @@ import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '@/themes/colors';
 import CustomDateComponent from '@/components/Atoms/CustomDateComponent';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const DateDemo = () => {
+  const { t } = useTranslation();
   const currentTheme = useSelector((state: any) => state.theme.theme);
   const colors = currentTheme === 'light' ? lightTheme : darkTheme;
   const [rangeValue, setRangeValue] = useState<
@@ -19,7 +21,7 @@ const DateDemo = () => {
     <Stack align="center" gap="xl">
       <div className="mx-auto mt-1 max-w-md space-y-8 ">
         <CustomDateComponent
-          label="Date Range"
+          label={t('date.label1')}
           type="range"
           value={rangeValue}
           onChange={val => setRangeValue(val)}
@@ -34,9 +36,9 @@ const DateDemo = () => {
         />
 
         <CustomDateComponent
-          label="Date"
+          label={t('date.label2')}
           type="default"
-          placeholder="Enter"
+          placeholder={t('date.placeholder1')}
           value={singleManualDate}
           onChange={val => {
             if (!Array.isArray(val)) setSingleManualDate(val);
@@ -52,9 +54,9 @@ const DateDemo = () => {
         />
 
         <CustomDateComponent
-          label="Date"
+          label={t('date.label2')}
           type="default"
-          placeholder="Select/Enter"
+          placeholder={t('date.placeholder2')}
           value={singleHybridDate}
           onChange={val => {
             if (!Array.isArray(val)) setSingleHybridDate(val);

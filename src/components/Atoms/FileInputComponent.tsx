@@ -119,7 +119,7 @@ const FileInputComponent: React.FC<customFileinputProps> = ({
             exit={{ opacity: 0, x: 10 }}
             style={{
               fontSize: '11px',
-              color: '#40C057',
+              color: colors.activeColor,
               fontWeight: 600,
               marginTop: -5,
               display: 'flex',
@@ -132,7 +132,7 @@ const FileInputComponent: React.FC<customFileinputProps> = ({
                 width: 6,
                 height: 6,
                 borderRadius: '50%',
-                backgroundColor: '#40C057',
+                backgroundColor: colors.activeColor,
               }}
             />
             {t('fileReadyForUpload')}

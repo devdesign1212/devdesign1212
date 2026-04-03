@@ -1,29 +1,22 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from '@/Pages/Home';
-import LaboratoryGallery from '@/Pages/Home/LaboratoryGallery';
 import MainLayout from '@/Pages/Home/MainLayout';
-// import { auth } from '@/Services/firebase';
+import { useTranslation } from 'react-i18next';
+import LaboratoryGallery from '@/Pages/Home/ComponentList';
 
 const RouterOutlet: React.FC = () => {
-  // const [user, setUser] = useState<any>(null);
-
-  // useEffect(() => {
-  //   const unsubscribe = auth.onAuthStateChanged(u => setUser(u));
-  //   return () => unsubscribe();
-  // }, []);
+  const { t } = useTranslation();
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>{t('buttons.loading')}</div>}>
       <Routes>
         <Route element={<MainLayout />}>
           <Route index element={<Dashboard />} />
-          {/* {user && ( */}
           <Route
             path="component-lab/:componentId?"
             element={<LaboratoryGallery />}
           />
-          {/* )} */}
         </Route>
       </Routes>
     </Suspense>
