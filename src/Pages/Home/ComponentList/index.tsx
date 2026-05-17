@@ -17,7 +17,6 @@ import {
   ScanHeart,
   ScanQrCode,
   PercentDiamondIcon,
-  MessageCirclePlusIcon,
 } from 'lucide-react';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '@/themes/colors';
@@ -40,7 +39,6 @@ import SwitchDemo from '@/Pages/Components/Switch/SwitchDemo';
 import NeuralMap from '@/Pages/Components/NeuralMap';
 import BioScanner from '@/Pages/Components/Scanner/BioScanner';
 import QRScanner from '@/Pages/Components/Scanner/QRScanner';
-import ChatLab from '@/Pages/Components/Chat';
 import SecureGate from '@/Pages/Components/SecureGate';
 import Components from './Components';
 import DetailComponent from './DetailComponent';
@@ -177,14 +175,6 @@ const LaboratoryGallery = () => {
         sub: t('QrScanner.DataStreamAnalysis'),
         icon: <ScanQrCode />,
         view: <QRScanner />,
-        span: 1,
-      },
-      {
-        id: 'SocketLab',
-        label: t('SocketLab.SocketLab'),
-        sub: t('SocketLab.DataStreamAnalysis'),
-        icon: <MessageCirclePlusIcon />,
-        view: <ChatLab />,
         span: 1,
       },
       {
